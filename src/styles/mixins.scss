@@ -18,8 +18,13 @@
  * ~ resets the elements transform css property
  */
 @mixin horizontal-center{
-	margin: auto;
-	display: block;
+	position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 /*
@@ -137,7 +142,8 @@
  * Sets width to Frame_Width and horizonally centers it
  */
 @mixin layout-frame($width: $Frame_Width){
-    width: $width;
+	width: $width;
+	float: left;
     @include horizontal-center;
     @media screen and (max-width: $width){
         width: 90%;
@@ -150,7 +156,7 @@
 @mixin layout-frame-inner($width: $Frame_Width){
     @include layout-fullwidth;
     > .inner{
-        @include layout-frame($width);
+		@include layout-frame($width);
     }
 }
 
