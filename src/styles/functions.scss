@@ -1,0 +1,36 @@
+@import "mixins.scss";
+
+
+input{
+    width: 95%;
+    padding-left: 5%;
+    height: 3em;
+    background-color: $Highlight;
+    border-radius: 20px;
+    text-align: left;
+    color: $Base_Font_Colour;
+    &.invalid{
+        outline: 1px dashed $Alert;
+        @include placeholder{
+            color: $Alert;
+        }
+    }
+    @include placeholder{
+        text-align: left;
+        font-weight: bold;
+        font-family: "#{$Alt_Font_Family}";
+    }
+}
+
+.button{
+    min-width: 100px;
+    min-height: 60px;
+    line-height: 60px;
+    color: $Highlight;
+    cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+    transition: 150ms;
+    &:hover{
+    }
+}
