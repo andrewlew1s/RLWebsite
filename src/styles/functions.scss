@@ -10,9 +10,7 @@ input{
     text-align: left;
     color: $Base_Font_Colour;
     &.invalid{
-        outline: 1px dashed $Alert;
         @include placeholder{
-            color: $Alert;
         }
     }
     @include placeholder{

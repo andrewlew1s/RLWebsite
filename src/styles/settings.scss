@@ -1,9 +1,7 @@
 /* Colours */
-
-$Cream: #eeedec;
-$Red: #c63840;
-$Theme_C: darkslategray;
-$Alert: #DB2929;
+$Background: rgb(43, 206, 206);
+$Theme: rgb(218, 36, 187);
+$Text: brown;
 $Highlight: #fff;
 
 /* Layout */
@@ -14,4 +12,4 @@ $Frame_Width: 1140px;
 $Base_Font_Family:'Josefin Sans', sans-serif;
 $Title_Font_Family:'Poiret One', cursive;
 $Alt_Font_Family: 'Raleway', sans-serif;
-$Base_Font_Colour: $Red;
+$Base_Font_Colour: $Text;
