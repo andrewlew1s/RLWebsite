@@ -14,8 +14,8 @@ Vue.use(BootstrapVue);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>',
+	el: '#app',
+	router,
+	components: { App },
+	template: '<App/>'
 });
