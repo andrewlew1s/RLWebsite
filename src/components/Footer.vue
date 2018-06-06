@@ -1,24 +1,23 @@
 <template>
-<div class="wrapper">
-
-  <div class="module-footer">
-    <div class="inner">
-     <p> Made by Andrew and Mike</p>
+    <div class="module-footer">
+        <div class="inner">
+            <p> Andrew and Mike Ltd. Corp</p>
+        </div>
     </div>
-  </div>
-
-</div>
 </template>
+
+<script>
+</script>
 
 <style lang="scss" scoped>
 @import '../style';
 
 .module-footer{
-  background: $Background;
-  @include layout-frame-inner($Frame-Width);
+    $height: 100px;
+    background: $Highlight;
+  @include layout-frame-inner();
   .inner{
-      background: green;
-
+      p{ padding-top: 0.8em;}
   }
 }
 
