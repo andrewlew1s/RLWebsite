@@ -1,49 +1,82 @@
 <template>
-<div class="wrapper">
+<div class="module-header">
+	<div class="inner">
 
-  <div class="module-header">
-    <div class="inner">
+		<b-img thumbnail src="../assets/logo.png" class="logo"></b-img>
 
-      <b-img thumbnail src="../assets/logo.png" class="logo"></b-img>
+		<menue :items="menuItems"></menue>
 
-      <h1 class="title">RL Website</h1>
-
-      <div class="menu">
-        <b-link to="/" exact>Home</b-link>
-        <b-link to="/about" exact>About</b-link>
-      </div>
-
-    </div>
-  </div>
+	</div>
 
 </div>
 </template>
+
+<script>
+import Menue from './Menue';
+
+export default {
+	components: {
+		Menue
+	},
+	data() {
+		return {
+			menuItems: [
+				{ path: '/', text: 'Home' },
+				{ path: '/about', text: 'About' },
+				{ path: '/bigPenis', text: 'HUGECOCK' }
+			]
+		};
+	}
+};
+
+</script>
 
 <style lang="scss" scoped>
 @import '../style';
 
 .module-header{
-  background: $Background;
-  height: 120px;
-  @include layout-frame-inner($Frame-Width);
-  .logo{
-    height: 100px;
-    float: left;
-    margin: 10px 30px;
-  }
-  .title{
-    font-size: 40px;
-    color: $Text;
-    margin-top: 40px;
-    float: left;
-  }
-  .menu{
-    font-size: 20px;
-    margin-top: 60px;
-    .active{
-      font-weight: bold;
-    }
-  }
+
+	$height: 200px;
+	background: $Highlight;
+	height: $height;
+	position: fixed;
+	@include layout-frame-inner($Frame-Width);
+
+	.logo{
+		height: $height / 2;
+		margin: auto;
+		margin-top: $height / 7;
+	}
+
+	.inner{
+		height: $height;
+	}
+
+	.menu{
+
+		font-size: 20px;
+		position: absolute !important;
+		bottom: $height / 20;
+		@include horizontal-center;
+
+		a{
+			border-bottom: 1px solid $Grey;
+			color: $Text_Colour;
+			padding-bottom: 0.5em;
+			margin: auto 20px;
+			display: inline-block;
+			text-decoration: none;
+		}
+
+		.active, :hover{
+			border-bottom: 2px solid $Text_Colour;
+		}
+
+		:active{
+			position: relative;
+			top: 2px;
+		}
+	}
 }
 
 </style>
