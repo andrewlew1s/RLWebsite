@@ -11,10 +11,12 @@
 @import '../style';
 
 .module-about{
-    $height: 300px;
-    background: $Highlight;
-  @include layout-frame-inner();
-  .rachel{
+
+$height: 300px;
+background: $Highlight;
+@include layout-frame-inner();
+
+	.rachel{
         height: $height / 2;
 		margin: auto;
         margin-top: $height / 10;
