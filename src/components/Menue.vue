@@ -28,6 +28,8 @@ export default {
 
 .module-menu{
 
+        text-align: center;
+
 		a{
 			font-size: 20px;
 			border-bottom: 1px solid $Grey;
