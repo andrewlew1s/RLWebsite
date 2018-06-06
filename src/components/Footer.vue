@@ -1,20 +1,35 @@
 <template>
-<div class="wrapper">
-
-  <div class="module-footer">
-    <div class="inner">
-     <p> Made by Andrew and Mike</p>
+    <div class="module-footer">
+        <div class="inner">
+            <menue :items="menuItems"></menue>
+            <p> Andrew and Mike Ltd. Corp</p>
+        </div>
     </div>
-  </div>
-
-</div>
 </template>
+
+<script>
+import Menue from './Menue';
+
+export default {
+	components: {
+		Menue
+	},
+	data() {
+		return {
+			menuItems: [{ path: '/', text: 'Home' }
+			]
+		};
+	}
+};
+
+</script>
 
 <style lang="scss" scoped>
 @import '../style';
 
 .module-footer{
-  background: $Background;
+    $height: 100px;
+    background: $Highlight;
   @include layout-frame-inner($Frame-Width);
   .inner{
       background: green;
