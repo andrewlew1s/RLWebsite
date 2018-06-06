@@ -1,16 +1,24 @@
 /* Colours */
+<<<<<<< HEAD
+=======
+
+$Grey: #d7d7d9;
+
+>>>>>>> 090935e9b501f812a23ae1b471a5830d14c4ae7f
 $Background: #33ccff;
 $Theme: #ff99cc;
-$Text: #333300;
+$Text_Colour: #333300;
 $Alert: #DB2929;
 $Highlight: #fff;
+
 
 /* Layout */
 $Frame_Width: 1140px;
 
 
 /* Font */
-$Base_Font_Family:'Josefin Sans', sans-serif;
-$Title_Font_Family:'Poiret One', cursive;
-$Alt_Font_Family: 'Raleway', sans-serif;
-$Base_Font_Colour: $Text;
+$Base_Font_Family: 'Zilla Slab', serif;
+
+$Title_Font_Family:'Zilla Slab', serif;
+$Alt_Font_Family: 'Zilla Slab', serif;
+$Base_Font_Colour: $Text_Colour;
