@@ -28,14 +28,16 @@ export default {
 
 .module-menu{
 
-        text-align: center;
+		text-align: center;
+		border-top: 1px solid $Grey;
+		border-bottom: 1px solid $Grey;
 
 		a{
 			font-size: 20px;
 			border-bottom: 1px solid $Grey;
 			color: $Text_Colour;
-			padding-bottom: 0.5em;
-			margin: auto 20px;
+			padding-bottom: 0.2em;
+			margin: 10px 20px;
 			display: inline-block;
 			text-decoration: none;
 			transition: 50ms;
