@@ -4,17 +4,27 @@
             <b-img src="../assets/rachel.jpg" class="rachel"></b-img>
             <p> Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.</p>
         </div>
+        {{ poem }}
     </div>
 </template>
 
 <script>
+import tigerless from '../assets/tigerless';
+
+export default {
+	data() {
+		return {
+			poem: tigerless
+		};
+	}
+};
 </script>
 
 <style lang="scss" scoped>
 @import '../style';
 
 .module-about{
-    $height: 100px;
+    $height: 300px;
     background: $Highlight;
   @include layout-frame-inner();
   .rachel{
