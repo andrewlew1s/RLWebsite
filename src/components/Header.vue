@@ -2,9 +2,9 @@
 <div class="module-header">
 	<div class="inner">
 
-		<b-img thumbnail src="../assets/logo.png" class="logo"></b-img>
+		<b-img  thumbnail src="../assets/logo.png" class="logo"></b-img>
 
-		<menue :items="menuItems"></menue>
+		<menue class="menu" :items="menuItems"></menue>
 
 	</div>
 
@@ -21,8 +21,8 @@ export default {
 	data() {
 		return {
 			menuItems: [
-				{ path: '/about', text: 'About' },
 				{ path: '/', text: 'Home' },
+				{ path: '/about', text: 'About' },
 				{ path: '/poems', text: 'Poems' }
 			]
 		};
@@ -45,8 +45,12 @@ export default {
 	.logo{
 		height: $height / 2;
 		margin: auto;
-        margin-top: $height / 7;
+        margin-top: $height / 10;
         display: block;
+	}
+
+	.menu{
+		margin-top: $height/20
 	}
 
 	.inner{
