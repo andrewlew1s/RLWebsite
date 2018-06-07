@@ -24,6 +24,6 @@ export default new Router({
 			name: 'Poems',
 			component: Poems
 		}
-
+		// #TODO: Add route for individual poem page
 	]
 });
