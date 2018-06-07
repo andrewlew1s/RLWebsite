@@ -2,7 +2,7 @@
 <div class="module-header">
 	<div class="inner">
 
-		<b-img src="../assets/logo2.png" class="logo"></b-img>
+		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
 
 		<menue class="menu" :items="menuItems"></menue>
 
@@ -40,6 +40,7 @@ export default {
 	background: $Highlight;
 	height: $height;
 	position: fixed;
+	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
 
 	.logo{

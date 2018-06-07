@@ -1,4 +1,5 @@
-export default `In between hunts, when I lie in the grasses
+export default {
+	text: `In between hunts, when I lie in the grasses
 And practise the stillness of death,
 I have been thinking hard.
 And I believe, Father, that what is gone is certitude.
@@ -23,4 +24,6 @@ Even find the way to you. All I found was men
 And the carcasses of lands they leave behind.
 Father I am afraid for you, lost somewhere
 I cannot help, somewhere I cannot even see.
-But Father, I am still more afraid for me.`;
+But Father, I am still more afraid for me.`,
+	title: 'Tigerless'
+};

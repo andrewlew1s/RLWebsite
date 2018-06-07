@@ -1,7 +1,7 @@
 <template>
     <div class="module-about">
         <div class="inner">
-            <b-img src="../assets/rachel.jpg" class="rachel"></b-img>
+            <b-img src="../assets/images/rachel.jpg" class="rachel"></b-img>
             <p> Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.</p>
         </div>
     </div>
