@@ -1,24 +1,6 @@
 const twentyTouristsImage = require('./images/20Tourists.png');
 
-
 export default [
-	{
-		text: `She holds the knife over red flesh,
-Its roundness straining at thin skin.
-She nicks with the serrated blade its edge,
-And pauses, and slices her first incision.
-
-The new halves split, peeling apart,
-Their several hearts displaying
-Great symmetry and difference,
-With a pip more here and there.
-
-Two hemipsheres. With every cut
-Another and another and another,
-Smaller, smaller, smaller, less to hold,
-Less space to cut the next from.`,
-		title: 'The Decision'
-	},
 	{
 		text: `In between hunts, when I lie in the grasses
 And practise the stillness of death,
@@ -46,7 +28,25 @@ And the carcasses of lands they leave behind.
 Father I am afraid for you, lost somewhere
 I cannot help, somewhere I cannot even see.
 But Father, I am still more afraid for me.`,
-		title: 'Tigerless'
+		title: 'Tigerless',
+		video: 'https://player.vimeo.com/video/101073841'
+	},
+	{
+		text: `She holds the knife over red flesh,
+Its roundness straining at thin skin.
+She nicks with the serrated blade its edge,
+And pauses, and slices her first incision.
+
+The new halves split, peeling apart,
+Their several hearts displaying
+Great symmetry and difference,
+With a pip more here and there.
+
+Two hemipsheres. With every cut
+Another and another and another,
+Smaller, smaller, smaller, less to hold,
+Less space to cut the next from.`,
+		title: 'The Decision'
 	},
 	{
 		text: `Old words sound beautiful
