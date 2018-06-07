@@ -10,6 +10,8 @@
 				<p v-if="poem.image">
 					<img thumbnail :src="poem.image"/>
 				</p>
+				<iframe v-if="poem.video" :src="poem.video" width="640" height="360" frameborder="0"
+					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				<br>
 				<br>
 			</div>
@@ -23,6 +25,7 @@ import tigerless from '../assets/poems/tigerless';
 import thedecision from '../assets/poems/thedecision';
 import ilium from '../assets/poems/ilium';
 import twentyTourists from '../assets/poems/20tourists';
+import It from '../assets/poems/It';
 
 export default {
 	data() {
@@ -31,7 +34,8 @@ export default {
 				tigerless,
 				ilium,
 				thedecision,
-				twentyTourists
+				twentyTourists,
+				It
 			]
 		};
 	}
