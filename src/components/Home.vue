@@ -1,86 +1,13 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+	<div class="module-home">
+		<div class="inner">
+			<p>Rachel joined PPL as an Analyst in October 2017 after completing a business management graduate scheme with Cambridge University Press.
+During the scheme, she worked on an internal consultancy basis on a range of change projects in a not-for-profit context. Her projects were aimed at making better use of data, overcoming organisational siloes and improving legacy processes, with a particular focus on developing person-centred approaches and putting users and customers at the heart of business decisions. Her work included acting as programme manager for a company-wide change to encourage better customer focus and co-created solutions. She also worked on launching a revised governance process for the multi-million pound technology portfolio, and on creating data analyses
+to inform process improvements in the technology, marketing and education departments.
+Her interest in the public sector, the health service and the third sector was sparked by voluntary work in a community health centre as part of national citizenship service whilst still at school. She has since volunteered for educational charities in the UK and Nepal and also spent a year as editor-in-chief of a health and development publication at the University of Cambridge, editing and writing academic articles on health, sustainability and international development.
+Rachel holds a BA in English Literature from the University of Cambridge, where she was a Peterhouse scholar.</p>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -95,19 +22,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style lang="scss" scoped>
+@import '../Style';
+
+.module-home{
+	@include layout-frame-inner;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
