@@ -10,17 +10,20 @@
 /* Component to render a styled menu.
 
 	Properties:
-		- Items: An array of menu item obejcts
-		- must have the property `menu` with value `true`
-		{ path: '/butts', name:'Click me', menu: true }
+		- Items: An array of menu item obejcts:
+		{ path: '/butts', name:'Click me' }
+
+		- Auto: if set to true will automatically display
+		from the routes.js file with the property `menu`
+		set to `true`.
 
  */
 
 import routes from '../router/routes';
 
 export default {
-
 	props: [
+		'auto',
 		'items'
 	],
 	data() {
@@ -30,7 +33,10 @@ export default {
 	},
 	computed: {
 		menuItems() {
-			return this.routes.filter(route => route.menu);
+			if (this.auto) {
+				return this.routes.filter(route => route.menu);
+			}
+			return this.items;
 		}
 	}
 };
