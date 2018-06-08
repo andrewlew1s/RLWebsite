@@ -2,7 +2,7 @@ import List from './List';
 
 const routes = [
 	{
-		name: 'poem.list',
+		name: 'Collection',
 		path: '/poems',
 		component: List,
 		menu: true
