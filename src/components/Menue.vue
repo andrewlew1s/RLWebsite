@@ -1,7 +1,7 @@
 <template>
 <div class="module-menu">
-	<b-link :to="item.path" exact v-for="item in items" v-bind:key="item.path">
-		{{ item.text }}
+	<b-link :to="item.path" exact v-for="item in menuItems" v-bind:key="item.path">
+		{{ item.name }}
 	</b-link>
 </div>
 </template>
@@ -10,15 +10,29 @@
 /* Component to render a styled menu.
 
 	Properties:
-		- Items: An array of menu item obejcts ~
-		{ path: '/butts', text:'Click me' }
+		- Items: An array of menu item obejcts
+		- must have the property `menu` with value `true`
+		{ path: '/butts', name:'Click me', menu: true }
 
  */
 
+import routes from '../router/routes';
+
 export default {
+
 	props: [
 		'items'
-	]
+	],
+	data() {
+		return {
+			routes
+		};
+	},
+	computed: {
+		menuItems() {
+			return this.routes.filter(route => route.menu);
+		}
+	}
 };
 
 </script>

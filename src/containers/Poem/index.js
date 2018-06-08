@@ -4,7 +4,8 @@ const routes = [
 	{
 		name: 'poem.list',
 		path: '/poems',
-		component: List
+		component: List,
+		menu: true
 	}
 ];
 

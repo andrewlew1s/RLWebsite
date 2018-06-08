@@ -4,7 +4,8 @@ const routes = [
 	{
 		name: 'about.detail',
 		path: '/about',
-		component: Detail
+		component: Detail,
+		menu: true
 	}
 ];
 

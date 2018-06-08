@@ -7,7 +7,6 @@
 		<menue class="menu" :items="menuItems"></menue>
 
 	</div>
-
 </div>
 </template>
 

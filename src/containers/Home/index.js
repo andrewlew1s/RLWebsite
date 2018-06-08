@@ -2,9 +2,10 @@ import Detail from './Detail';
 
 const routes = [
 	{
-		name: 'home.detail',
+		name: 'Home',
 		path: '/',
-		component: Detail
+		component: Detail,
+		menu: true
 	}
 ];
 
