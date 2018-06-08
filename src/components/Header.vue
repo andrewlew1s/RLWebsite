@@ -4,7 +4,7 @@
 
 		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
 
-		<menue class="menu" auto></menue>
+		<menue class="menu" :auto="true"></menue>
 
 	</div>
 </div>
