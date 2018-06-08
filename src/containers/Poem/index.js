@@ -1,4 +1,5 @@
 import List from './List';
+import Detail from './Detail';
 
 const routes = [
 	{
@@ -6,6 +7,11 @@ const routes = [
 		path: '/poems',
 		component: List,
 		menu: true
+	},
+	{
+		name: 'poem.detail',
+		path: '/poems/:id',
+		component: Detail
 	}
 ];
 
