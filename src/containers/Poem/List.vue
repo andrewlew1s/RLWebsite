@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import poems from '../assets/poems';
+import poems from '../../assets/poems';
 
 export default {
 	data() {
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style';
+@import '../../style';
 .module-poems{
 	@include layout-frame-inner;
 }
