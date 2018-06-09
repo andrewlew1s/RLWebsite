@@ -29,7 +29,8 @@ Father I am afraid for you, lost somewhere
 I cannot help, somewhere I cannot even see.
 But Father, I am still more afraid for me.`,
 		title: 'Tigerless',
-		video: 'https://player.vimeo.com/video/101073841'
+		video: 'https://player.vimeo.com/video/101073841',
+		id: 0
 	},
 	{
 		text: `She holds the knife over red flesh,
@@ -46,7 +47,8 @@ Two hemipsheres. With every cut
 Another and another and another,
 Smaller, smaller, smaller, less to hold,
 Less space to cut the next from.`,
-		title: 'The Decision'
+		title: 'The Decision',
+		id: 1
 	},
 	{
 		text: `Old words sound beautiful
@@ -70,14 +72,17 @@ In a cardboard box. Time is collapsed.
 
 There is no story but this story telling
 Its retelling, Troy is always falling.`,
-		title: 'Ilium'
+		title: 'Ilium',
+		id: 2
 	},
 	{
 		title: 'It',
-		video: 'https://player.vimeo.com/video/267116502'
+		video: 'https://player.vimeo.com/video/267116502',
+		id: 3
 	},
 	{
 		title: '20 Tourists',
-		image: twentyTouristsImage
+		image: twentyTouristsImage,
+		id: 4
 	}
 ];
