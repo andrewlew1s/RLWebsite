@@ -21,22 +21,12 @@
 </template>
 
 <script>
-import tigerless from '../assets/poems/tigerless';
-import thedecision from '../assets/poems/thedecision';
-import ilium from '../assets/poems/ilium';
-import twentyTourists from '../assets/poems/20tourists';
-import It from '../assets/poems/It';
+import poems from '../assets/poems';
 
 export default {
 	data() {
 		return {
-			poems: [
-				tigerless,
-				ilium,
-				thedecision,
-				twentyTourists,
-				It
-			]
+			poems
 		};
 	}
 };
