@@ -22,17 +22,15 @@
 
 
 <script>
-import poems from '../../assets/poems';
-
 export default {
 	data() {
 		return {
 			poem: {},	// initialise poem as an empty object
-			poems
+			poems: this.$store.state.poems.data
 		};
 	},
 	mounted() {
-		this.poem = poems[this.$route.params.id];
+		this.poem = this.poems[this.$route.params.id];
 	}
 };
 </script>
