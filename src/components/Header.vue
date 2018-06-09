@@ -4,10 +4,9 @@
 
 		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
 
-		<menue class="menu" :items="menuItems"></menue>
+		<menue class="menu" :auto="true"></menue>
 
 	</div>
-
 </div>
 </template>
 
@@ -17,15 +16,6 @@ import Menue from './Menue';
 export default {
 	components: {
 		Menue
-	},
-	data() {
-		return {
-			menuItems: [
-				{ path: '/', text: 'Home' },
-				{ path: '/about', text: 'About' },
-				{ path: '/poems', text: 'Poems' }
-			]
-		};
 	}
 };
 
