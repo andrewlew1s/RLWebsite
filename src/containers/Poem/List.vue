@@ -14,12 +14,10 @@
 
 
 <script>
-import poems from '../../assets/poems';
-
 export default {
 	data() {
 		return {
-			poems
+			poems: this.$store.state.poems.data
 		};
 	},
 	methods: {
