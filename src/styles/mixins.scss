@@ -97,7 +97,7 @@
 /*
  * Sets background image to url and covers background and centers
  */
-@mixin backgroundImage($url){
+@mixin background-image($url){
     background-image: url($url);
     background-size: cover;
     background-position: center;
