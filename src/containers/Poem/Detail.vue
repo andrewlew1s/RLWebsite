@@ -1,8 +1,8 @@
 <template>
-    <div class="module-poems">
-        <div class="inner">
+	<div class="poem-detail">
+		<div class="inner">
 
-           <div v-bind:key="poem.title" v-for="poem in poems" class="mb-3">
+			<div v-bind:key="poem.title" class="mb-3">
 				<h2>{{poem.title}}</h2>
 				<p v-if="poem.text">
 					{{poem.text}}
@@ -16,25 +16,31 @@
 				<br>
 			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </template>
 
-<script>
-import poems from '../assets/poems';
 
+<script>
 export default {
 	data() {
 		return {
-			poems
+			poem: {},	// initialise poem as an empty object
+			poems: this.$store.state.poems.data
 		};
+	},
+	mounted() {
+		this.poem = this.poems[this.$route.params.id];
 	}
 };
 </script>
 
+
 <style lang="scss" scoped>
-@import '../style';
-.module-poems{
+
+@import '../../style';
+
+.poem-detail{
 	@include layout-frame-inner;
 }
 
