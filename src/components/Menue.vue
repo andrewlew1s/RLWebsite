@@ -61,6 +61,11 @@ export default {
 			display: inline-block;
 			text-decoration: none;
 			transition: 50ms;
+
+			@media all and (max-width: $Mobile_Width){
+				font-size: 12px;
+				margin: 5px 8px;
+			}
 		}
 
 		.active, :hover{
