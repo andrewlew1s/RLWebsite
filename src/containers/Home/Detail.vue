@@ -19,20 +19,32 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 
 					<!-- Text slides with image -->
 					<b-carousel-slide caption="Tigerless"
-										text="'When I lie in the grasses, And practise the stillness of death'"
-										img-src="https://picsum.photos/1024/480/?image=487"
-					></b-carousel-slide>
+						img-src="https://picsum.photos/1024/480/?image=487">
+							<b-link to="poems/0"><p>When I lie in the grasses, And practise the stillness of death</p></b-link>
+					</b-carousel-slide>
 
 					<!-- Slides with custom text -->
 					<b-carousel-slide caption="The Decision"
-										text="'She holds the knife over red flesh'"
 										img-src="https://picsum.photos/1024/480/?image=835">
+										<b-link to="poems/1"><p>She holds the knife over red flesh</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with custom text -->
+					<b-carousel-slide caption="Ilium"
+										img-src="https://picsum.photos/1024/480/?image=420">
+										<b-link to="poems/2"><p>Old words sound beautiful Because we don’t know what they mean</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with custom text -->
+					<b-carousel-slide caption="It"
+										img-src="https://picsum.photos/1024/480/?image=324">
+										<b-link to="poems/3"><p>A visual experience</p></b-link>
 					</b-carousel-slide>
 
 					<!-- Slides with image only -->
 					<b-carousel-slide caption="20 Tourists"
-										text="'Below shifting boughs, every wave drowned out'"
 										img-src="https://picsum.photos/1024/480/?image=700">
+										<b-link to="poems/4"><p>Below shifting boughs, every wave drowned out</p></b-link>
 					</b-carousel-slide>
 					</b-carousel>
 
