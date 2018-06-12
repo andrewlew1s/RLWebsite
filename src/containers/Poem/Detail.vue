@@ -42,6 +42,13 @@ export default {
 
 .poem-detail{
 	@include layout-frame-inner;
+
+	img, iframe{
+		@media all and (max-width: $Mobile_Width) {
+			max-width: 100%;
+		}
+	}
+
 }
 
 </style>
