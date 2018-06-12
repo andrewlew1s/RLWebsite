@@ -1,43 +1,79 @@
-<template>
-	<div class="module-home">
-		<div class="inner">
-			<p>
-				<!-- eslint-disable max-len -->
-				Rachel joined PPL as an Analyst in October 2017 after completing a business management graduate scheme with Cambridge University Press.
-				During the scheme, she worked on an internal consultancy basis on a range of change projects in a not-for-profit context. Her projects were
-				aimed at making better use of data, overcoming organisational siloes and improving legacy processes, with a particular focus on developing
-				person-centred approaches and putting users and customers at the heart of business decisions. Her work included acting as programme manager
-				for a company-wide change to encourage better customer focus and co-created solutions. She also worked on launching a revised governance
-				process for the multi-million pound technology portfolio, and on creating data analyses to inform process improvements in the technology,
-				marketing and education departments. Her interest in the public sector, the health service and the third sector was sparked by voluntary
-				work in a community health centre as part of national citizenship service whilst still at school. She has since volunteered for educational
-				charities in the UK and Nepal and also spent a year as editor-in-chief of a health and development publication at the University of
-				Cambridge, editing and writing academic articles on health, sustainability and international development. Rachel holds a BA in English
-				Literature from the University of Cambridge, where she was a Peterhouse scholar.
-				<!-- eslint-enable max-len -->
+const twentyTouristsImage = require('./images/20Tourists.png');
 
-			</p>
+<template>
+	<div class="module-about">
+		<div class="inner">
+				<div>
+					<b-carousel id="carousel1"
+								style="text-shadow: 1px 1px 2px #333;"
+								controls
+								indicators
+								background="#ababab"
+								:interval="10000"
+								img-width="1024"
+								img-height="480"
+								v-model="slide"
+								@sliding-start="onSlideStart"
+								@sliding-end="onSlideEnd"
+					>
+
+					<!-- Text slides with image -->
+					<b-carousel-slide caption="Tigerless"
+						img-src="https://picsum.photos/1024/480/?image=487">
+							<b-link to="poems/0"><p>When I lie in the grasses, And practise the stillness of death</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with custom text -->
+					<b-carousel-slide caption="The Decision"
+										img-src="https://picsum.photos/1024/480/?image=835">
+										<b-link to="poems/1"><p>She holds the knife over red flesh</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with custom text -->
+					<b-carousel-slide caption="Ilium"
+										img-src="https://picsum.photos/1024/480/?image=420">
+										<b-link to="poems/2"><p>Old words sound beautiful Because we don’t know what they mean</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with custom text -->
+					<b-carousel-slide caption="It"
+										img-src="https://picsum.photos/1024/480/?image=324">
+										<b-link to="poems/3"><p>A visual experience</p></b-link>
+					</b-carousel-slide>
+
+					<!-- Slides with image only -->
+					<b-carousel-slide caption="20 Tourists"
+										img-src="https://picsum.photos/1024/480/?image=700">
+										<b-link to="poems/4"><p>Below shifting boughs, every wave drowned out</p></b-link>
+					</b-carousel-slide>
+					</b-carousel>
+
+					<!-- <p class="mt-4">
+					Slide #: {{ slide }}<br>
+					Sliding: {{ sliding }}
+					</p> -->
+
+			</div>
 		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'HelloWorld',
-	data() {
-		return {
-			msg: 'Welcome to Your Vue.js App'
-		};
-	}
-};
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import '../../style';
 
-.module-home{
-	@include layout-frame-inner;
+.module-about{
+
+$height: 300px;
+background: $Highlight;
+@include layout-frame-inner();
+
+	.rachel{
+        height: $height / 2;
+		margin: auto;
+        margin-top: $height / 10;
+        display: block;
+  }
+
 }
 
 </style>
