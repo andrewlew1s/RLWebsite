@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
+	<!-- Passing properties in this way makes them available at all routes -->
     <router-view class="wrapper"
 		:poems="poems"/>
     <Footer></Footer>
