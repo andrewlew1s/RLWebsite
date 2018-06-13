@@ -29,6 +29,7 @@ export default {
 .header{
 	$height: $Header_Height;
 	border-top: 3px solid $Dark;
+	background: $Highlight;
 	height: $height;
 	position: fixed;
 	z-index: 10;

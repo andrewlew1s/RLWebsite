@@ -1,6 +1,6 @@
 <template>
 <div class="module-menu">
-	<b-link :to="item.path" exact v-for="item in menuItems" v-bind:key="item.path">
+	<b-link :to="item.path" :exact="(item.path!='')" v-for="item in menuItems" :key="item.path">
 		{{ item.name }}
 	</b-link>
 </div>
@@ -58,6 +58,7 @@ export default {
 			display: inline-block;
 			text-decoration: none;
 			transition: 50ms;
+			box-sizing: border-box;
 
 			@media all and (max-width: $Mobile_Width){
 				font-size: 12px;
@@ -66,6 +67,7 @@ export default {
 		}
 
 		.active, :hover{
+			margin-bottom: -2px;	// to balance the added space
 			border-bottom: 2px solid $Text_Colour;
 		}
 
