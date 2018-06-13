@@ -42,8 +42,16 @@ export default {
 		async loadPoems() {
 			this.loadingPoems = true;
 			const snap = await poemsRef.once('value');
-			this.poems = snap.val();
+			this.poems = this.poemIdFactory(snap.val());
 			this.loadingPoems = false;
+		},
+		// When given an array of poems, simply returns the same array but with the
+		// property 'id' added to each poem and the value of its position in the array
+		poemIdFactory(poems) {
+			return poems.map((poem, i) => {
+				poem.id = i;
+				return poem;
+			});
 		}
 	},
 	mounted() {
