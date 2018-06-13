@@ -47,14 +47,11 @@ export default {
 @import '../style';
 
 .module-menu{
-
 		text-align: center;
-		border-top: 1px solid $Grey;
-		border-bottom: 1px solid $Grey;
 
 		a{
-			font-size: 20px;
-			border-bottom: 1px solid $Grey;
+			font-size: 14px;
+			font-family: $Title_Font_Family;
 			color: $Text_Colour;
 			padding-bottom: 0.2em;
 			margin: 10px 20px;

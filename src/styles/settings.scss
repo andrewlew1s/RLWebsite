@@ -6,16 +6,22 @@ $Theme: #ff99cc;
 $Text_Colour: #333300;
 $Alert: #DB2929;
 $Highlight: #fff;
+$Dark: #111;
 
 
 /* Layout */
 $Frame_Width: 1140px;
 
+/* Fonts */
+$Zilla: 'Zilla Slab', serif;
+$Garamond: 'EB Garamond', serif;
+$Prata: 'Prata', serif;
 
-/* Font */
+
+/* Text */
 $Base_Font_Family: 'Zilla Slab', serif;
 
-$Title_Font_Family:'Zilla Slab', serif;
+$Title_Font_Family: $Garamond;
 $Alt_Font_Family: 'Zilla Slab', serif;
 $Base_Font_Colour: $Text_Colour;
 

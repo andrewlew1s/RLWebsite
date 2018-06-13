@@ -1,10 +1,13 @@
 <template>
-<div class="module-header">
+<div class="header">
 	<div class="inner">
 
-		<b-img src="../assets/images/wwm.svg" class="logo"></b-img>
+		<h1 class="header__title">Wander with Maya</h1>
 
-		<menue class="menu" :auto="true"></menue>
+		<!-- #todo: move this into the header banner -->
+		<!-- <b-img src="../assets/images/wwm.svg" class="logo"></b-img> -->
+
+		<menue class="header__menu" :auto="true"></menue>
 
 	</div>
 </div>
@@ -24,28 +27,27 @@ export default {
 <style lang="scss" scoped>
 @import '../style';
 
-.module-header{
-
-	$height: 200px;
+.header{
+	$height: 88px;
 	background: $Highlight;
+	border-top: 3px solid $Dark;
 	height: $height;
 	position: fixed;
 	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
 
-	.logo{
-		height: $height / 2;
-		margin: auto;
-        margin-top: $height / 10;
-        display: block;
+	&__title {
+		font-size: 30px;
+		display: inline-block;
 	}
 
-	.menu{
-		margin-top: $height/20
+	&__menu{
+		float: right;
+		display: inline-block;
 	}
 
 	.inner{
-		height: $height;
+		@include total-center;
 	}
 }
 
