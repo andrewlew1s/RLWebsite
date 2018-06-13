@@ -1,11 +1,13 @@
 import homeRoutes from '../containers/Home';
 import aboutRoutes from '../containers/About';
-import poemRoutes from '../containers/Poem';
+import categoryRoutes from '../containers/Category';
+import contactRoutes from '../containers/Contact';
 
 const routes = [
 	...homeRoutes,
 	...aboutRoutes,
-	...poemRoutes
+	...categoryRoutes,
+	...contactRoutes
 ];
 
 export default routes;
