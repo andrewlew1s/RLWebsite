@@ -1,10 +1,10 @@
 <template>
-	<div class="poem-list">
+	<div class="post-list">
 		<div class="inner">
 			<b-list-group>
 
-				<b-list-group-item v-for="poem in poems" v-bind:key="poem.id">
-						<b-link @click="goToPoem(poem.id)"> {{ poem.title }} </b-link>
+				<b-list-group-item v-for="post in posts" v-bind:key="post.id">
+						<b-link @click="goTopost(post.id)"> {{ post.title }} </b-link>
 				</b-list-group-item>
 
 			</b-list-group>
@@ -16,11 +16,11 @@
 <script>
 export default {
 	props: [
-		'poems'
+		'posts'
 	],
 	methods: {
-		goToPoem(poemId) {
-			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
+		goTopost(postId) {
+			this.$router.push({ name: 'post.detail', params: { id: postId } });
 		}
 	}
 };
@@ -31,7 +31,7 @@ export default {
 
 @import '../../style';
 
-.poem-list{
+.post-list{
 	@include layout-frame-inner;
 }
 

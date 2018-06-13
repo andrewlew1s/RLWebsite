@@ -3,17 +3,36 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 <template>
 	<div class="home">
 
-		<home-banner img="http://via.placeholder.com/350x150"></home-banner>
+		<home-banner class="home__banner" img="http://via.placeholder.com/350x150"></home-banner>
+
+		<b-row class="inner">
+			<b-col>
+				<b-img class="home__preview-image" :src="posts[0].image"></b-img>
+			</b-col>
+			<b-col>
+				<span class="home__preview-date">{{ posts[0].date | humanizeIsoDate }}</span>
+				<h2 class="home__preview-title">{{posts[0].title}}</h2>
+			</b-col>
+		</b-row>
 
 	</div>
 </template>
 
 <script>
+import moment from 'moment';
 import HomeBanner from '../../components/HomeBanner';
 
 export default {
 	components: {
 		HomeBanner
+	},
+	props: [
+		'posts'
+	],
+	filters: {
+		humanizeIsoDate(isoDate) {
+			return moment(isoDate).format('LL');
+		}
 	}
 };
 
@@ -26,11 +45,21 @@ export default {
 .home{
 	@include layout-frame-inner;
 
-	.spacer{
-		height: 400px;
-		float: left;
-		width: 100%;
+	&__banner{
+		margin-bottom: 40px;
+	}
 
+	&__preview-image{
+		width: 100%;
+	}
+
+	&__preview-date{
+		font-family: $Title_Font_Family;
+		font-size: 18px;
+	}
+
+	&__preview-title{
+		font-size: 54px;
 	}
 }
 </style>

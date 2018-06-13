@@ -1,14 +1,14 @@
 <template>
-	<div class="poem-detail">
+	<div class="post-detail">
 		<div class="inner">
 
-			<div v-bind:key="poem.title" class="mb-3">
-				<h2>{{poem.title}}</h2>
-				<div v-if="poem.text" v-html="poem.text"></div>
-				<p v-if="poem.image">
-					<img thumbnail :src="poem.image"/>
+			<div v-bind:key="post.title" class="mb-3">
+				<h2>{{post.title}}</h2>
+				<div v-if="post.text" v-html="post.text"></div>
+				<p v-if="post.image">
+					<img thumbnail :src="post.image"/>
 				</p>
-				<iframe v-if="poem.video" :src="poem.video" width="640" height="360" frameborder="0"
+				<iframe v-if="post.video" :src="post.video" width="640" height="360" frameborder="0"
 					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				<br>
 				<br>
@@ -22,11 +22,11 @@
 <script>
 export default {
 	props: [
-		'poems'
+		'posts'
 	],
 	computed: {
-		poem() {
-			return this.poems[this.$route.params.id] || {};
+		post() {
+			return this.posts[this.$route.params.id] || {};
 		}
 	}
 };
@@ -37,7 +37,7 @@ export default {
 
 @import '../../style';
 
-.poem-detail{
+.post-detail{
 	@include layout-frame-inner;
 
 	img, iframe{
