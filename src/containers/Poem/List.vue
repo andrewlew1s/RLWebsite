@@ -15,11 +15,9 @@
 
 <script>
 export default {
-	data() {
-		return {
-			poems: this.$store.state.poems.data
-		};
-	},
+	props: [
+		'poems'
+	],
 	methods: {
 		goToPoem(poemId) {
 			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
