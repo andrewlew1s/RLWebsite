@@ -13,7 +13,7 @@
 				<b-link to="poems/0">
 					<h2>Tigerless</h2>
 				</b-link>
-				<p>When I lie in the grasses, And practise the stillness of death</p></b-link>
+				<p>When I lie in the grasses, And practise the stillness of death</p>
 		</b-carousel-slide>
 
 		<!-- Slides with custom text -->
@@ -29,7 +29,7 @@
 			<b-link to="poems/2">
 				<h2>Ilium</h2>
 			</b-link>
-			<p>Old words sound beautiful Because we don’t know what they mean</p></b-link>
+			<p>Old words sound beautiful Because we don’t know what they mean</p>
 		</b-carousel-slide>
 
 		<!-- Slides with custom text -->
