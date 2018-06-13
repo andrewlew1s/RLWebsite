@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueFire from 'vuefire';
+
 
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,6 +17,7 @@ import router from './router';
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
+Vue.use(VueFire);
 Vue.use(BootstrapVue);
 
 const store = new Vuex.Store(storeConfig);
