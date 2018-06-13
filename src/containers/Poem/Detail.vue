@@ -4,9 +4,7 @@
 
 			<div v-bind:key="poem.title" class="mb-3">
 				<h2>{{poem.title}}</h2>
-				<p v-if="poem.text">
-					{{poem.text}}
-				</p>
+				<div v-if="poem.text" v-html="poem.text"></div>
 				<p v-if="poem.image">
 					<img thumbnail :src="poem.image"/>
 				</p>
@@ -28,7 +26,7 @@ export default {
 	],
 	computed: {
 		poem() {
-			return this.poems[this.$route.params.id];
+			return this.poems[this.$route.params.id] || {};
 		}
 	}
 };
