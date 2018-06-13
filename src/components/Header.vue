@@ -2,7 +2,7 @@
 <div class="module-header">
 	<div class="inner">
 
-		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
+		<b-img src="../assets/images/wwm.svg" class="logo"></b-img>
 
 		<menue class="menu" :auto="true"></menue>
 
