@@ -14,12 +14,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyCBSeq7wRNRQQYZnxZGYt35P-6-yHvwXIg',
-	authDomain: 'asdsa-48c2f.firebaseapp.com',
-	databaseURL: 'https://asdsa-48c2f.firebaseio.com',
-	projectId: 'asdsa-48c2f',
-	storageBucket: 'asdsa-48c2f.appspot.com',
-	messagingSenderId: '92593551317'
+	apiKey: 'AIzaSyCjOdEJb-yC05RldJ_orSg8URsW42jWaA8',
+	authDomain: 'demoworld-c9c3a.firebaseapp.com',
+	databaseURL: 'https://demoworld-c9c3a.firebaseio.com',
+	projectId: 'demoworld-c9c3a',
+	storageBucket: 'demoworld-c9c3a.appspot.com',
+	messagingSenderId: '994402680084'
 };
 
 const app = Firebase.initializeApp(firebaseConfig);
