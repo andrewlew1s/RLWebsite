@@ -1,21 +1,19 @@
 const twentyTouristsImage = require('./images/20Tourists.png');
 
 <template>
-	<div class="module-about">
-		<div class="inner">
+	<div class="home">
 
-			<carousel></carousel>
+		<home-banner img="http://via.placeholder.com/350x150"></home-banner>
 
-		</div>
 	</div>
 </template>
 
 <script>
-import Carousel from '../../components/Carousel';
+import HomeBanner from '../../components/HomeBanner';
 
 export default {
 	components: {
-		Carousel
+		HomeBanner
 	}
 };
 
@@ -25,17 +23,14 @@ export default {
 @import '../../style';
 
 
-.module-about{
+.home{
+	@include layout-frame-inner;
 
-	$height: 300px;
-	background: $Highlight;
-	@include layout-frame-inner();
+	.spacer{
+		height: 400px;
+		float: left;
+		width: 100%;
 
-	.rachel{
-		height: $height / 2;
-		margin: auto;
-		margin-top: $height / 10;
-		display: block;
 	}
 }
 </style>

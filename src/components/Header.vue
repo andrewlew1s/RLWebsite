@@ -28,8 +28,7 @@ export default {
 @import '../style';
 
 .header{
-	$height: 88px;
-	background: $Highlight;
+	$height: $Header_Height;
 	border-top: 3px solid $Dark;
 	height: $height;
 	position: fixed;
