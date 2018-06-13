@@ -9,7 +9,7 @@ const routes = [
 		menu: true
 	},
 	{
-		name: 'poem.detail',
+		name: 'category.detail',
 		path: '/category/:id',
 		component: Detail
 	}
