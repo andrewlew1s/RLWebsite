@@ -2,10 +2,9 @@
 <div class="header">
 	<div class="inner">
 
-		<h1 class="header__title">Wander with Maya</h1>
-
-		<!-- #todo: move this into the header banner -->
-		<!-- <b-img src="../assets/images/wwm.svg" class="logo"></b-img> -->
+		<b-link to='/'>
+			<h1 class="header__title">Wander with Maya</h1>
+		</b-link>
 
 		<menue class="header__menu" :auto="true"></menue>
 
@@ -38,6 +37,8 @@ export default {
 	&__title {
 		font-size: 30px;
 		display: inline-block;
+		text-decoration: none;
+		color: $Text_Colour;
 	}
 
 	&__menu{
