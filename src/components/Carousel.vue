@@ -1,12 +1,11 @@
 <template>
-  <b-carousel id="carousel1"
-				style="text-shadow: 1px 1px 2px #333;"
-				controls
-				indicators
-				background="#ababab"
-				:interval="10000"
-				img-width="1024"
-				img-height="480">
+	<b-carousel controls
+		indicators
+		:style="slideConfig.style"
+		:background="slideConfig.background"
+		:interval="slideConfig.interval"
+		:img-width="slideConfig.width"
+		:img-height="slideConfig.height">
 
 		<!-- Text slides with image -->
 		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=487">
@@ -52,7 +51,17 @@
 
 <script>
 export default {
-
+	data() {
+		return {
+			slideConfig: {
+				style: 'text-shadow: 1px 1px 2px #333;',
+				background: '#ababab',
+				interval: 10000,
+				width: 1024,
+				height: 480
+			}
+		};
+	}
 };
 </script>
 
