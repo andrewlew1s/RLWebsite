@@ -50,7 +50,7 @@ export default {
 		text-align: center;
 
 		a{
-			font-size: 14px;
+			font-size: 16px;
 			font-family: $Title_Font_Family;
 			color: $Text_Colour;
 			padding-bottom: 0.2em;
