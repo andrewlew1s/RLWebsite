@@ -1,7 +1,7 @@
 <template>
 	<div class="home" v-if="!isLoading">
 
-		<home-banner class="home__banner" :img="bannerImage"></home-banner>
+		<banner class="home__banner" :img="bannerImage"></banner>
 
 		<b-row class="inner home__preview">
 			<b-col>
@@ -10,6 +10,7 @@
 			<b-col>
 				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
 				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+				<p v-html="currentPost.excerpt"></p>
 			</b-col>
 		</b-row>
 
@@ -17,6 +18,7 @@
 			<b-col>
 				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
 				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+				<p v-html="currentPost.excerpt"></p>
 			</b-col>
 			<b-col>
 				<b-img class="home__preview__image" :src="currentPost.thumbnail"></b-img>
@@ -28,11 +30,11 @@
 
 <script>
 import moment from 'moment';
-import HomeBanner from '../../components/HomeBanner';
+import Banner from './components/Banner';
 
 export default {
 	components: {
-		HomeBanner
+		Banner
 	},
 	props: [
 		'posts',
@@ -89,7 +91,8 @@ export default {
 		margin-bottom: 40px;
 
 		&__image{
-		width: 100%;
+			width: 100%;
+			height: 600px;// #TODO: remove this fixed ratio
 		}
 
 		&__date{

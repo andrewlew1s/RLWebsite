@@ -70,7 +70,7 @@ export default {
 
 #app {
     .wrapper{
-        padding-top: $Header_Height+40px;
+        padding-top: $Header_Height;
     }
     > * {
         float: left;

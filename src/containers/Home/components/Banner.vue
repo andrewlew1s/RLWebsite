@@ -2,7 +2,7 @@
 <div class="home-banner">
 
 	<div class="home-banner__inner">
-		<b-img src="../assets/images/wwm.svg" class="home-banner__logo"></b-img>
+		<b-img src="../../../assets/images/wwm.svg" class="home-banner__logo"></b-img>
 	</div>
 
 </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style';
+@import '../../../style';
 
 .home-banner {
 	@include layout-frame-inner;
