@@ -13,8 +13,10 @@ export default {
 	props: [
 		'img'
 	],
-	mounted() {
-		this.$el.style.backgroundImage = `url(${this.img})`;
+	watch: {
+		img() {
+			this.$el.style.backgroundImage = `url(${this.img})`;
+		}
 	}
 };
 
