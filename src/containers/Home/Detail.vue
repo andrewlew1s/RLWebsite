@@ -3,13 +3,23 @@
 
 		<home-banner class="home__banner" img="http://via.placeholder.com/350x150"></home-banner>
 
-		<b-row class="inner">
+		<b-row class="inner home__preview">
 			<b-col>
-				<b-img class="home__preview-image" :src="currentPost.thumbnail"></b-img>
+				<b-img class="home__preview__image" :src="currentPost.thumbnail"></b-img>
 			</b-col>
 			<b-col>
-				<span class="home__preview-date">{{ currentPost.date | humanizeIsoDate }}</span>
-				<h2 class="home__preview-title">{{currentPost.title}}</h2>
+				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
+				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+			</b-col>
+		</b-row>
+
+		<b-row class="inner home__preview">
+			<b-col>
+				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
+				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+			</b-col>
+			<b-col>
+				<b-img class="home__preview__image" :src="currentPost.thumbnail"></b-img>
 			</b-col>
 		</b-row>
 
@@ -54,17 +64,22 @@ export default {
 		margin-bottom: 40px;
 	}
 
-	&__preview-image{
+	&__preview {
+		margin-bottom: 40px;
+
+		&__image{
 		width: 100%;
+		}
+
+		&__date{
+			font-family: $Title_Font_Family;
+			font-size: 18px;
+		}
+
+		&__title{
+			font-size: 54px;
+		}
 	}
 
-	&__preview-date{
-		font-family: $Title_Font_Family;
-		font-size: 18px;
-	}
-
-	&__preview-title{
-		font-size: 54px;
-	}
 }
 </style>
