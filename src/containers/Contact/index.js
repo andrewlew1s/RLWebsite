@@ -3,14 +3,14 @@ import Detail from './Detail';
 
 const routes = [
 	{
-		name: 'About Me',
-		path: '/about',
+		name: 'Contact',
+		path: '/contact',
 		component: List,
 		menu: true
 	},
 	{
-		name: 'about.detail',
-		path: '/about/:id',
+		name: 'contact.detail',
+		path: '/contact/:id',
 		component: Detail
 	}
 ];

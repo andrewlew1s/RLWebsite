@@ -3,14 +3,14 @@ import Detail from './Detail';
 
 const routes = [
 	{
-		name: 'Collection',
-		path: '/poems',
+		name: 'Category',
+		path: '/category',
 		component: List,
 		menu: true
 	},
 	{
-		name: 'poem.detail',
-		path: '/poems/:id',
+		name: 'post.detail',
+		path: '/category/:id',
 		component: Detail
 	}
 ];

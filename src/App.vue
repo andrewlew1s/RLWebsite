@@ -3,7 +3,8 @@
     <Header></Header>
 	<!-- Passing properties in this way makes them available at all routes -->
     <router-view class="wrapper"
-		:poems="poems"/>
+		:posts="posts"
+		:pageDataRef="pageDataRef"/>
     <Footer></Footer>
   </div>
 </template>
@@ -14,17 +15,19 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyCjOdEJb-yC05RldJ_orSg8URsW42jWaA8',
-	authDomain: 'demoworld-c9c3a.firebaseapp.com',
-	databaseURL: 'https://demoworld-c9c3a.firebaseio.com',
-	projectId: 'demoworld-c9c3a',
-	storageBucket: 'demoworld-c9c3a.appspot.com',
-	messagingSenderId: '994402680084'
+	apiKey: 'AIzaSyBQGtbFb4l6t7DmpYrXKJxgYNIAM7wpYhE',
+	authDomain: 'wander-with-maya-406da.firebaseapp.com',
+	databaseURL: 'https://wander-with-maya-406da.firebaseio.com',
+	projectId: 'wander-with-maya-406da',
+	storageBucket: 'wander-with-maya-406da.appspot.com',
+	messagingSenderId: '545679964819'
 };
 
 const app = Firebase.initializeApp(firebaseConfig);
 const db = app.database();
-const poemsRef = db.ref('poems');
+
+const postsRef = db.ref('posts');
+const pageDataRef = db.ref('page-data');
 
 export default {
 	name: 'App',
@@ -34,28 +37,29 @@ export default {
 	},
 	data() {
 		return {
-			loadingPoems: false,
-			poems: []
+			loadingposts: false,
+			posts: [],
+			pageDataRef
 		};
 	},
 	methods: {
-		async loadPoems() {
-			this.loadingPoems = true;
-			const snap = await poemsRef.once('value');
-			this.poems = this.poemIdFactory(snap.val());
-			this.loadingPoems = false;
+		async loadposts() {
+			this.loadingposts = true;
+			const snap = await postsRef.once('value');
+			this.posts = this.postIdFactory(snap.val());
+			this.loadingposts = false;
 		},
-		// When given an array of poems, simply returns the same array but with the
-		// property 'id' added to each poem and the value of its position in the array
-		poemIdFactory(poems) {
-			return poems.map((poem, i) => {
-				poem.id = i;
-				return poem;
+		// When given an array of posts, simply returns the same array but with the
+		// property 'id' added to each post and the value of its position in the array
+		postIdFactory(posts) {
+			return posts.map((post, i) => {
+				post.id = i;
+				return post;
 			});
 		}
 	},
 	mounted() {
-		this.loadPoems();
+		this.loadposts();
 	}
 };
 </script>
@@ -66,7 +70,7 @@ export default {
 
 #app {
     .wrapper{
-        padding-top: 200px;
+        padding-top: $Header_Height;
     }
     > * {
         float: left;

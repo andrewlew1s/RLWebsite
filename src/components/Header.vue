@@ -1,10 +1,12 @@
 <template>
-<div class="module-header">
+<div class="header">
 	<div class="inner">
 
-		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
+		<b-link to='/'>
+			<h1 class="header__title">Wander with Maya</h1>
+		</b-link>
 
-		<menue class="menu" :auto="true"></menue>
+		<menue class="header__menu" :auto="true"></menue>
 
 	</div>
 </div>
@@ -16,6 +18,19 @@ import Menue from './Menue';
 export default {
 	components: {
 		Menue
+	},
+	methods: {
+		toggleShadow() {
+			// if page is scrolled
+			if (window.scrollY !== 0) {
+				this.$el.classList.add('shadow');
+			} else {
+				this.$el.classList.remove('shadow');
+			}
+		}
+	},
+	mounted() {
+		window.addEventListener('scroll', this.toggleShadow);
 	}
 };
 
@@ -24,28 +39,34 @@ export default {
 <style lang="scss" scoped>
 @import '../style';
 
-.module-header{
-
-	$height: 200px;
+.header{
+	$height: $Header_Height;
+	border-top: 3px solid $Dark;
+	transition: box-shadow 350ms;
 	background: $Highlight;
 	height: $height;
 	position: fixed;
 	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
 
-	.logo{
-		height: $height / 2;
-		margin: auto;
-        margin-top: $height / 10;
-        display: block;
+	&.shadow{
+		box-shadow: 0 2px 5px -2px $Dark;
 	}
 
-	.menu{
-		margin-top: $height/20
+	&__title {
+		font-size: 30px;
+		display: inline-block;
+		text-decoration: none;
+		color: $Text_Colour;
+	}
+
+	&__menu{
+		float: right;
+		display: inline-block;
 	}
 
 	.inner{
-		height: $height;
+		@include total-center;
 	}
 }
 

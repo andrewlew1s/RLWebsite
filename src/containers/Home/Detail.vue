@@ -1,21 +1,76 @@
-const twentyTouristsImage = require('./images/20Tourists.png');
-
 <template>
-	<div class="module-about">
-		<div class="inner">
+	<div class="home" v-if="!isLoading">
 
-			<carousel></carousel>
+		<banner class="home__banner" :img="bannerImage"></banner>
 
-		</div>
+		<b-row class="inner home__preview">
+			<b-col>
+				<b-img class="home__preview__image" :src="currentPost.thumbnail"></b-img>
+			</b-col>
+			<b-col>
+				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
+				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+				<p v-html="currentPost.excerpt"></p>
+			</b-col>
+		</b-row>
+
+		<b-row class="inner home__preview">
+			<b-col>
+				<span class="home__preview__date">{{ currentPost.date | humanizeIsoDate }}</span>
+				<h2 class="home__preview__title">{{currentPost.title}}</h2>
+				<p v-html="currentPost.excerpt"></p>
+			</b-col>
+			<b-col>
+				<b-img class="home__preview__image" :src="currentPost.thumbnail"></b-img>
+			</b-col>
+		</b-row>
+
 	</div>
 </template>
 
 <script>
-import Carousel from '../../components/Carousel';
+import moment from 'moment';
+import Banner from './components/Banner';
 
 export default {
 	components: {
-		Carousel
+		Banner
+	},
+	props: [
+		'posts',
+		'pageDataRef'
+	],
+	data() {
+		return {
+			pageData: {}
+		};
+	},
+	computed: {
+		isLoading() {
+			return this.pageData === {};
+		},
+		currentPost() {
+			// if posts hasn't loaded then load empty object
+			if (!this.posts[0]) return {};
+			return this.posts[0];
+		},
+		bannerImage() {
+			return this.pageData['banner-image'];
+		}
+	},
+	methods: {
+		async loadPageData() {
+			const snap = await this.pageDataRef.child('home').once('value');
+			this.pageData = snap.val();
+		}
+	},
+	mounted() {
+		this.loadPageData();
+	},
+	filters: {
+		humanizeIsoDate(isoDate) {
+			return moment(isoDate).format('LL');
+		}
 	}
 };
 
@@ -25,17 +80,30 @@ export default {
 @import '../../style';
 
 
-.module-about{
+.home{
+	@include layout-frame-inner;
 
-	$height: 300px;
-	background: $Highlight;
-	@include layout-frame-inner();
-
-	.rachel{
-		height: $height / 2;
-		margin: auto;
-		margin-top: $height / 10;
-		display: block;
+	&__banner{
+		margin-bottom: 40px;
 	}
+
+	&__preview {
+		margin-bottom: 40px;
+
+		&__image{
+			width: 100%;
+			height: 600px;// #TODO: remove this fixed ratio
+		}
+
+		&__date{
+			font-family: $Title_Font_Family;
+			font-size: 18px;
+		}
+
+		&__title{
+			font-size: 54px;
+		}
+	}
+
 }
 </style>
