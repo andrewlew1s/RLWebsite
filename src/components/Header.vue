@@ -23,9 +23,9 @@ export default {
 		toggleShadow() {
 			// if page is scrolled
 			if (window.scrollY !== 0) {
-				this.$el.style.boxShadow = '0 2px 5px -2px #111';
+				this.$el.classList.add('shadow');
 			} else {
-				this.$el.style.boxShadow = null;
+				this.$el.classList.remove('shadow');
 			}
 		}
 	},
@@ -42,12 +42,16 @@ export default {
 .header{
 	$height: $Header_Height;
 	border-top: 3px solid $Dark;
-	transition: box-shadow 500ms;
+	transition: box-shadow 350ms;
 	background: $Highlight;
 	height: $height;
 	position: fixed;
 	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
+
+	&.shadow{
+		box-shadow: 0 2px 5px -2px $Dark;
+	}
 
 	&__title {
 		font-size: 30px;
