@@ -1,8 +1,6 @@
 <template>
 	<div class="home" v-if="!isLoading">
 
-		{{bannerImage}}
-
 		<home-banner class="home__banner" :img="bannerImage"></home-banner>
 
 		<b-row class="inner home__preview">
