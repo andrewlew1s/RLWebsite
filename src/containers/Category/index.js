@@ -9,7 +9,7 @@ const routes = [
 		menu: true
 	},
 	{
-		name: 'category.detail',
+		name: 'post.detail',
 		path: '/category/:id',
 		component: Detail
 	}
