@@ -18,6 +18,19 @@ import Menue from './Menue';
 export default {
 	components: {
 		Menue
+	},
+	methods: {
+		toggleShadow() {
+			// if page is scrolled
+			if (window.scrollY !== 0) {
+				this.$el.style.boxShadow = '0 2px 5px -2px #111';
+			} else {
+				this.$el.style.boxShadow = null;
+			}
+		}
+	},
+	mounted() {
+		window.addEventListener('scroll', this.toggleShadow);
 	}
 };
 
@@ -29,6 +42,7 @@ export default {
 .header{
 	$height: $Header_Height;
 	border-top: 3px solid $Dark;
+	transition: box-shadow 500ms;
 	background: $Highlight;
 	height: $height;
 	position: fixed;
