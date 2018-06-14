@@ -1,5 +1,3 @@
-const twentyTouristsImage = require('./images/20Tourists.png');
-
 <template>
 	<div class="home">
 
@@ -7,11 +5,11 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 
 		<b-row class="inner">
 			<b-col>
-				<b-img class="home__preview-image" :src="posts[0].image"></b-img>
+				<b-img class="home__preview-image" :src="currentPost.thumbnail"></b-img>
 			</b-col>
 			<b-col>
-				<span class="home__preview-date">{{ posts[0].date | humanizeIsoDate }}</span>
-				<h2 class="home__preview-title">{{posts[0].title}}</h2>
+				<span class="home__preview-date">{{ currentPost.date | humanizeIsoDate }}</span>
+				<h2 class="home__preview-title">{{currentPost.title}}</h2>
 			</b-col>
 		</b-row>
 
@@ -29,6 +27,13 @@ export default {
 	props: [
 		'posts'
 	],
+	computed: {
+		currentPost() {
+			// if posts hasn't loaded then load empty object
+			if (!this.posts[0]) return {};
+			return this.posts[0];
+		}
+	},
 	filters: {
 		humanizeIsoDate(isoDate) {
 			return moment(isoDate).format('LL');

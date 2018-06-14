@@ -1,14 +1,6 @@
 <template>
 	<div class="post-list">
-		<div class="inner">
-			<b-list-group>
 
-				<b-list-group-item v-for="post in posts" v-bind:key="post.id">
-						<b-link @click="goTopost(post.id)"> {{ post.title }} </b-link>
-				</b-list-group-item>
-
-			</b-list-group>
-		</div>
 	</div>
 </template>
 
