@@ -1,7 +1,9 @@
 <template>
-	<div class="home">
+	<div class="home" v-if="!isLoading">
 
-		<home-banner class="home__banner" img="http://via.placeholder.com/350x150"></home-banner>
+		{{bannerImage}}
+
+		<home-banner class="home__banner" :img="bannerImage"></home-banner>
 
 		<b-row class="inner home__preview">
 			<b-col>
@@ -35,14 +37,35 @@ export default {
 		HomeBanner
 	},
 	props: [
-		'posts'
+		'posts',
+		'pageDataRef'
 	],
+	data() {
+		return {
+			pageData: {}
+		};
+	},
 	computed: {
+		isLoading() {
+			return this.pageData === {};
+		},
 		currentPost() {
 			// if posts hasn't loaded then load empty object
 			if (!this.posts[0]) return {};
 			return this.posts[0];
+		},
+		bannerImage() {
+			return this.pageData['banner-image'];
 		}
+	},
+	methods: {
+		async loadPageData() {
+			const snap = await this.pageDataRef.child('home').once('value');
+			this.pageData = snap.val();
+		}
+	},
+	mounted() {
+		this.loadPageData();
 	},
 	filters: {
 		humanizeIsoDate(isoDate) {

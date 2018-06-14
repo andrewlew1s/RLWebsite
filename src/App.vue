@@ -3,7 +3,8 @@
     <Header></Header>
 	<!-- Passing properties in this way makes them available at all routes -->
     <router-view class="wrapper"
-		:posts="posts"/>
+		:posts="posts"
+		:pageDataRef="pageDataRef"/>
     <Footer></Footer>
   </div>
 </template>
@@ -24,7 +25,9 @@ const firebaseConfig = {
 
 const app = Firebase.initializeApp(firebaseConfig);
 const db = app.database();
+
 const postsRef = db.ref('posts');
+const pageDataRef = db.ref('page-data');
 
 export default {
 	name: 'App',
@@ -35,7 +38,8 @@ export default {
 	data() {
 		return {
 			loadingposts: false,
-			posts: []
+			posts: [],
+			pageDataRef
 		};
 	},
 	methods: {
