@@ -69,7 +69,6 @@ export default {
 
 #app {
     .wrapper{
-        padding-top: 200px;
     }
     > * {
         float: left;
