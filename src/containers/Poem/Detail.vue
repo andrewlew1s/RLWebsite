@@ -23,14 +23,13 @@
 
 <script>
 export default {
-	data() {
-		return {
-			poem: {},	// initialise poem as an empty object
-			poems: this.$store.state.poems.data
-		};
-	},
-	mounted() {
-		this.poem = this.poems[this.$route.params.id];
+	props: [
+		'poems'
+	],
+	computed: {
+		poem() {
+			return this.poems[this.$route.params.id];
+		}
 	}
 };
 </script>
