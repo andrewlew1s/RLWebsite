@@ -1,4 +1,4 @@
-# rl-website
+# CMC-website
 
 > A Vue.js project
 
