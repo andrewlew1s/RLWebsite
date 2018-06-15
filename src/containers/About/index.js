@@ -2,7 +2,7 @@ import Detail from './Detail';
 
 const routes = [
 	{
-		name: 'About Rachel',
+		name: 'About Claudia',
 		path: '/about',
 		component: Detail,
 		menu: true
