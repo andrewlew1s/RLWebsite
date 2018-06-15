@@ -1,5 +1,6 @@
 <template>
 <div class="module-header">
+
 	<div class="inner">
 
 		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
@@ -29,7 +30,7 @@ export default {
 	$height: 200px;
 	background: $Highlight;
 	height: $height;
-	position: fixed;
+	position: relative;
 	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
 

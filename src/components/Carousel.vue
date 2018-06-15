@@ -69,6 +69,7 @@ export default {
 @import '../style';
 
 .carousel{
+	@include layout-frame-inner($Frame-Width);
 	* {
 		color: white;
 		text-decoration: none;

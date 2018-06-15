@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+	<Carousel></Carousel>
     <Header></Header>
 	<!-- Passing properties in this way makes them available at all routes -->
     <router-view class="wrapper"
@@ -12,6 +13,7 @@
 import Firebase from 'firebase';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Carousel from './components/Carousel';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyCjOdEJb-yC05RldJ_orSg8URsW42jWaA8',
@@ -30,7 +32,8 @@ export default {
 	name: 'App',
 	components: {
 		Header,
-		Footer
+		Footer,
+		Carousel
 	},
 	data() {
 		return {
