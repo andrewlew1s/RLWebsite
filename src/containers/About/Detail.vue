@@ -3,21 +3,24 @@
 
 		<b-row class="inner">
 			<b-col>
-				<h3>
-					Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.
-				</h3>
+				<p>
+					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+					voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+					cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum
+					et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
+					nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+					assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+					saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
+					a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+					repellat
+				</p>
 			</b-col>
 			<b-col>
-				<p>
+				<h1>
 					<!-- eslint-disable max-len -->
-					Rachel joined PPL as an Analyst in October 2017 after completing a business management graduate scheme with Cambridge University Press.
-					During the scheme, she worked on an internal consultancy basis on a range of change projects in a not-for-profit context. Her projects were
-					aimed at making better use of data, overcoming organisational siloes and improving legacy processes, with a particular focus on developing
-					person-centred approaches and putting users and customers at the heart of business decisions. Her work included acting as programme manager
-					for a company-wide change to encourage better customer focus and co-created solutions. She also worked on launching a revised governance
-					process for the multi-million pound technology portfolio, and on creating data analyses to inform process improvements in the technology,
+					"Claudia is the most inspirational person in the whole world. She has provided many with profound wisdoms"
 					<!-- eslint-enable max-len -->
-				</p>
+				</h1>
 			</b-col>
 		</b-row>
 
@@ -25,16 +28,12 @@
 			<b-col>
 				<p>
 					<!-- eslint-disable max-len -->
-					Her interest in the public sector, the health service and the third sector was sparked by voluntary
-					work in a community health centre as part of national citizenship service whilst still at school. She has since volunteered for educational
-					charities in the UK and Nepal and also spent a year as editor-in-chief of a health and development publication at the University of
-					Cambridge, editing and writing academic articles on health, sustainability and international development. Rachel holds a BA in English
-					Literature from the University of Cambridge, where she was a Peterhouse scholar.
+					Nulla egestas non dolor at imperdiet. Praesent quis lorem vel lorem volutpat suscipit. Sed blandit augue non eros malesuada dignissim. Integer imperdiet neque nisi, a euismod eros fringilla a. Donec malesuada porttitor purus, vel finibus justo feugiat sit amet. Ut at lobortis purus, a tempor tellus. Donec maximus vestibulum pharetra.
 					<!-- eslint-enable max-len -->
 				</p>
 			</b-col>
 			<b-col>
-				<b-img src="../../assets/images/rachel.jpg"></b-img>
+				<b-img thumbnail src="../../assets/images/cat1.png"></b-img>
 			</b-col>
 		</b-row>
 
