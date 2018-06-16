@@ -1,12 +1,9 @@
 const twentyTouristsImage = require('./images/20Tourists.png');
 
 <template>
-	<div class="module-about">
-		<div class="inner">
+	<div class="home">
+		<carousel class="home__carousel"></carousel>
 
-			<carousel></carousel>
-
-		</div>
 	</div>
 </template>
 
@@ -25,17 +22,18 @@ export default {
 @import '../../style';
 
 
-.module-about{
-
-	$height: 300px;
+.home{
 	background: $Highlight;
-	@include layout-frame-inner();
+	@include layout-frame-inner;
 
-	.rachel{
-		height: $height / 2;
-		margin: auto;
-		margin-top: $height / 10;
-		display: block;
+	&__carousel{
+		@include layout-fullwidth;
 	}
+
+}
+
+.carousel{
+
+
 }
 </style>

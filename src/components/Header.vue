@@ -1,10 +1,12 @@
 <template>
-<div class="module-header">
+<div class="header">
 	<div class="inner">
 
-		<b-img src="../assets/images/logo2.png" class="logo"></b-img>
+		<h1 class="header__title">
+			Rachel Lewis
+		</h1>
 
-		<menue class="menu" :auto="true"></menue>
+		<menue class="header__menue" :auto="true"></menue>
 
 	</div>
 </div>
@@ -24,28 +26,32 @@ export default {
 <style lang="scss" scoped>
 @import '../style';
 
-.module-header{
-
-	$height: 200px;
-	background: $Highlight;
-	height: $height;
+.header{
+	background: $Light_Gray;
+	height: $Header_Height;
 	position: fixed;
+	color: $Dark_Gray;
 	z-index: 10;
 	@include layout-frame-inner($Frame-Width);
 
-	.logo{
-		height: $height / 2;
+	&__title{
+		height: $Header_Height / 2;
 		margin: auto;
-        margin-top: $height / 10;
-        display: block;
+		display: block;
+		float: left;
+		display: inline-block;
+		@include vertical-center;
 	}
 
-	.menu{
-		margin-top: $height/20
+	&__menue{
+		display: inline-block;
+		@include vertical-center;
+		float: right;
+		margin-top: 9px;
 	}
 
 	.inner{
-		height: $height;
+		height: $Header_Height;
 	}
 }
 
