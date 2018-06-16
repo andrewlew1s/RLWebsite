@@ -66,7 +66,8 @@ export default {
 
 #app {
     .wrapper{
-        padding-top: 200px;
+		padding-top: $Header_Height;
+		background: $Background;
     }
     > * {
         float: left;

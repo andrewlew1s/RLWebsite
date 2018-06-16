@@ -1,21 +1,24 @@
 /* Colours */
-$Grey: #d7d7d9;
+$Orange: #ffcc66;
+$Light_Gray: #d7d7d9;
+$Dark_Gray: #404040;
 
-$Background: #33ccff;
-$Theme: #ff99cc;
-$Text_Colour: #333300;
+$Background: $Orange;
+$Theme: $Dark_Gray;
 $Alert: #DB2929;
 $Highlight: #fff;
-
+$Text_Colour: $Highlight;
 
 /* Layout */
 $Frame_Width: 1140px;
+$Header_Height: 90px;
 
+$Poppin: 'Poppins', sans-serif;
 
 /* Font */
-$Base_Font_Family: 'Zilla Slab', serif;
+$Base_Font_Family: $Poppin;
 
-$Title_Font_Family:'Zilla Slab', serif;
+$Title_Font_Family: $Poppin;
 $Alt_Font_Family: 'Zilla Slab', serif;
 $Base_Font_Colour: $Text_Colour;
 

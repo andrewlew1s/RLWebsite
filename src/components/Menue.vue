@@ -1,5 +1,5 @@
 <template>
-<div class="module-menu">
+<div class="menue">
 	<b-link :to="item.path" exact v-for="item in menuItems" v-bind:key="item.path">
 		{{ item.name }}
 	</b-link>
@@ -46,18 +46,14 @@ export default {
 <style lang="scss" scoped>
 @import '../style';
 
-.module-menu{
-
-		text-align: center;
-		border-top: 1px solid $Grey;
-		border-bottom: 1px solid $Grey;
+.menue{
 
 		a{
-			font-size: 20px;
-			border-bottom: 1px solid $Grey;
-			color: $Text_Colour;
+			font-size: 16px;
+			border-bottom: 1px solid $Highlight;
 			padding-bottom: 0.2em;
-			margin: 10px 20px;
+			color: $Dark_Gray;
+			margin: 0 20px;
 			display: inline-block;
 			text-decoration: none;
 			transition: 50ms;
@@ -69,7 +65,7 @@ export default {
 		}
 
 		.active, :hover{
-			border-bottom: 2px solid $Text_Colour;
+			border-bottom: 2px solid $Highlight;
 		}
 
 		:active{
