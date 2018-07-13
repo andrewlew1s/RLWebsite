@@ -79,6 +79,7 @@ export default {
 			margin-left: 5%;
 			margin-right: 5%;
 		}
+
 	}
 
 	&__wrapper {
