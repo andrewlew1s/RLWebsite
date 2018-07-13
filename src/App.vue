@@ -1,11 +1,15 @@
 <template>
-  <div id="app">
-    <Header></Header>
-	<!-- Passing properties in this way makes them available at all routes -->
-    <router-view class="wrapper"
-		:poems="poems"/>
-    <Footer></Footer>
-  </div>
+	<div class="App">
+
+		<Header/>
+
+		<router-view
+			class="App_wrapper"
+			:poems="poems"/>
+
+		<Footer/>
+
+	</div>
 </template>
 
 <script>
@@ -63,17 +67,6 @@ export default {
 <style lang="scss">
 @import './settings';
 
-#app {
-    .wrapper{
-		padding-top: $Header_Height;
-		background: $Background;
-    }
-    > * {
-        float: left;
-    }
-
-}
-
 .App {
 
 	&__inner {
@@ -81,6 +74,12 @@ export default {
 		margin: auto;
 		position: relative;
 	}
+
+	&__wrapper {
+		padding-top: $Header_Height;
+		background: $Background;
+	}
+
 }
 
 </style>

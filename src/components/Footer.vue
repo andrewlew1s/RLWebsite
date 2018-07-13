@@ -1,24 +1,22 @@
 <template>
-    <div class="module-footer">
-        <div class="inner">
+    <div class="Footer">
+        <div class="App__inner Footer__inner">
             <p> Andrew and Mike Ltd. Corp</p>
         </div>
     </div>
 </template>
 
-<script>
-</script>
 
-<style lang="scss" scoped>
-@import '../style';
+<style lang="scss">
+@import '../settings';
 
-.module-footer{
-    $height: 100px;
-    background: $Highlight;
-  @include layout-frame-inner();
-  .inner{
-      p{ padding-top: 0.8em;}
-  }
+.Footer{
+	$height: 100px;
+	background: $Highlight;
+
+	&__inner {
+		padding-top: 0.8em;
+	}
 }
 
 </style>
