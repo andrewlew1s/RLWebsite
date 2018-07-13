@@ -73,6 +73,12 @@ export default {
 		width: 1140px;
 		margin: auto;
 		position: relative;
+
+		@media all and (max-width: $Frame-Width) {
+			width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
 	}
 
 	&__wrapper {
