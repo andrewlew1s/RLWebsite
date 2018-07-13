@@ -1,8 +1,14 @@
 <template>
-<div class="menue">
-	<b-link :to="item.path" exact v-for="item in menuItems" v-bind:key="item.path">
-		{{ item.name }}
-	</b-link>
+<div class="Menue">
+
+	<b-link
+		class="Menue__link"
+		:to="item.path"
+		v-for="item in menuItems"
+		:key="item.path"
+		v-text="item.name"
+		exact/>
+
 </div>
 </template>
 
@@ -43,34 +49,35 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-@import '../style';
+<style lang="scss">
+@import '../settings';
 
-.menue{
+.Menue{
 
-		a{
-			font-size: 16px;
-			border-bottom: 1px solid $Highlight;
-			padding-bottom: 0.2em;
-			color: $Dark_Gray;
-			margin: 0 20px;
-			display: inline-block;
-			text-decoration: none;
-			transition: 50ms;
+	&__link{
+		font-size: 16px;
+		border-bottom: 1px solid $Highlight;
+		padding-bottom: 0.2em;
+		color: $Dark_Gray !important;
+		margin: 0 20px;
+		display: inline-block;
+		text-decoration: none !important;;
+		transition: 50ms;
 
-			@media all and (max-width: $Mobile_Width){
-				font-size: 12px;
-				margin: 5px 8px;
-			}
+		@media all and (max-width: $Mobile_Width){
+			font-size: 12px;
+			margin: 5px 8px;
 		}
 
-		.active, :hover{
-			border-bottom: 2px solid $Highlight;
-		}
-
-		:active{
-			position: relative;
-			top: 2px;
-		}
 	}
+
+	.active, :hover{
+		border-bottom: 3px solid $Highlight;
+	}
+
+	:active{
+		position: relative;
+		top: 2px;
+	}
+}
 </style>
