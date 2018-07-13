@@ -1,10 +1,16 @@
 <template>
-	<div class="poem-list">
-		<div class="inner">
+	<div class="Poems">
+		<div class="App__inner">
 			<b-list-group>
 
-				<b-list-group-item v-for="poem in poems" v-bind:key="poem.id">
-						<b-link @click="goToPoem(poem.id)"> {{ poem.title }} </b-link>
+				<b-list-group-item
+					v-for="poem in poems"
+					:key="poem.id">
+
+						<b-link
+							@click="goToPoem(poem.id)"
+							v-text="poem.title"/>
+
 				</b-list-group-item>
 
 			</b-list-group>
@@ -29,10 +35,9 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../style';
+@import '../../settings';
 
-.poem-list{
-	@include layout-frame-inner;
+.Poems{
 }
 
 </style>

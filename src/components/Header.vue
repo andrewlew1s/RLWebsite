@@ -2,13 +2,13 @@
 <div class="Header">
 	<div class="App__inner Header__inner">
 
-		<h1 class="Header__title Header--center">
+		<h1 class="Header__title App--center">
 			Rachel Lewis
 		</h1>
 
 		<menue
-			class="Header__menue Header--center"
-			:auto="true"></menue>
+			class="Header__menue App--center"
+			:auto="true"/>
 
 	</div>
 </div>
@@ -53,13 +53,6 @@ export default {
 	&__inner{
 		height: 100%;
 	}
-
-	&--center {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
 
 }
 

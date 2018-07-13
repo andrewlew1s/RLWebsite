@@ -1,20 +1,26 @@
 <template>
-	<div class="poem-detail">
-		<div class="inner">
+	<div class="Poem">
+		<div class="App__inner">
 
-			<div v-bind:key="poem.title" class="mb-3">
-				<h2>{{poem.title}}</h2>
-				<p v-if="poem.text">
-					{{poem.text}}
-				</p>
+				<h2 v-text="poem.title"/>
+
+				<p
+					v-if="poem.text"
+					v-text="poem.text"/>
+
 				<p v-if="poem.image">
 					<img thumbnail :src="poem.image"/>
 				</p>
-				<iframe v-if="poem.video" :src="poem.video" width="640" height="360" frameborder="0"
-					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				<br>
-				<br>
-			</div>
+
+				<iframe
+					v-if="poem.video"
+					:src="poem.video"
+					width="640"
+					height="360"
+					frameborder="0"
+					webkitallowfullscreen
+					mozallowfullscreen
+					allowfullscreen></iframe>
 
 		</div>
 	</div>
@@ -39,8 +45,8 @@ export default {
 
 @import '../../style';
 
-.poem-detail{
-	@include layout-frame-inner;
+.Poem{
+	margin-bottom: 3rem;
 
 	img, iframe{
 		@media all and (max-width: $Mobile_Width) {

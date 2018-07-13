@@ -1,10 +1,10 @@
 const twentyTouristsImage = require('./images/20Tourists.png');
 
 <template>
-	<div class="home">
+	<div class="Home">
 
 		<carousel
-			class="home_carousel"
+			class="Home_carousel"
 			:slides="slides"/>
 
 	</div>
@@ -33,22 +33,18 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-@import '../../style';
+<style lang="scss">
+@import '../../settings';
 
 
-.home{
+.Home{
+	width: 100%;
 	background: $Highlight;
-	@include layout-frame-inner;
 
 	&__carousel{
-		@include layout-fullwidth;
+		width: 100%;
 	}
 
 }
 
-.carousel{
-
-
-}
 </style>

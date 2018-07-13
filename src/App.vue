@@ -4,7 +4,7 @@
 		<Header/>
 
 		<router-view
-			class="App_wrapper"
+			class="App__wrapper"
 			:poems="poems"/>
 
 		<Footer/>
@@ -78,6 +78,12 @@ export default {
 	&__wrapper {
 		padding-top: $Header_Height;
 		background: $Background;
+	}
+
+	&--center {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 }
