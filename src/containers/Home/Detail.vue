@@ -2,7 +2,10 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 
 <template>
 	<div class="home">
-		<carousel class="home__carousel"></carousel>
+
+		<carousel
+			class="home_carousel"
+			:slides="slides"/>
 
 	</div>
 </template>
@@ -13,6 +16,18 @@ import Carousel from '../../components/Carousel';
 export default {
 	components: {
 		Carousel
+	},
+	data() {
+		return {
+			slides: [
+				{
+					imageSrc: 'someString',
+					link: '/somePage',
+					title: 'Some Title',
+					text: 'some text'
+				}
+			]
+		};
 	}
 };
 

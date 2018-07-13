@@ -10,6 +10,10 @@
 		:img-width="slideConfig.width"
 		:img-height="slideConfig.height">
 
+		<b-carousel />
+
+		{{slides}}
+
 		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=487"/>
 
 		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=835"/>
@@ -27,6 +31,12 @@
 
 <script>
 export default {
+	props: {
+		slides: {
+			type: Array,
+			required: true
+		}
+	},
 	data() {
 		return {
 			slideConfig: {
