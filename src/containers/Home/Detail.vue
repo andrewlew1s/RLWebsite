@@ -21,8 +21,8 @@ export default {
 		return {
 			slides: [
 				{
-					imageSrc: 'someString',
-					link: '/somePage',
+					imageSrc: 'https://picsum.photos/1024/480/?image=487',
+					link: '/poems',
 					title: 'Some Title',
 					text: 'some text'
 				}

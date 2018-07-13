@@ -10,11 +10,18 @@
 		:img-width="slideConfig.width"
 		:img-height="slideConfig.height">
 
-		<b-carousel />
+	<b-link
+		:to="slide.link"
+		v-for="slide in slides"
+		:key="slide.link">
 
-		{{slides}}
+			<b-carousel-slide
+				:img-src="slide.imageSrc"
+				:caption="slide.title"/>
 
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=487"/>
+	</b-link>
+
+		<!-- <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=487"/>
 
 		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=835"/>
 
@@ -22,7 +29,7 @@
 
 		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=324"/>
 
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=700"/>
+		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=700"/> -->
 
 	</b-carousel>
 
