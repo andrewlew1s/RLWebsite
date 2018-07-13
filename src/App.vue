@@ -60,9 +60,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import './styles/reset';
-@import './Style';
+<style lang="scss">
+@import './settings';
 
 #app {
     .wrapper{
@@ -73,6 +72,15 @@ export default {
         float: left;
     }
 
+}
+
+.App {
+
+	&__inner {
+		width: 1140px;
+		margin: auto;
+		position: relative;
+	}
 }
 
 </style>
