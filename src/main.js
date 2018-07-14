@@ -7,7 +7,7 @@ import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-import storeConfig from './vuex/store';
+import storeConfig from './vuex/storeConfig';
 
 import App from './App';
 import router from './router';

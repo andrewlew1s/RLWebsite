@@ -28,14 +28,25 @@
 
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-	props: [
-		'poems'
-	],
 	computed: {
+		...mapGetters({
+			poems: 'poems'
+		}),
 		poem() {
 			return this.poems[this.$route.params.id];
 		}
+	},
+	methods: {
+		...mapActions({
+			loadPoems: 'loadPoems'
+		})
+	},
+	created() {
+		// #Todo: look at improving loading so we don't load all poems to load a specific poem's page
+		this.loadPoems();
 	}
 };
 </script>
@@ -43,13 +54,13 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../style';
+@import '../../settings';
 
 .Poem{
 	margin-bottom: 3rem;
 
 	img, iframe{
-		@media all and (max-width: $Mobile_Width) {
+		@media all and (max-width: $Mobile-Width) {
 			max-width: 100%;
 		}
 	}

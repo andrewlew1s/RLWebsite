@@ -2,9 +2,11 @@
 <div class="Header">
 	<div class="App__inner Header__inner">
 
-		<h1 class="Header__title App--center">
-			Rachel Lewis
-		</h1>
+		<b-link to="/">
+			<h1 class="Header__title App--center">
+				Rachel Lewis
+			</h1>
+		</b-link>
 
 		<menue
 			class="Header__menue App--center"
@@ -29,15 +31,16 @@ export default {
 @import '../settings';
 
 .Header{
-	background: $Light_Gray;
+	background: $Light-Grey;
 	height: $Header_Height;
 	position: fixed;
-	color: $Dark_Gray;
+	color: $Dark-Grey;
 	width: 100%;
 	z-index: 10;
 
 	&__title{
 		height: $Header_Height / 2;
+		color: $Dark-Grey;
 		margin: auto;
 		display: block;
 		display: inline-block;
