@@ -18,16 +18,25 @@
 	</div>
 </template>
 
-
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-	props: [
-		'poems'
-	],
+	computed: {
+		...mapGetters({
+			poems: 'poems'
+		})
+	},
 	methods: {
+		...mapActions({
+			loadPoems: 'loadPoems'
+		}),
 		goToPoem(poemId) {
 			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
 		}
+	},
+	created() {
+		this.loadPoems();
 	}
 };
 </script>
