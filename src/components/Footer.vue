@@ -13,7 +13,7 @@
 $highlight: $Highlight-Colour;
 
 .Footer{
-	$height: 100px;
+	$height: $Footer-Height;
 	background: $highlight;
 
 	&__inner {

@@ -32,14 +32,14 @@ export default {
 
 .Header{
 	background: $Light-Grey;
-	height: $Header_Height;
+	height: $Header-Height;
 	position: fixed;
 	color: $Dark-Grey;
 	width: 100%;
 	z-index: 10;
 
 	&__title{
-		height: $Header_Height / 2;
+		height: $Header-Height / 2;
 		color: $Dark-Grey;
 		margin: auto;
 		display: block;

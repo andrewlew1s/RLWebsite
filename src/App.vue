@@ -44,7 +44,8 @@ export default {
 	}
 
 	&__wrapper {
-		padding-top: $Header_Height;
+		padding-top: $Header-Height;
+		min-height: calc(100vh - #{$Footer-Height});
 		background: $Background-Colour;
 	}
 
