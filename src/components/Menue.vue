@@ -53,18 +53,19 @@ export default {
 @import '../settings';
 
 .Menue{
+	$highlight: $Highlight-Colour;
 
 	&__link{
 		font-size: 16px;
-		border-bottom: 1px solid $Highlight;
+		border-bottom: 1px solid $highlight;
 		padding-bottom: 0.2em;
-		color: $Dark_Gray !important;
+		color: $Dark-Grey !important;
 		margin: 0 20px;
 		display: inline-block;
 		text-decoration: none !important;;
 		transition: 50ms;
 
-		@media all and (max-width: $Mobile_Width){
+		@media all and (max-width: $Mobile-Width){
 			font-size: 12px;
 			margin: 5px 8px;
 		}
@@ -72,7 +73,7 @@ export default {
 	}
 
 	.active, :hover{
-		border-bottom: 3px solid $Highlight;
+		border-bottom: 3px solid $highlight;
 	}
 
 	:active{

@@ -10,9 +10,11 @@
 <style lang="scss">
 @import '../settings';
 
+$highlight: $Highlight-Colour;
+
 .Footer{
 	$height: 100px;
-	background: $Highlight;
+	background: $highlight;
 
 	&__inner {
 		padding-top: 0.8em;

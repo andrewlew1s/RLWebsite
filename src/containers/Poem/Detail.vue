@@ -54,13 +54,13 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../style';
+@import '../../settings';
 
 .Poem{
 	margin-bottom: 3rem;
 
 	img, iframe{
-		@media all and (max-width: $Mobile_Width) {
+		@media all and (max-width: $Mobile-Width) {
 			max-width: 100%;
 		}
 	}

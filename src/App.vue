@@ -27,6 +27,8 @@ export default {
 @import './settings';
 
 .App {
+	background: $Background-Colour;
+	font-family: $Font-Family;
 
 	&__inner {
 		width: 1140px;
@@ -43,7 +45,7 @@ export default {
 
 	&__wrapper {
 		padding-top: $Header_Height;
-		background: $Background;
+		background: $Background-Colour;
 	}
 
 	&--center {

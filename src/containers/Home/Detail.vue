@@ -39,7 +39,6 @@ export default {
 
 .Home{
 	width: 100%;
-	background: $Highlight;
 
 	&__carousel{
 		width: 100%;
