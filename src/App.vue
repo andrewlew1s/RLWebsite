@@ -27,6 +27,8 @@ export default {
 @import './settings';
 
 .App {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	background: $Background-Colour;
 	font-family: $Font-Family;
 
