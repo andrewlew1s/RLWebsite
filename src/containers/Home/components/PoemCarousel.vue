@@ -4,7 +4,8 @@
 	<carousel
 		class="Carousel__carousel"
 		v-if="isLoaded"
-		:slides="formattedSlides"/>
+		:slides="formattedSlides"
+		fullHeight/>
 
 </div>
 </template>

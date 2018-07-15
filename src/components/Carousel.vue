@@ -2,7 +2,9 @@
 <div class="Carousel">
 
 	<b-carousel
-		class="Carousel__carousel"
+		:class="{
+			'Carousel__carousel--fullHeight': fullHeight
+		}"
 		indicators
 		controls
 		:style="slideConfig.style"
@@ -37,6 +39,9 @@ export default {
 		},
 		text: {
 			type: String
+		},
+		fullHeight: {
+			type: Boolean
 		}
 	},
 	data() {
@@ -44,8 +49,8 @@ export default {
 			slideConfig: {
 				background: '#ababab',
 				interval: 10000,
-				width: 1024,
-				height: 480
+				width: 1080,
+				height: 1920
 			}
 		};
 	}
@@ -60,8 +65,17 @@ $headerHeight: $Header-Height;
 .Carousel {
 
 	&__carousel {
-		// #Todo: make this height setting enabled by a 'fullScreen' property
-		height: calc(100vh - #{$headerHeight});
+
+		&--fullHeight {
+			height: calc(100vh - #{$headerHeight});
+
+			.img-fluid.w-100 {
+				height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
+				width: auto;
+			}
+
+		}
+
 	}
 }
 </style>
