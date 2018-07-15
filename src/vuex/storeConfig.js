@@ -13,8 +13,6 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = app.database();
 
 const poemsRef = db.ref('poems');
-const slideRef = db.ref('slides');
-
 
 const store = {
 	state: {
