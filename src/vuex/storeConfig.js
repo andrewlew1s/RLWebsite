@@ -20,14 +20,7 @@ const store = {
 	state: {
 		poems: [],
 		poem: {},
-		slides: [
-			{
-				imageSrc: 'https://picsum.photos/1024/480/?image=487',
-				link: '/poems',
-				title: 'Some Title',
-				text: 'some text'
-			}
-		]
+		homeSlides: []
 	},
 	mutations: {
 		SET_POEMS(state, poems) {
@@ -35,6 +28,9 @@ const store = {
 		},
 		SET_POEM(state, poem) {
 			this.state.poem = poem;
+		},
+		SET_SLIDES(state, slides) {
+			this.state.homeSlides = slides;
 		}
 	},
 	actions: {
@@ -50,20 +46,21 @@ const store = {
 			const snap = await poemsRef.child(id).once('value');
 			const poem = snap.val();
 			commit('SET_POEM', poem);
+			return snap;
 		},
-		async loadSlides({ commit }) {
+		async loadSlides({ commit, dispatch, state }) {
+			// This function is dependent on state.poems being loaded
+			// so triggers a call to that action before anything else
+			await dispatch('loadPoems');
 			const snap = await slideRef.once('value');
-			const slides = snap.val().map((slide, i) => {
-				slide._id = i;
-				return slide;
-			});
-			commit('SET_POEMS', slides);
+			const slides = snap.val().map(poemId => state.poems[poemId]);
+			commit('SET_SLIDES', slides);
 		}
 	},
 	getters: {
 		poems: state => state.poems,
 		poem: state => state.poem,
-		slides: state => state.slides
+		homeSlides: state => state.homeSlides
 	}
 };
 

@@ -19,13 +19,16 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			slides: 'slides'
+			slides: 'homeSlides'
 		})
 	},
 	methods: {
 		...mapActions({
 			loadSlides: 'loadSlides'
 		})
+	},
+	async created() {
+		await this.loadSlides();
 	}
 };
 
