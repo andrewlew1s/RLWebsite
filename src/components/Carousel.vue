@@ -2,6 +2,7 @@
 <div class="Carousel">
 
 	<b-carousel
+		class="Carousel__carousel"
 		indicators
 		controls
 		:style="slideConfig.style"
@@ -54,7 +55,13 @@ export default {
 <style lang="scss">
 @import '../settings';
 
-.Carousel{
+$headerHeight: $Header-Height;
 
+.Carousel {
+
+	&__carousel {
+		// #Todo: make this height setting enabled by a 'fullScreen' property
+		height: calc(100vh - #{$headerHeight});
+	}
 }
 </style>
