@@ -11,13 +11,23 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = app.database();
+
 const poemsRef = db.ref('poems');
+const slideRef = db.ref('slides');
 
 
 const store = {
 	state: {
 		poems: [],
-		poem: {}
+		poem: {},
+		slides: [
+			{
+				imageSrc: 'https://picsum.photos/1024/480/?image=487',
+				link: '/poems',
+				title: 'Some Title',
+				text: 'some text'
+			}
+		]
 	},
 	mutations: {
 		SET_POEMS(state, poems) {
@@ -40,11 +50,20 @@ const store = {
 			const snap = await poemsRef.child(id).once('value');
 			const poem = snap.val();
 			commit('SET_POEM', poem);
+		},
+		async loadSlides({ commit }) {
+			const snap = await slideRef.once('value');
+			const slides = snap.val().map((slide, i) => {
+				slide._id = i;
+				return slide;
+			});
+			commit('SET_POEMS', slides);
 		}
 	},
 	getters: {
 		poems: state => state.poems,
-		poem: state => state.poem
+		poem: state => state.poem,
+		slides: state => state.slides
 	}
 };
 

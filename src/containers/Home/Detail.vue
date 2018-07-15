@@ -4,6 +4,7 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 	<div class="Home">
 
 		<carousel
+			v-if="slides"
 			class="Home_carousel"
 			:slides="slides"/>
 
@@ -11,23 +12,22 @@ const twentyTouristsImage = require('./images/20Tourists.png');
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import Carousel from '../../components/Carousel';
 
 export default {
 	components: {
 		Carousel
 	},
-	data() {
-		return {
-			slides: [
-				{
-					imageSrc: 'https://picsum.photos/1024/480/?image=487',
-					link: '/poems',
-					title: 'Some Title',
-					text: 'some text'
-				}
-			]
-		};
+	computed: {
+		...mapGetters({
+			slides: 'slides'
+		})
+	},
+	methods: {
+		...mapActions({
+			loadSlides: 'loadSlides'
+		})
 	}
 };
 
