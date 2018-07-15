@@ -1,35 +1,21 @@
 <template>
 	<div class="Home">
 
-		<carousel
-			v-if="slides"
-			class="Home_carousel"
-			:slides="slides"/>
+		<poem-carousel
+			class="Home__carousel"/>
 
 	</div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import Carousel from '../../components/Carousel';
+import PoemCarousel from './components/PoemCarousel';
 
 export default {
 	components: {
-		Carousel
-	},
-	computed: {
-		...mapGetters({
-			slides: 'homeSlides'
-		})
-	},
-	methods: {
-		...mapActions({
-			loadSlides: 'loadSlides'
-		})
-	},
-	async created() {
-		await this.loadSlides();
+		PoemCarousel
 	}
+
+
 };
 
 </script>
@@ -43,6 +29,7 @@ export default {
 
 	&__carousel{
 		width: 100%;
+		float: left;
 	}
 
 }
