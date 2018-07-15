@@ -1,5 +1,3 @@
-const twentyTouristsImage = require('./images/20Tourists.png');
-
 <template>
 	<div class="Home">
 
