@@ -17,7 +17,8 @@
 
 				<b-carousel-slide
 					:img-src="slide.imageSrc"
-					:caption="slide.title"/>
+					:caption="slide.title"
+					:text="slide.text"/>
 
 		</b-link>
 
@@ -32,6 +33,9 @@ export default {
 		slides: {
 			type: Array,
 			required: true
+		},
+		text: {
+			type: String
 		}
 	},
 	data() {

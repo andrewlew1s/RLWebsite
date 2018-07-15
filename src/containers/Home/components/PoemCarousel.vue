@@ -31,6 +31,7 @@ export default {
 				const link = `poems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
+					text: slideInPoemForm.text,
 					imageSrc: this.sanitizedImgSrc(slideInPoemForm),
 					link
 				};
@@ -40,7 +41,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			loadSlides: 'loadSlides'
+			loadPoems: 'loadPoems'
 		}),
 		sanitizedImgSrc(slide) {
 			if (slide.slideImage) return slide.slideImage;
@@ -49,7 +50,7 @@ export default {
 		}
 	},
 	async created() {
-		await this.loadSlides();
+		await this.loadPoems();
 		this.isLoaded = true;
 	}
 };

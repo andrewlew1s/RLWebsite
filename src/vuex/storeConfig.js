@@ -40,21 +40,15 @@ const store = {
 				poem._id = i;
 				return poem;
 			});
+			const slides = poems.filter(poem => poem.featured);
 			commit('SET_POEMS', poems);
+			commit('SET_SLIDES', slides);
 		},
 		async loadPoem({ commit }, id) {
 			const snap = await poemsRef.child(id).once('value');
 			const poem = snap.val();
 			commit('SET_POEM', poem);
 			return snap;
-		},
-		async loadSlides({ commit, dispatch, state }) {
-			// This function is dependent on state.poems being loaded
-			// so triggers a call to that action before anything else
-			await dispatch('loadPoems');
-			const snap = await slideRef.once('value');
-			const slides = snap.val().map(poemId => state.poems[poemId]);
-			commit('SET_SLIDES', slides);
 		}
 	},
 	getters: {
