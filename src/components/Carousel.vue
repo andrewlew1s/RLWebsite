@@ -71,7 +71,7 @@ $headerHeight: $Header-Height;
 
 			.img-fluid.w-100 {
 				height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
-				width: auto;
+				width: auto !important;
 			}
 
 		}

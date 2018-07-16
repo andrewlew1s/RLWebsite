@@ -51,7 +51,7 @@ export default {
 
 	&__wrapper {
 		margin-top: $Header-Height;
-		min-height: calc(100vh - #{$Footer-Height});
+		min-height: calc(100vh - #{$Footer-Height} - #{$Header-Height});
 		background: $Background-Colour;
 	}
 
