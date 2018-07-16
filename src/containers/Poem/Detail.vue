@@ -1,5 +1,5 @@
 <template>
-	<div class="Poem">
+	<div class="Poem App--paddingTop">
 		<div class="App__inner">
 
 				<h2 v-text="poem.title"/>

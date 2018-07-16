@@ -1,6 +1,6 @@
 <template>
 	<div class="Poems">
-		<div class="App__inner">
+		<div class="App__inner App--paddingTop">
 			<b-list-group>
 
 				<b-list-group-item
@@ -8,7 +8,7 @@
 					:key="poem.id">
 
 						<b-link
-							@click="goToPoem(poem.id)"
+							@click="goToPoem(poem._id)"
 							v-text="poem.title"/>
 
 				</b-list-group-item>
