@@ -1,9 +1,9 @@
 <template>
-	<div class="About App--paddingTop">
+	<div class="About App--padding">
 
 		<b-row class="App__inner">
 			<b-col>
-				<h3 class="App--center">
+				<h3>
 					Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.
 				</h3>
 			</b-col>
@@ -34,7 +34,7 @@
 				</p>
 			</b-col>
 			<b-col>
-				<b-img class="App--center About__image" src="../../assets/images/rachel.jpg"></b-img>
+				<b-img class="About__image" src="../../assets/images/rachel.jpg"></b-img>
 			</b-col>
 		</b-row>
 
@@ -48,7 +48,6 @@
 
 	&__image{
 		width: auto;
-
 	}
 }
 

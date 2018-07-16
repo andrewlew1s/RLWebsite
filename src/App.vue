@@ -41,6 +41,14 @@ export default {
 		margin: auto;
 		position: relative;
 
+		.col {
+			width: 100%;
+			flex: none;
+			display: block;
+			clear: both;
+			float: left;
+		}
+
 		@media all and (max-width: $Frame-Width) {
 			width: 90%;
 			margin-left: 5%;
@@ -55,8 +63,17 @@ export default {
 		background: $Background-Colour;
 	}
 
-	&--paddingTop {
+	&--padding {
 		padding-top: 60px;
+		padding-bottom: 60px;
+
+		&Top {
+			padding-top: 60px;
+		}
+
+		&Bottom {
+			padding-bottom: 60px;
+		}
 	}
 
 	&--center {
