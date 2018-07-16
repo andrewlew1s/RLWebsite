@@ -5,7 +5,7 @@
 		class="Carousel__carousel"
 		v-if="isLoaded"
 		:slides="formattedSlides"
-		fullHeight/>
+		fullScreen/>
 
 	<app-loader
 		class="Carousel__loader"

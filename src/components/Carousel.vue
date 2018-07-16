@@ -3,7 +3,7 @@
 
 	<b-carousel
 		:class="{
-			'Carousel__carousel--fullHeight': fullHeight
+			'Carousel__carousel--fullScreen': fullScreen
 		}"
 		indicators
 		controls
@@ -40,7 +40,7 @@ export default {
 		text: {
 			type: String
 		},
-		fullHeight: {
+		fullScreen: {
 			type: Boolean
 		}
 	},
@@ -66,12 +66,16 @@ $headerHeight: $Header-Height;
 
 	&__carousel {
 
-		&--fullHeight {
+		&--fullScreen {
 			height: calc(100vh - #{$headerHeight});
 
 			.img-fluid.w-100 {
-				height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
+				height: calc(100vh - #{$headerHeight}) !important;;	// this makes actual slide image flush with bottom of screen
+				min-height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
 				width: auto !important;
+				max-width: unset !important;
+				overflow: hidden;
+
 			}
 
 		}
