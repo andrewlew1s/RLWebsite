@@ -7,16 +7,22 @@
 		:slides="formattedSlides"
 		fullHeight/>
 
+	<app-loader
+		class="Carousel__loader"
+		v-else/>
+
 </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Carousel from '../../../components/Carousel';
+import AppLoader from '../../../components/AppLoader';
 
 export default {
 	components: {
-		Carousel
+		Carousel,
+		AppLoader
 	},
 	data() {
 		return {
@@ -60,10 +66,15 @@ export default {
 <style lang="scss">
 
  .Carousel {
+	position: relative;
 
 	&__carousel {
 		width: 100%;
 		float: left;
+	}
+
+	&__loader {
+		margin-top: 60px;
 	}
 
  }
