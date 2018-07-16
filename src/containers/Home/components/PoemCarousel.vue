@@ -8,8 +8,8 @@
 		fullHeight/>
 
 	<app-loader
-		class="Carousel__loader"
-		v-else/>
+		class="App--paddingTop"
+		/>
 
 </div>
 </template>
@@ -71,10 +71,6 @@ export default {
 	&__carousel {
 		width: 100%;
 		float: left;
-	}
-
-	&__loader {
-		margin-top: 60px;
 	}
 
  }

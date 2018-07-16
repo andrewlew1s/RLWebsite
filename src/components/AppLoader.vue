@@ -12,17 +12,18 @@
 $background: $Theme-Colour;
 $highlight: $Highlight-Colour;
 
+$size: 120px;
+
 .Spinner {
 	border: 16px solid $background; /* Light grey */
 	border-top: 16px solid $highlight; /* Blue */
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
+	width: $size;
+	height: $size;
 	animation: Spinner--spin 2s linear infinite;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: calc(50% - (#{$size} / 2));
+	left: calc(50% - (#{$size} / 2));
 }
 
 @keyframes Spinner--spin {
