@@ -17,9 +17,10 @@ $textColour: $Highlight-Colour;
 .Footer{
 	background: $background;
 	color: $textColour;
+	height: $height;
 
 	&__inner {
-		padding-top: 0.8em;
+		padding-top: 0.5em;
 	}
 }
 
