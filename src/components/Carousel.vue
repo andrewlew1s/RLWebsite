@@ -61,10 +61,26 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
+$mobileBreak: $Mobile-Width;
 
 .Carousel {
 
 	&__carousel {
+
+		.carousel-caption {
+
+			p {
+				float: left;
+				height: 90%;
+				overflow: hidden;
+			}
+
+			@media all and (max-width: $mobileBreak) {
+				top: 0;
+				height: 90%;
+				float: left;
+			}
+		}
 
 		&--fullScreen {
 			height: calc(100vh - #{$headerHeight});
