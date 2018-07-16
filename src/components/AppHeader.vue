@@ -22,6 +22,19 @@ import Menue from './Menue';
 export default {
 	components: {
 		Menue
+	},
+	methods: {
+		toggleShadow() {
+			// if page is scrolled
+			if (window.scrollY !== 0) {
+				this.$el.classList.add('Header--shadow');
+			} else {
+				this.$el.classList.remove('Header--shadow');
+			}
+		}
+	},
+	mounted() {
+		window.addEventListener('scroll', this.toggleShadow);
 	}
 };
 
@@ -32,6 +45,7 @@ export default {
 
 $headerHeight: $Header-Height;
 $background: $Theme-Colour;
+$shadow: $Brown-Dark;
 $textColour: $Highlight-Colour;
 
 .Header{
@@ -41,6 +55,7 @@ $textColour: $Highlight-Colour;
 	color: $textColour;
 	width: 100%;
 	z-index: 10;
+	transition: box-shadow 350ms ease-in-out;
 
 	&__title{
 		height: $headerHeight / 2;
@@ -59,6 +74,10 @@ $textColour: $Highlight-Colour;
 
 	&__inner{
 		height: 100%;
+	}
+
+	&--shadow {
+		box-shadow: 0 4px 15px -4px $shadow;
 	}
 
 }
