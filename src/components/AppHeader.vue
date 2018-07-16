@@ -30,17 +30,21 @@ export default {
 <style lang="scss">
 @import '../settings';
 
+$headerHeight: $Header-Height;
+$background: $Theme-Colour;
+$textColour: $Highlight-Colour;
+
 .Header{
-	background: $Light-Grey;
-	height: $Header-Height;
+	background: $background;
+	height: $headerHeight;
 	position: fixed;
-	color: $Dark-Grey;
+	color: $textColour;
 	width: 100%;
 	z-index: 10;
 
 	&__title{
-		height: $Header-Height / 2;
-		color: $Dark-Grey;
+		height: $headerHeight / 2;
+		color: $textColour;
 		margin: auto;
 		display: block;
 		display: inline-block;

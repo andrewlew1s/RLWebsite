@@ -30,10 +30,11 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: $Background-Colour;
+	color: $Text-Colour;
 	font-family: $Font-Family;
 
 	&__inner {
-		width: 1140px;
+		width: $Frame-Width;
 		margin: auto;
 		position: relative;
 

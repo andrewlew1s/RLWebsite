@@ -52,14 +52,15 @@ export default {
 <style lang="scss">
 @import '../settings';
 
+$textColour: $Highlight-Colour;
+
 .Menue{
-	$highlight: $Highlight-Colour;
 
 	&__link{
 		font-size: 16px;
-		border-bottom: 1px solid $highlight;
+		border-bottom: 1px solid $textColour;
 		padding-bottom: 0.2em;
-		color: $Dark-Grey !important;
+		color: $textColour !important;
 		margin: 0 20px;
 		display: inline-block;
 		text-decoration: none !important;;
@@ -73,7 +74,7 @@ export default {
 	}
 
 	.active, :hover{
-		border-bottom: 3px solid $highlight;
+		border-bottom: 3px solid $textColour;
 	}
 
 	:active{

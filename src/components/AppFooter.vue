@@ -1,7 +1,7 @@
 <template>
     <div class="Footer">
         <div class="App__inner Footer__inner">
-            <p> Andrew and Mike Ltd. Corp</p>
+            <span> Andrew and Mike Ltd. Corp</span>
         </div>
     </div>
 </template>
@@ -10,11 +10,13 @@
 <style lang="scss">
 @import '../settings';
 
-$highlight: $Highlight-Colour;
+$height: $Footer-Height;
+$background: $Theme-Colour;
+$textColour: $Highlight-Colour;
 
 .Footer{
-	$height: $Footer-Height;
-	background: $highlight;
+	background: $background;
+	color: $textColour;
 
 	&__inner {
 		padding-top: 0.8em;
