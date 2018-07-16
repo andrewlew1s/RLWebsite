@@ -1,14 +1,20 @@
 <template>
 
+	<!-- Inspired by: https://www.w3schools.com/howto/howto_css_loader.asp -->
+
 	<div class="Spinner"/>
 
 </template>
 
 <style lang="scss">
+@import '../settings';
+
+$background: $Theme-Colour;
+$highlight: $Highlight-Colour;
 
 .Spinner {
-	border: 16px solid #f3f3f3; /* Light grey */
-	border-top: 16px solid #3498db; /* Blue */
+	border: 16px solid $background; /* Light grey */
+	border-top: 16px solid $highlight; /* Blue */
 	border-radius: 50%;
 	width: 120px;
 	height: 120px;
