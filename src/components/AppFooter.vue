@@ -18,6 +18,8 @@ $textColour: $Highlight-Colour;
 	background: $background;
 	color: $textColour;
 	height: $height;
+	width: 100%;
+	float: left;
 
 	&__inner {
 		padding-top: 0.5em;
