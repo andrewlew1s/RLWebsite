@@ -89,7 +89,7 @@ $mobileBreak: $Mobile-Width;
 				height: calc(100vh - #{$headerHeight}) !important;;	// this makes actual slide image flush with bottom of screen
 				min-height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
 				width: auto !important;
-				max-width: unset !important;
+				min-width: 100% !important;
 				overflow: hidden;
 
 			}
