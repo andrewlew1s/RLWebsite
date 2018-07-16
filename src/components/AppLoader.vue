@@ -13,10 +13,11 @@ $background: $Theme-Colour;
 $highlight: $Highlight-Colour;
 
 $size: 120px;
+$width: 8px;
 
 .Spinner {
-	border: 16px solid $background; /* Light grey */
-	border-top: 16px solid $highlight; /* Blue */
+	border: $width solid $background; /* Light grey */
+	border-top: $width solid $highlight; /* Blue */
 	border-radius: 50%;
 	width: $size;
 	height: $size;
