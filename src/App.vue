@@ -50,13 +50,13 @@ export default {
 	}
 
 	&__wrapper {
-		padding-top: $Header-Height;
+		margin-top: $Header-Height;
 		min-height: calc(100vh - #{$Footer-Height});
 		background: $Background-Colour;
 	}
 
 	&--paddingTop {
-		margin-top: 60px;
+		padding-top: 60px;
 	}
 
 	&--center {
