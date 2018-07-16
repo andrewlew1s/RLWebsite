@@ -32,6 +32,9 @@ export default {
 	background: $Background-Colour;
 	color: $Text-Colour;
 	font-family: $Font-Family;
+	width: 100%;
+	position: absolute;
+	top: 0;
 
 	&__inner {
 		width: $Frame-Width;
@@ -50,6 +53,10 @@ export default {
 		padding-top: $Header-Height;
 		min-height: calc(100vh - #{$Footer-Height});
 		background: $Background-Colour;
+	}
+
+	&--paddingTop {
+		margin-top: 60px;
 	}
 
 	&--center {

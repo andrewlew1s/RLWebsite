@@ -1,5 +1,5 @@
 <template>
-	<div class="About">
+	<div class="About App--paddingTop">
 
 		<b-row class="App__inner">
 			<b-col>
