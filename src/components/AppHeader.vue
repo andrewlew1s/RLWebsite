@@ -3,13 +3,13 @@
 	<div class="App__inner Header__inner">
 
 		<b-link to="/">
-			<h1 class="Header__title App--center">
+			<h1 class="Header__title App--center Header--responsive">
 				Rachel Lewis
 			</h1>
 		</b-link>
 
 		<menue
-			class="Header__menue App--center"
+			class="Header__menue App--center Header--responsive"
 			:auto="true"/>
 
 	</div>
@@ -47,6 +47,7 @@ $headerHeight: $Header-Height;
 $background: $Theme-Colour;
 $shadow: $Brown-Dark;
 $textColour: $Highlight-Colour;
+$mobileBreak: $Mobile-Width;
 
 .Header{
 	background: $background;
@@ -70,6 +71,10 @@ $textColour: $Highlight-Colour;
 		display: inline-block;
 		right: 0;
 		margin-top: 9px;
+
+		@media all and (max-width: $mobileBreak) {
+			top: 70px;
+		}
 	}
 
 	&__inner{
@@ -78,6 +83,13 @@ $textColour: $Highlight-Colour;
 
 	&--shadow {
 		box-shadow: 0 4px 15px -4px $shadow;
+	}
+
+	&--responsive {
+
+		@media all and (max-width: $mobileBreak) {
+			width: 100%;
+		}
 	}
 
 }
