@@ -67,6 +67,17 @@ $mobileBreak: $Mobile-Width;
 
 	&__carousel {
 
+		.carousel-caption {
+
+			@media all and (max-width: $mobileBreak){
+				p {
+					float: left;
+					height: 90%;
+					overflow: hidden;
+				}
+			}
+		}
+
 		&--fullScreen {
 			height: calc(100vh - #{$headerHeight});
 
@@ -82,17 +93,6 @@ $mobileBreak: $Mobile-Width;
 				top: 0;
 				height: 90%;
 				float: left;
-
-				.carousel-caption {
-
-					p {
-						float: left;
-						height: 90%;
-						overflow: hidden;
-					}
-
-				}
-
 			}
 
 		}
