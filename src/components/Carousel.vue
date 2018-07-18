@@ -69,12 +69,16 @@ $mobileBreak: $Mobile-Width;
 
 		.carousel-caption {
 
+			p {
+				float: left;
+				height: 90%;
+				overflow: hidden;
+			}
+
 			@media all and (max-width: $mobileBreak){
-				p {
-					float: left;
-					height: 90%;
-					overflow: hidden;
-				}
+				top: 0;
+				height: 90%;
+				float: left;
 			}
 		}
 
