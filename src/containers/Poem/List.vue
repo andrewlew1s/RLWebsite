@@ -1,10 +1,16 @@
 <template>
-	<div class="poem-list">
-		<div class="inner">
+	<div class="Poems">
+		<div class="App__inner App--paddingTop">
 			<b-list-group>
 
-				<b-list-group-item v-for="poem in poems" v-bind:key="poem.id">
-						<b-link @click="goToPoem(poem.id)"> {{ poem.title }} </b-link>
+				<b-list-group-item
+					v-for="poem in poems"
+					:key="poem.id">
+
+						<b-link
+							@click="goToPoem(poem._id)"
+							v-text="poem.title"/>
+
 				</b-list-group-item>
 
 			</b-list-group>
@@ -12,16 +18,25 @@
 	</div>
 </template>
 
-
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-	props: [
-		'poems'
-	],
+	computed: {
+		...mapGetters({
+			poems: 'poems'
+		})
+	},
 	methods: {
+		...mapActions({
+			loadPoems: 'loadPoems'
+		}),
 		goToPoem(poemId) {
 			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
 		}
+	},
+	created() {
+		this.loadPoems();
 	}
 };
 </script>
@@ -29,10 +44,9 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../style';
+@import '../../settings';
 
-.poem-list{
-	@include layout-frame-inner;
+.Poems{
 }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
-	<div class="module-home">
+	<div class="About App--padding">
 
-		<b-row class="inner">
+		<b-row class="App__inner">
 			<b-col>
 				<h3>
 					Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.
@@ -21,7 +21,7 @@
 			</b-col>
 		</b-row>
 
-		<b-row class="inner">
+		<b-row class="App__inner">
 			<b-col>
 				<p>
 					<!-- eslint-disable max-len -->
@@ -34,43 +34,22 @@
 				</p>
 			</b-col>
 			<b-col>
-				<b-img src="../../assets/images/rachel.jpg"></b-img>
+				<b-img class="About__image" src="../../assets/images/rachel.jpg"></b-img>
 			</b-col>
 		</b-row>
 
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'HelloWorld',
-	data() {
-		return {
-			msg: 'Welcome to Your Vue.js App'
-		};
-	}
-};
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import '../../style';
+<style lang="scss">
+@import '../../settings';
 
 .module-home{
-	@include layout-frame-inner;
 
-	.row{
-		position: relative;
-
-		img{
-			width: auto;
-			@include total-center;
-		}
-		h3{
-			@include total-center;
-		}
+	&__image{
+		width: auto;
 	}
-
 }
+
 
 </style>

@@ -1,136 +1,101 @@
 <template>
-	<b-carousel controls
+<div class="Carousel">
+
+	<b-carousel
+		:class="{
+			'Carousel__carousel--fullScreen': fullScreen
+		}"
 		indicators
+		controls
 		:style="slideConfig.style"
 		:background="slideConfig.background"
 		:interval="slideConfig.interval"
 		:img-width="slideConfig.width"
 		:img-height="slideConfig.height">
 
-		<!-- Text slides with image -->
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=487">
-				<b-link to="poems/0">
-					<h2>Tigerless</h2>
-				</b-link>
-				<p>When I lie in the grasses, And practise the stillness of death</p>
-		</b-carousel-slide>
+		<b-link
+			:to="slide.link"
+			v-for="slide in slides"
+			:key="slide.link">
 
-		<!-- Slides with custom text -->
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=835">
-			<b-link to="poems/1">
-				<h2>The Decision</h2>
-			</b-link>
-			<p>She holds the knife over red flesh</p>
-		</b-carousel-slide>
+				<b-carousel-slide
+					:img-src="slide.imageSrc"
+					:caption="slide.title"
+					:text="slide.text"/>
 
-		<!-- Slides with custom text -->
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=420">
-			<b-link to="poems/2">
-				<h2>Ilium</h2>
-			</b-link>
-			<p>Old words sound beautiful Because we don’t know what they mean</p>
-		</b-carousel-slide>
+		</b-link>
 
-		<!-- Slides with custom text -->
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=324">
-			<b-link to="poems/3">
-				<h2>It</h2>
-			</b-link>
-			<p>A visual experience</p>
-		</b-carousel-slide>
-
-		<!-- Slides with image only -->
-		<b-carousel-slide img-src="https://picsum.photos/1024/480/?image=700">
-			<b-link to="poems/4">
-				<h2>Twenty Tourists</h2>
-			</b-link>
-			<p>Below shifting boughs, every wave drowned out</p>
-		</b-carousel-slide>
 	</b-carousel>
+
+</div>
 </template>
 
 <script>
 export default {
+	props: {
+		slides: {
+			type: Array,
+			required: true
+		},
+		text: {
+			type: String
+		},
+		fullScreen: {
+			type: Boolean
+		}
+	},
 	data() {
 		return {
 			slideConfig: {
-				style: 'text-shadow: 1px 1px 2px #333;',
 				background: '#ababab',
 				interval: 10000,
-				width: 1024,
-				height: 480
+				width: 1080,
+				height: 1920
 			}
 		};
 	}
 };
 </script>
 
-<style lang="scss" scoped>
-@import '../style';
+<style lang="scss">
+@import '../settings';
 
-.carousel{
-	* {
-		color: white;
-		text-decoration: none;
-		text-shadow:
-			-1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			1px 1px 0 #000;
-	}
+$headerHeight: $Header-Height;
+$mobileBreak: $Mobile-Width;
 
-	h2{
-		font-size: 32px;
+.Carousel {
 
-		@media all and (max-width: $Mobile_Width){
-			font-size: 24px;
-		}
+	&__carousel {
 
-	}
+		.carousel-caption {
 
-	p{
-		font-size: 22px;
+			p {
+				float: left;
+				height: 90%;
+				overflow: hidden;
+			}
 
-		@media all and (max-width: $Mobile_Width){
-			font-size: 14px;
-			margin-bottom: 0;
-		}
-
-	}
-
-	// https://codepen.io/colloque/pen/bDgmx
-	a{
-		:hover{
-			-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
-			-webkit-mask-size: 200%;
-			animation: shine 2s infinite;
-
-			@keyframes shine {
-				from {
-					-webkit-mask-position: 150%;
-				}
-				to {
-					-webkit-mask-position: -50%;
-				}
+			@media all and (max-width: $mobileBreak) {
+				top: 0;
+				height: 90%;
+				float: left;
 			}
 		}
-	}
-}
-</style>
 
-<style lang="scss">
-@import '../style';
+		&--fullScreen {
+			height: calc(100vh - #{$headerHeight});
 
-.carousel-indicators{
-	@media all and (max-width: $Mobile_Width){
-		bottom: -7px;
-	}
-}
+			.img-fluid.w-100 {
+				height: calc(100vh - #{$headerHeight}) !important;;	// this makes actual slide image flush with bottom of screen
+				min-height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
+				width: auto !important;
+				min-width: 100% !important;
+				overflow: hidden;
 
-.carousel-caption{
-	@media all and (max-width: $Mobile_Width){
-		padding-top: 8px;
-		padding-bottom: 4px;
+			}
+
+		}
+
 	}
 }
 </style>

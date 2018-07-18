@@ -1,8 +1,14 @@
 <template>
-<div class="module-menu">
-	<b-link :to="item.path" exact v-for="item in menuItems" v-bind:key="item.path">
-		{{ item.name }}
-	</b-link>
+<div class="Menue">
+
+	<b-link
+		class="Menue__link"
+		:to="item.path"
+		v-for="item in menuItems"
+		:key="item.path"
+		v-text="item.name"
+		exact/>
+
 </div>
 </template>
 
@@ -43,38 +49,37 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-@import '../style';
+<style lang="scss">
+@import '../settings';
 
-.module-menu{
+$textColour: $Highlight-Colour;
 
-		text-align: center;
-		border-top: 1px solid $Grey;
-		border-bottom: 1px solid $Grey;
+.Menue{
 
-		a{
-			font-size: 20px;
-			border-bottom: 1px solid $Grey;
-			color: $Text_Colour;
-			padding-bottom: 0.2em;
-			margin: 10px 20px;
-			display: inline-block;
-			text-decoration: none;
-			transition: 50ms;
+	&__link{
+		font-size: 16px;
+		border-bottom: 1px solid $textColour;
+		padding-bottom: 0.2em;
+		color: $textColour !important;
+		margin: 0 20px;
+		display: inline-block;
+		text-decoration: none !important;;
+		transition: 50ms;
 
-			@media all and (max-width: $Mobile_Width){
-				font-size: 12px;
-				margin: 5px 8px;
-			}
+		@media all and (max-width: $Mobile-Width){
+			font-size: 12px;
+			margin: 5px 8px;
 		}
 
-		.active, :hover{
-			border-bottom: 2px solid $Text_Colour;
-		}
-
-		:active{
-			position: relative;
-			top: 2px;
-		}
 	}
+
+	.active, :hover{
+		border-bottom: 3px solid $textColour;
+	}
+
+	:active{
+		position: relative;
+		top: 2px;
+	}
+}
 </style>

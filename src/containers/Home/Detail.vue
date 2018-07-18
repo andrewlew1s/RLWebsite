@@ -1,41 +1,37 @@
-const twentyTouristsImage = require('./images/20Tourists.png');
-
 <template>
-	<div class="module-about">
-		<div class="inner">
+	<div class="Home">
 
-			<carousel></carousel>
+		<poem-carousel
+			class="Home__carousel"/>
 
-		</div>
 	</div>
 </template>
 
 <script>
-import Carousel from '../../components/Carousel';
+import PoemCarousel from './components/PoemCarousel';
 
 export default {
 	components: {
-		Carousel
+		PoemCarousel
 	}
+
+
 };
 
 </script>
 
-<style lang="scss" scoped>
-@import '../../style';
+<style lang="scss">
+@import '../../settings';
 
 
-.module-about{
+.Home{
+	width: 100%;
 
-	$height: 300px;
-	background: $Highlight;
-	@include layout-frame-inner();
-
-	.rachel{
-		height: $height / 2;
-		margin: auto;
-		margin-top: $height / 10;
-		display: block;
+	&__carousel{
+		width: 100%;
+		float: left;
 	}
+
 }
+
 </style>

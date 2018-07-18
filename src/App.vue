@@ -1,76 +1,86 @@
 <template>
-  <div id="app">
-    <Header></Header>
-	<!-- Passing properties in this way makes them available at all routes -->
-    <router-view class="wrapper"
-		:poems="poems"/>
-    <Footer></Footer>
-  </div>
+	<div class="App">
+
+		<app-header/>
+
+		<router-view class="App__wrapper"/>
+
+		<app-footer/>
+
+	</div>
 </template>
 
 <script>
-import Firebase from 'firebase';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-const firebaseConfig = {
-	apiKey: 'AIzaSyCjOdEJb-yC05RldJ_orSg8URsW42jWaA8',
-	authDomain: 'demoworld-c9c3a.firebaseapp.com',
-	databaseURL: 'https://demoworld-c9c3a.firebaseio.com',
-	projectId: 'demoworld-c9c3a',
-	storageBucket: 'demoworld-c9c3a.appspot.com',
-	messagingSenderId: '994402680084'
-};
-
-const app = Firebase.initializeApp(firebaseConfig);
-const db = app.database();
-const poemsRef = db.ref('poems');
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
 
 export default {
 	name: 'App',
 	components: {
-		Header,
-		Footer
-	},
-	data() {
-		return {
-			loadingPoems: false,
-			poems: []
-		};
-	},
-	methods: {
-		async loadPoems() {
-			this.loadingPoems = true;
-			const snap = await poemsRef.once('value');
-			this.poems = this.poemIdFactory(snap.val());
-			this.loadingPoems = false;
-		},
-		// When given an array of poems, simply returns the same array but with the
-		// property 'id' added to each poem and the value of its position in the array
-		poemIdFactory(poems) {
-			return poems.map((poem, i) => {
-				poem.id = i;
-				return poem;
-			});
-		}
-	},
-	mounted() {
-		this.loadPoems();
+		AppHeader,
+		AppFooter
 	}
 };
 </script>
 
-<style lang="scss" scoped>
-@import './styles/reset';
-@import './Style';
+<style lang="scss">
+@import './settings';
 
-#app {
-    .wrapper{
-        padding-top: 200px;
-    }
-    > * {
-        float: left;
-    }
+.App {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $Background-Colour;
+	color: $Text-Colour;
+	font-family: $Font-Family;
+	width: 100%;
+	position: absolute;
+	top: 0;
+
+	&__inner {
+		width: $Frame-Width;
+		margin: auto;
+		position: relative;
+
+		.col {
+			width: 100%;
+			flex: none;
+			display: block;
+			clear: both;
+			float: left;
+		}
+
+		@media all and (max-width: $Frame-Width) {
+			width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+
+	}
+
+	&__wrapper {
+		margin-top: $Header-Height;
+		min-height: calc(100vh - #{$Footer-Height} - #{$Header-Height});
+		background: $Background-Colour;
+	}
+
+	&--padding {
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		&Top {
+			padding-top: 60px;
+		}
+
+		&Bottom {
+			padding-bottom: 60px;
+		}
+	}
+
+	&--center {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 
 }
 

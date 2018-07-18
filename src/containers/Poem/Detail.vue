@@ -1,20 +1,26 @@
 <template>
-	<div class="poem-detail">
-		<div class="inner">
+	<div class="Poem App--paddingTop">
+		<div class="App__inner">
 
-			<div v-bind:key="poem.title" class="mb-3">
-				<h2>{{poem.title}}</h2>
-				<p v-if="poem.text">
-					{{poem.text}}
-				</p>
+				<h2 v-text="poem.title"/>
+
+				<p
+					v-if="poem.text"
+					v-text="poem.text"/>
+
 				<p v-if="poem.image">
 					<img thumbnail :src="poem.image"/>
 				</p>
-				<iframe v-if="poem.video" :src="poem.video" width="640" height="360" frameborder="0"
-					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				<br>
-				<br>
-			</div>
+
+				<iframe
+					v-if="poem.video"
+					:src="poem.video"
+					width="640"
+					height="360"
+					frameborder="0"
+					webkitallowfullscreen
+					mozallowfullscreen
+					allowfullscreen></iframe>
 
 		</div>
 	</div>
@@ -22,14 +28,25 @@
 
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-	props: [
-		'poems'
-	],
 	computed: {
+		...mapGetters({
+			poems: 'poems'
+		}),
 		poem() {
 			return this.poems[this.$route.params.id];
 		}
+	},
+	methods: {
+		...mapActions({
+			loadPoems: 'loadPoems'
+		})
+	},
+	created() {
+		// #Todo: look at improving loading so we don't load all poems to load a specific poem's page
+		this.loadPoems();
 	}
 };
 </script>
@@ -37,13 +54,13 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../style';
+@import '../../settings';
 
-.poem-detail{
-	@include layout-frame-inner;
+.Poem{
+	margin-bottom: 3rem;
 
 	img, iframe{
-		@media all and (max-width: $Mobile_Width) {
+		@media all and (max-width: $Mobile-Width) {
 			max-width: 100%;
 		}
 	}
