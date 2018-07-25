@@ -123,12 +123,13 @@ export default {
 
 $headerHeight: $Header-Height;
 $backgroundColour: $Background-Colour;
-$detailBarBackgroundColour: $Theme-Colour;
-$detailBarTextCololur: $Highlight-Colour;
-
+$detailBarBackgroundColour: $Highlight-Colour;
+$detailBarTextCololur: $Theme-Colour;
+$indicatorColour: $Theme-Colour;
 $mobileBreak: $Mobile-Width;
 
 .Carousel {
+	overflow: hidden;
 
 	&__carousel {
 
@@ -144,6 +145,17 @@ $mobileBreak: $Mobile-Width;
 				float: left;
 				height: 90%;
 				overflow: hidden;
+			}
+		}
+
+		.carousel-indicators {
+			li {
+				background: $indicatorColour;
+				opacity: 0.5;
+
+				&.active {
+					opacity: 1;
+				}
 			}
 		}
 
