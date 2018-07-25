@@ -116,6 +116,7 @@ export default {
 	async mounted() {
 		await this.$nextTick();
 		this.setImageHeight();
+		this.currentSlideId = 1;
 		if (this.showDetailBar) this.initialiseDetailBar();
 	}
 };
@@ -196,7 +197,6 @@ $mobileBreak: $Mobile-Width;
 		background: $detailBarBackgroundColour;
 		height: 100%;
 		position: absolute;
-		top: 0;
 
 		&__content {
 			margin-top: 1rem;
