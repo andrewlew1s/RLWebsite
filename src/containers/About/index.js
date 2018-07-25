@@ -1,11 +1,12 @@
-import Detail from './Detail';
+import Page from './Page';
 
 const routes = [
 	{
-		name: 'About Rachel',
+		name: 'about.detail',
 		path: '/about',
-		component: Detail,
-		menu: true
+		component: Page,
+		menu: true,
+		menuName: 'About'
 	}
 ];
 
