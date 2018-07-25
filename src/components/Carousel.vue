@@ -112,7 +112,8 @@ export default {
 			this.detailBarText = currentSlide.caption;
 		}
 	},
-	mounted() {
+	async mounted() {
+		await this.$nextTick();
 		this.setImageHeight();
 		if (this.showDetailBar) this.initialiseDetailBar();
 	}
