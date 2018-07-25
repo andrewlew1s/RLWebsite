@@ -5,7 +5,8 @@
 		class="Carousel__carousel"
 		v-if="isLoaded"
 		:slides="formattedSlides"
-		fullScreen/>
+		fullScreen
+		showDetailBar/>
 
 	<app-loader
 		class="Carousel__loader"
@@ -36,10 +37,10 @@ export default {
 		formattedSlides() {
 			if (!this.slides) return null;
 			return this.slides.map(slideInPoemForm => {
-				const link = `poems/${slideInPoemForm._id}`;
+				const link = `#/poems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
-					text: slideInPoemForm.text,
+					caption: slideInPoemForm.caption,
 					imageSrc: this.sanitizedImgSrc(slideInPoemForm),
 					link
 				};

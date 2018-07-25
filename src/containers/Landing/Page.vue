@@ -1,8 +1,7 @@
 <template>
 	<div class="Home">
 
-		<poem-carousel
-			class="Home__carousel"/>
+		<poem-carousel class="Home__carousel"/>
 
 	</div>
 </template>
