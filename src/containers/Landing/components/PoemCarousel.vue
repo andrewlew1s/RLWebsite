@@ -31,9 +31,10 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			slides: 'poem/featureds'
+			slides: 'poem/featured'
 		}),
 		formattedSlides() {
+			if (!this.slides) return null;
 			return this.slides.map(slideInPoemForm => {
 				const link = `poems/${slideInPoemForm._id}`;
 				const formattedSlide = {
