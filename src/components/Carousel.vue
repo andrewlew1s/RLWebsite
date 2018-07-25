@@ -99,7 +99,7 @@ export default {
 			}
 		},
 		async initialiseDetailBar() {
-			await setTimeout(1000);	// timeout while waiting for carousel to load
+			await setTimeout(null, 2000);	// timeout while waiting for carousel to load
 			await this.$nextTick();
 			window.addEventListener('resize', () => {
 				this.setImageHeight();
