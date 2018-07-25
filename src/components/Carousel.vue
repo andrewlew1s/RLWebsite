@@ -90,7 +90,8 @@ export default {
 		}
 	},
 	methods: {
-		setImageHeight() {
+		async setImageHeight() {
+			await this.$nextTick();
 			this.imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
 			this.detailBarStyle = `top: ${this.imageHeight}px;`;
 			if (this.fullScreen) {
