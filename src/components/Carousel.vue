@@ -98,13 +98,13 @@ export default {
 			}
 		},
 		async initialiseDetailBar() {
+			await this.$nextTick();
 			window.addEventListener('resize', () => {
 				this.setImageHeight();
 			});
 			this.setImageHeight();
 			if (!this.slides) return;
 			if (!this.slides[this.currentSlideId]) return;
-			await this.$nextTick();
 			const currentSlide = this.slides[this.currentSlideId];
 			this.detailBarLink = currentSlide.link;
 			this.detailBarTitle = currentSlide.title;
