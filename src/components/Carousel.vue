@@ -6,7 +6,6 @@
 			'Carousel__carousel--fullScreen': fullScreen
 		}"
 		indicators
-		controls
 		:style="slideConfig.style"
 		:background="slideConfig.background"
 		:interval="slideConfig.interval"
@@ -19,10 +18,7 @@
 			v-for="slide in slides"
 			:key="slide.link">
 
-				<b-carousel-slide
-					:img-src="slide.imageSrc"
-					:caption="slide.title"
-					:text="slide.caption"/>
+				<b-carousel-slide :img-src="slide.imageSrc"/>
 
 		</b-link>
 
@@ -37,12 +33,14 @@
 		:style="detailBarStyle">
 
 		<div class="Carousel__detailBar__content App__inner">
-			<b-button class="Carousel__detailBar__button">
-				Read more
-			</b-button>
-			<p class="Carousel__detailBar__excerpt">
-				Lorem Blah Blahs
-			</p>
+			<b-button
+				class="Carousel__detailBar__buton"
+				variant="outline-primary"
+				:href="detailBarLink"
+				v-text="detailBarTitle"/>
+			<p
+				class="Carousel__detailBar__excerpt"
+				v-text="detailBarText"/>
 		</div>
 
 	</section>
@@ -65,38 +63,57 @@ export default {
 		},
 		showDetailBar: {
 			type: Boolean
-		},
-		currentSlideId: null
+		}
 	},
 	data() {
 		return {
-			slideConfig: {
+			imageHeight: null,
+			detailBarStyle: null,
+			detailBarTitle: null,
+			detailBarText: null,
+			detailBarLink: '/poems/0',
+			currentSlideId: 0
+		};
+	},
+	watch: {
+		currentSlideId() {
+			this.initialiseDetailBar();
+		}
+	},
+	computed: {
+		slideConfig() {
+			return {
 				background: '#ababab',
 				interval: 10000,
-				width: 1080,
-				height: 1920
-			},
-			detailBarStyle: null
-		};
+				height: this.imageHeight
+			};
+		}
 	},
 	methods: {
 		setImageHeight() {
-			const imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
-			this.detailBarStyle = `top: ${imageHeight}px;`;
+			this.imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
+			this.detailBarStyle = `top: ${this.imageHeight}px;`;
 			if (this.fullScreen) {
-				this.detailBarStyle += ` height: calc(100vh - ${imageHeight}px)`;
+				this.detailBarStyle += ` height: calc(100vh - ${this.imageHeight}px)`;
 			}
 		},
-		initialiseDetailBar() {
+		async initialiseDetailBar() {
 			window.addEventListener('resize', () => {
 				this.setImageHeight();
 			});
 			this.setImageHeight();
+			if (!this.slides) return;
+			if (!this.slides[this.currentSlideId]) return;
+			await this.$nextTick();
+			const currentSlide = this.slides[this.currentSlideId];
+			this.detailBarLink = currentSlide.link;
+			this.detailBarTitle = currentSlide.title;
+			this.detailBarText = currentSlide.caption;
 		}
 	},
 	mounted() {
+		this.setImageHeight();
 		if (this.showDetailBar) this.initialiseDetailBar();
-
 	}
 };
 </script>
@@ -106,7 +123,9 @@ export default {
 
 $headerHeight: $Header-Height;
 $backgroundColour: $Background-Colour;
-$detailBarBackground: $Theme-Colour;
+$detailBarBackgroundColour: $Theme-Colour;
+$detailBarTextCololur: $Highlight-Colour;
+
 $mobileBreak: $Mobile-Width;
 
 .Carousel {
@@ -159,16 +178,25 @@ $mobileBreak: $Mobile-Width;
 
 	&__detailBar {
 		width: 100%;
-		background: $detailBarBackground;
+		background: $detailBarBackgroundColour;
 		height: 100%;
 		position: absolute;
 		top: 0;
 
 		&__content {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			margin-top: 1rem;
 		}
+
+		&__excerpt {
+			float: right;
+			color: $detailBarTextCololur;
+		}
+
+		&__title {
+			color: $detailBarTextCololur;
+			float: left;
+		}
+
 	}
 
 }
