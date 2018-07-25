@@ -6,7 +6,7 @@
 		:to="item.path"
 		v-for="item in menuItems"
 		:key="item.path"
-		v-text="item.name"
+		v-text="item.menuName"
 		exact/>
 
 </div>
@@ -17,7 +17,7 @@
 
 	Properties:
 		- Items: An array of menu item obejcts:
-		{ path: '/butts', name:'Click me' }
+		{ path: '/butts', menuName:'Click me' }
 
 		- Auto: if set to true will automatically display
 		from the routes.js file with the property `menu`

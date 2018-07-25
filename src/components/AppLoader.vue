@@ -25,6 +25,7 @@ $width: 8px;
 	position: absolute;
 	top: calc(50% - (#{$size} / 2));
 	left: calc(50% - (#{$size} / 2));
+	margin-top: 60px;
 }
 
 @keyframes Spinner--spin {

@@ -11,7 +11,8 @@
 		:background="slideConfig.background"
 		:interval="slideConfig.interval"
 		:img-width="slideConfig.width"
-		:img-height="slideConfig.height">
+		:img-height="slideConfig.height"
+		v-model="currentSlideId">
 
 		<b-link
 			:to="slide.link"
@@ -26,6 +27,13 @@
 		</b-link>
 
 	</b-carousel>
+
+	<section
+		v-if="showDetailBar"
+		class="Carousel__detailBar">
+		Hey!
+
+	</section>
 
 </div>
 </template>
@@ -42,7 +50,11 @@ export default {
 		},
 		fullScreen: {
 			type: Boolean
-		}
+		},
+		showDetailBar: {
+			type: Boolean
+		},
+		currentSlideId: null
 	},
 	data() {
 		return {
@@ -61,6 +73,8 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
+$backgroundColour: $Background-Colour;
+$detailBarBackground: $Theme-Colour;
 $mobileBreak: $Mobile-Width;
 
 .Carousel {
@@ -82,8 +96,14 @@ $mobileBreak: $Mobile-Width;
 			}
 		}
 
+		&__detailBar {
+			width: 100%;
+			background: $detailBarBackground;
+		}
+
 		&--fullScreen {
 			height: calc(100vh - #{$headerHeight});
+			background: linear-gradient(to bottom right, $backgroundColour, white) !important;
 
 			@media all and (max-width: $mobileBreak) {
 				top: 0;
@@ -91,10 +111,17 @@ $mobileBreak: $Mobile-Width;
 				float: left;
 			}
 
+			.carousel-caption {
+				overflow: scroll;
+
+				p {
+					overflow: scroll
+				}
+			}
+
 			.img-fluid.w-100 {
-				height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
-				width: auto !important;
-				min-width: 100% !important;
+				max-width: 100%;
+				max-height: 100%;
 				overflow: hidden;
 			}
 
