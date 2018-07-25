@@ -2,6 +2,8 @@
 	<div class="Poem App--paddingTop">
 		<div class="App__inner">
 
+			<section v-if="isPoemLoaded">
+
 				<h2 v-text="poem.title"/>
 
 				<p
@@ -20,7 +22,9 @@
 					frameborder="0"
 					webkitallowfullscreen
 					mozallowfullscreen
-					allowfullscreen></iframe>
+					allowfullscreen/>
+
+			</section>
 
 		</div>
 	</div>
@@ -37,6 +41,10 @@ export default {
 		}),
 		poem() {
 			return this.poems[this.$route.params.id];
+		},
+		isPoemLoaded() {
+			if (!this.poem) return false;
+			return true;
 		}
 	},
 	methods: {
