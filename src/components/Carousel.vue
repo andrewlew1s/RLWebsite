@@ -30,8 +30,20 @@
 
 	<section
 		v-if="showDetailBar"
-		class="Carousel__detailBar">
-		Hey!
+		class="Carousel__detailBar"
+		:class="{
+			'Carousel__detailBar--fullScreen': fullScreen
+		}"
+		:style="detailBarStyle">
+
+		<div class="Carousel__detailBar__content App__inner">
+			<b-button class="Carousel__detailBar__button">
+				Read more
+			</b-button>
+			<p class="Carousel__detailBar__excerpt">
+				Lorem Blah Blahs
+			</p>
+		</div>
 
 	</section>
 
@@ -63,8 +75,21 @@ export default {
 				interval: 10000,
 				width: 1080,
 				height: 1920
-			}
+			},
+			detailBarStyle: null
 		};
+	},
+	methods: {
+		setImageHeight() {
+			const imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
+			this.detailBarStyle = `top: ${imageHeight}px;`;
+		}
+	},
+	mounted() {
+		window.addEventListener('resize', () => {
+			this.setImageHeight();
+		});
+		this.setImageHeight();
 	}
 };
 </script>
@@ -96,11 +121,6 @@ $mobileBreak: $Mobile-Width;
 			}
 		}
 
-		&__detailBar {
-			width: 100%;
-			background: $detailBarBackground;
-		}
-
 		&--fullScreen {
 			height: calc(100vh - #{$headerHeight});
 			background: linear-gradient(to bottom right, $backgroundColour, white) !important;
@@ -123,10 +143,31 @@ $mobileBreak: $Mobile-Width;
 				max-width: 100%;
 				max-height: 100%;
 				overflow: hidden;
+				z-index: 2;
 			}
 
 		}
 
 	}
+
+	&__detailBar {
+		width: 100%;
+		background: $detailBarBackground;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+
+		&--fullScreen {
+			height: calc(100vh - #{$headerHeight});
+		}
+
+		&__content {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
 }
 </style>
