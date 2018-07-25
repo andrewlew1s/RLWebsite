@@ -83,13 +83,20 @@ export default {
 		setImageHeight() {
 			const imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
 			this.detailBarStyle = `top: ${imageHeight}px;`;
+			if (this.fullScreen) {
+				this.detailBarStyle += ` height: calc(100vh - ${imageHeight}px)`;
+			}
+		},
+		initialiseDetailBar() {
+			window.addEventListener('resize', () => {
+				this.setImageHeight();
+			});
+			this.setImageHeight();
 		}
 	},
 	mounted() {
-		window.addEventListener('resize', () => {
-			this.setImageHeight();
-		});
-		this.setImageHeight();
+		if (this.showDetailBar) this.initialiseDetailBar();
+
 	}
 };
 </script>
@@ -156,11 +163,6 @@ $mobileBreak: $Mobile-Width;
 		height: 100%;
 		position: absolute;
 		top: 0;
-		z-index: 1;
-
-		&--fullScreen {
-			height: calc(100vh - #{$headerHeight});
-		}
 
 		&__content {
 			position: absolute;
