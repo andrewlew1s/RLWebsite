@@ -26,6 +26,8 @@
 
 			</section>
 
+			<app-loader v-else/>
+
 		</div>
 	</div>
 </template>
@@ -33,8 +35,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import AppLoader from '../../components/AppLoader';
 
 export default {
+	components: {
+		AppLoader
+	},
 	computed: {
 		...mapGetters({
 			poems: 'poem/poems'
