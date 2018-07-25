@@ -33,7 +33,7 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			poems: 'poems'
+			poems: 'poem/poems'
 		}),
 		poem() {
 			return this.poems[this.$route.params.id];
@@ -41,12 +41,12 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			loadPoems: 'loadPoems'
+			fetchPoems: 'poem/fetchList'
 		})
 	},
 	created() {
 		// #Todo: look at improving loading so we don't load all poems to load a specific poem's page
-		this.loadPoems();
+		this.fetchPoems();
 	}
 };
 </script>

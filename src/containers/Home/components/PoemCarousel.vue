@@ -31,7 +31,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			slides: 'homeSlides'
+			slides: 'poem/featureds'
 		}),
 		formattedSlides() {
 			return this.slides.map(slideInPoemForm => {
@@ -48,7 +48,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			loadPoems: 'loadPoems'
+			fetchPoems: 'poem/fetchList'
 		}),
 		sanitizedImgSrc(slide) {
 			if (slide.slideImage) return slide.slideImage;
@@ -57,7 +57,7 @@ export default {
 		}
 	},
 	async created() {
-		await this.loadPoems();
+		await this.fetchPoems();
 		this.isLoaded = true;
 	}
 };
