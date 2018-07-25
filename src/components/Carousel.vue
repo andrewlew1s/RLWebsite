@@ -99,7 +99,6 @@ export default {
 			}
 		},
 		async initialiseDetailBar() {
-			await setTimeout(null, 3000);	// timeout while waiting for carousel to load
 			await this.$nextTick();
 			window.addEventListener('resize', () => {
 				this.setImageHeight();
@@ -114,9 +113,9 @@ export default {
 		}
 	},
 	async mounted() {
+		this.currentSlideId = 1;
 		await this.$nextTick();
 		this.setImageHeight();
-		this.currentSlideId = 1;
 		if (this.showDetailBar) this.initialiseDetailBar();
 	}
 };
