@@ -29,27 +29,6 @@
 		</slide>
 	</carousel>
 
-	<section
-		v-if="showDetailBar"
-		class="Carousel__detailBar"
-		:class="{
-			'Carousel__detailBar--fullScreen': fullScreen
-		}"
-		:style="detailBarStyle">
-
-		<div class="Carousel__detailBar__content App__inner">
-			<b-button
-				class="Carousel__detailBar__buton"
-				variant="outline-primary"
-				:href="detailBarLink"
-				v-text="detailBarTitle"/>
-			<p
-				class="Carousel__detailBar__excerpt"
-				v-text="detailBarText"/>
-		</div>
-
-	</section>
-
 </div>
 </template>
 
@@ -65,50 +44,7 @@ export default {
 		slides: {
 			type: Array,
 			required: true
-		},
-		text: {
-			type: String
-		},
-		fullScreen: {
-			type: Boolean
-		},
-		showDetailBar: {
-			type: Boolean
 		}
-	},
-	data() {
-		return {
-			imageHeight: null,
-			detailBarStyle: null,
-			detailBarTitle: null,
-			detailBarText: null,
-			detailBarLink: '/poems/0',
-			currentSlideId: 0
-		};
-	},
-	watch: {
-		currentSlideId() {
-			this.initialiseDetailBar();
-		}
-	},
-	computed: {
-		slideConfig() {
-			return {
-				background: '#ababab',
-				interval: 10000,
-				height: this.imageHeight
-			};
-		}
-	},
-	methods: {
-		async setImageHeight() {
-			await this.$nextTick();
-			this.imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
-			this.detailBarStyle = `top: ${this.imageHeight}px;`;
-			if (this.fullScreen) {
-				this.detailBarStyle += ` height: calc(100vh - ${this.imageHeight}px)`;
-			}
-		};
 	},
 	methods: {
 		getImgStyle(slide) {
