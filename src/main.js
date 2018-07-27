@@ -5,6 +5,7 @@ import Vuex from 'vuex';
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import Vuetify from 'vuetify';
 
 import storeConfig from './vuex/store';
 import App from './App';
@@ -15,6 +16,7 @@ Vue.config.productionTip = false;
 
 Vue.use(Vuex);
 Vue.use(BootstrapVue);
+Vue.use(Vuetify);
 
 Vue.component('app-loader', AppLoader);
 
