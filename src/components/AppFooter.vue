@@ -1,11 +1,24 @@
 <template>
-    <div class="Footer">
-        <div class="App__inner Footer__inner">
-            <span> Andrew and Mike Ltd. Corp</span>
-        </div>
-    </div>
+	<div class="Footer">
+		<div class="App__inner Footer__inner">
+			<span> Andrew and Mike Ltd. Corp</span>
+		</div>
+	</div>
 </template>
 
+<script>
+export default {
+	data() {
+		return {
+			icons: [
+				{
+					name: 'myIcon'
+				}
+			]
+		};
+	}
+};
+</script>
 
 <style lang="scss">
 @import '../settings';
@@ -23,6 +36,14 @@ $textColour: $Highlight-Colour;
 
 	&__inner {
 		padding-top: 0.5em;
+	}
+
+	&__icons {
+		float: right;
+	}
+
+	&__icon {
+		width: 24px;
 	}
 }
 
