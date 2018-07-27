@@ -2,7 +2,7 @@
 	<div class="Footer">
 		<div class="App__inner Footer__inner">
 			<span> Andrew and Mike Ltd. Corp</span>
-		</div>s
+		</div>
 	</div>
 </template>
 
