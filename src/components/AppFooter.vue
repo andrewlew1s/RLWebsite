@@ -8,24 +8,31 @@
 			flat
 			tile>
 
-			<v-card-title class="teal">
-				<strong class="subheading">Get connected with us on social networks!</strong>
-				<v-spacer/>
-				<v-btn
-					v-for="icon in icons"
-					:key="icon.name"
-					class="mx-3"
-					dark
-					icon>
-					<v-icon size="24px" v-text="icon"/>
-				</v-btn>
-			</v-card-title>
+			<section class="App__inner App__inner--noPadding">
 
-			<v-card-actions class="grey darken-3 justify-center">
-				&copy;2018 — <strong>Vuetify</strong>
-			</v-card-actions>
+				<v-card-title class="teal">
+					<strong class="subheading">Get connected with us on social networks!</strong>
+					<v-spacer/>
+					<v-btn
+						v-for="icon in icons"
+						:key="icon.name"
+						class="mx-3"
+						dark
+						icon>
+						<v-icon size="24px" v-text="icon"/>
+					</v-btn>
+				</v-card-title>
+
+				<v-card-actions class="grey darken-3 justify-center">
+					&copy;2018 — <strong>Vuetify</strong>
+				</v-card-actions>
+
+			</section>
+
 		</v-card>
+
 	</v-footer>
+
 </template>
 
 <script>
