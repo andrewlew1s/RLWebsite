@@ -9,6 +9,14 @@
 			</b-col>
 			<b-col>
 				<p>
+					<b-img class="About__image" src="../../assets/images/rachel.jpg"></b-img>
+				</p>
+			</b-col>
+		</b-row>
+
+		<b-row class="App__inner">
+			<b-col>
+				<p>
 					<!-- eslint-disable max-len -->
 					Rachel joined PPL as an Analyst in October 2017 after completing a business management graduate scheme with Cambridge University Press.
 					During the scheme, she worked on an internal consultancy basis on a range of change projects in a not-for-profit context. Her projects were
@@ -19,22 +27,14 @@
 					<!-- eslint-enable max-len -->
 				</p>
 			</b-col>
-		</b-row>
-
-		<b-row class="App__inner">
 			<b-col>
-				<p>
-					<!-- eslint-disable max-len -->
+				<!-- eslint-disable max-len -->
 					Her interest in the public sector, the health service and the third sector was sparked by voluntary
 					work in a community health centre as part of national citizenship service whilst still at school. She has since volunteered for educational
 					charities in the UK and Nepal and also spent a year as editor-in-chief of a health and development publication at the University of
 					Cambridge, editing and writing academic articles on health, sustainability and international development. Rachel holds a BA in English
 					Literature from the University of Cambridge, where she was a Peterhouse scholar.
-					<!-- eslint-enable max-len -->
-				</p>
-			</b-col>
-			<b-col>
-				<b-img class="About__image" src="../../assets/images/rachel.jpg"></b-img>
+				<!-- eslint-enable max-len -->
 			</b-col>
 		</b-row>
 
