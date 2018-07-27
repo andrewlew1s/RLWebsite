@@ -24,19 +24,19 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			poems: 'poems'
+			poems: 'poem/poems'
 		})
 	},
 	methods: {
 		...mapActions({
-			loadPoems: 'loadPoems'
+			fetchPoems: 'poem/fetchList'
 		}),
 		goToPoem(poemId) {
 			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
 		}
 	},
 	created() {
-		this.loadPoems();
+		this.fetchPoems();
 	}
 };
 </script>

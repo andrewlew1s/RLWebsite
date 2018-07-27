@@ -29,6 +29,27 @@
 		</slide>
 	</carousel>
 
+	<section
+		v-if="showDetailBar"
+		class="Carousel__detailBar"
+		:class="{
+			'Carousel__detailBar--fullScreen': fullScreen
+		}"
+		:style="detailBarStyle">
+
+		<div class="Carousel__detailBar__content App__inner">
+			<b-button
+				class="Carousel__detailBar__buton"
+				variant="outline-primary"
+				:href="detailBarLink"
+				v-text="detailBarTitle"/>
+			<p
+				class="Carousel__detailBar__excerpt"
+				v-text="detailBarText"/>
+		</div>
+
+	</section>
+
 </div>
 </template>
 
@@ -50,15 +71,42 @@ export default {
 		},
 		fullScreen: {
 			type: Boolean
+		},
+		showDetailBar: {
+			type: Boolean
 		}
 	},
 	data() {
 		return {
-			slideConfig: {
+			imageHeight: null,
+			detailBarStyle: null,
+			detailBarTitle: null,
+			detailBarText: null,
+			detailBarLink: '/poems/0',
+			currentSlideId: 0
+		};
+	},
+	watch: {
+		currentSlideId() {
+			this.initialiseDetailBar();
+		}
+	},
+	computed: {
+		slideConfig() {
+			return {
 				background: '#ababab',
 				interval: 10000,
-				width: 1080,
-				height: 1920
+				height: this.imageHeight
+			};
+		}
+	},
+	methods: {
+		async setImageHeight() {
+			await this.$nextTick();
+			this.imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
+			this.detailBarStyle = `top: ${this.imageHeight}px;`;
+			if (this.fullScreen) {
+				this.detailBarStyle += ` height: calc(100vh - ${this.imageHeight}px)`;
 			}
 		};
 	},
@@ -74,6 +122,10 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
+$backgroundColour: $Background-Colour;
+$detailBarBackgroundColour: $Highlight-Colour;
+$detailBarTextCololur: $Theme-Colour;
+$indicatorColour: $Theme-Colour;
 $mobileBreak: $Mobile-Width;
 $shadowColour: $Brown-Dark;
 $textColour: $Highlight-Colour;

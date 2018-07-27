@@ -2,6 +2,8 @@
 	<div class="Poem App--paddingTop">
 		<div class="App__inner">
 
+			<section v-if="isPoemLoaded">
+
 				<h2 v-text="poem.title"/>
 
 				<p
@@ -20,7 +22,11 @@
 					frameborder="0"
 					webkitallowfullscreen
 					mozallowfullscreen
-					allowfullscreen></iframe>
+					allowfullscreen/>
+
+			</section>
+
+			<app-loader v-else/>
 
 		</div>
 	</div>
@@ -29,24 +35,32 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import AppLoader from '../../components/AppLoader';
 
 export default {
+	components: {
+		AppLoader
+	},
 	computed: {
 		...mapGetters({
-			poems: 'poems'
+			poems: 'poem/poems'
 		}),
 		poem() {
 			return this.poems[this.$route.params.id];
+		},
+		isPoemLoaded() {
+			if (!this.poem) return false;
+			return true;
 		}
 	},
 	methods: {
 		...mapActions({
-			loadPoems: 'loadPoems'
+			fetchPoems: 'poem/fetchList'
 		})
 	},
 	created() {
 		// #Todo: look at improving loading so we don't load all poems to load a specific poem's page
-		this.loadPoems();
+		this.fetchPoems();
 	}
 };
 </script>

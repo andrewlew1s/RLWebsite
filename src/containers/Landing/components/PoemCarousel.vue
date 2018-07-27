@@ -5,7 +5,8 @@
 		class="Carousel__carousel"
 		v-if="isLoaded"
 		:slides="formattedSlides"
-		fullScreen/>
+		fullScreen
+		showDetailBar/>
 
 	<app-loader
 		class="Carousel__loader"
@@ -31,11 +32,12 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			slides: 'homeSlides'
+			slides: 'poem/featured'
 		}),
 		formattedSlides() {
+			if (!this.slides) return null;
 			return this.slides.map(slideInPoemForm => {
-				const link = `poems/${slideInPoemForm._id}`;
+				const link = `#/kpoems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
 					text: slideInPoemForm.caption,
@@ -48,7 +50,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			loadPoems: 'loadPoems'
+			fetchPoems: 'poem/fetchList'
 		}),
 		sanitizedImgSrc(slide) {
 			if (slide.slideImage) return slide.slideImage;
@@ -57,7 +59,7 @@ export default {
 		}
 	},
 	async created() {
-		await this.loadPoems();
+		await this.fetchPoems();
 		this.isLoaded = true;
 	}
 };
