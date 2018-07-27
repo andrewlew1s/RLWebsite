@@ -4,9 +4,7 @@
 	<carousel
 		class="Carousel__carousel"
 		v-if="isLoaded"
-		:slides="formattedSlides"
-		fullScreen
-		showDetailBar/>
+		:slides="formattedSlides"/>
 
 	<app-loader
 		class="Carousel__loader"
@@ -18,12 +16,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Carousel from '../../../components/Carousel';
-import AppLoader from '../../../components/AppLoader';
 
 export default {
 	components: {
-		Carousel,
-		AppLoader
+		Carousel
 	},
 	data() {
 		return {
@@ -40,7 +36,7 @@ export default {
 				const link = `#/kpoems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
-					caption: slideInPoemForm.caption,
+					text: slideInPoemForm.caption,
 					imageSrc: this.sanitizedImgSrc(slideInPoemForm),
 					link
 				};
