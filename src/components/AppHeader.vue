@@ -8,7 +8,7 @@
 			</h1>
 		</b-link>
 
-		<menue
+		<app-menu
 			class="Header__menue App--center Header--responsive"
 			:auto="true"/>
 
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import Menue from './Menue';
+import AppMenu from './AppMenu';
 
 export default {
 	components: {
-		Menue
+		AppMenu
 	},
 	methods: {
 		toggleShadow() {

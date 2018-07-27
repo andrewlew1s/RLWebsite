@@ -62,6 +62,7 @@ export default {
 		min-height: calc(100vh - #{$Footer-Height});
 		background: $Background-Colour;
 		float: left;
+		width: 100%;
 	}
 
 	&__footer {
