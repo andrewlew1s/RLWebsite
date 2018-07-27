@@ -11,11 +11,14 @@ import storeConfig from './vuex/store';
 
 import App from './App';
 import router from './router';
+import AppLoader from './components/AppLoader';
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
 Vue.use(BootstrapVue);
+
+Vue.component(AppLoader);
 
 const store = new Vuex.Store(storeConfig);
 

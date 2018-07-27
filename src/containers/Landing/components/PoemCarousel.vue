@@ -18,12 +18,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Carousel from '../../../components/Carousel';
-import AppLoader from '../../../components/AppLoader';
 
 export default {
 	components: {
-		Carousel,
-		AppLoader
+		Carousel
 	},
 	data() {
 		return {

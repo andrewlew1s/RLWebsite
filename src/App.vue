@@ -26,15 +26,25 @@ export default {
 <style lang="scss">
 @import './settings';
 
+$footerHeight: $Footer-Height;
+$headerHeight: $Header-Height;
+$frameWidth: $Frame-Width;
+$textColour: $Text-Colour;
+$backgroundColour: $Background-Colour;
+$fontFamily: $Font-Family;
+
+$footerPadding: 60px;
+
 .App {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: $Background-Colour;
-	font-family: $Font-Family;
+	background: $backgroundColour;
+	font-family: $fontFamily;
+	color: $textColour;
 
 	&__inner {
-		width:  $Frame-Width;
-		margin: 0 calc((100vw - #{$Frame-Width}) / 2);
+		width:  $frameWidth;
+		margin: 0 calc((100vw - #{$frameWidth}) / 2);
 		position: relative;
 		padding-top: 60px;
 
@@ -46,7 +56,7 @@ export default {
 			padding: 0;
 		}
 
-		@media all and (max-width: $Frame-Width) {
+		@media all and (max-width: $frameWidth) {
 			width: 90%;
 			margin-left: 5%;
 			margin-right: 5%;
@@ -58,11 +68,12 @@ export default {
 	}
 
 	&__wrapper {
-		padding-top: $Header-Height;
-		min-height: calc(100vh - #{$Footer-Height});
-		background: $Background-Colour;
+		min-height: calc(100vh - #{$footerHeight});
+		background: $backgroundColour;
 		float: left;
 		width: 100%;
+		padding-top: $headerHeight;
+		padding-bottom: $footerPadding;
 	}
 
 	&__footer {
