@@ -18,7 +18,7 @@ Vue.config.productionTip = false;
 Vue.use(Vuex);
 Vue.use(BootstrapVue);
 
-Vue.component(AppLoader);
+Vue.component('app-loader', AppLoader);
 
 const store = new Vuex.Store(storeConfig);
 

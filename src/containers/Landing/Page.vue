@@ -8,10 +8,24 @@
 				class="Landing__card"
 				overlay
 				img-src="https://images.unsplash.com/photo-1513545581681-9217042d29b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c95f0ea2768c222f671086d5ba6640d&auto=format&fit=crop&w=1350&q=80"
-				img-alt="Games"
+				img-alt="Published"
 				text-variant="white"
-				title="Games">
+				title="Published">
 				<app-loader/>
+				Coming Soon!
+			</b-card>
+		</section>
+
+		<section class="App__inner">
+			<b-card
+				class="Landing__card"
+				overlay
+				img-src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80"
+				img-alt="Perfomed"
+				text-variant="white"
+				title="Perfomed">
+				<app-loader/>
+				Coming Soon!
 			</b-card>
 		</section>
 
