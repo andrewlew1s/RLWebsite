@@ -47,6 +47,7 @@ $footerPadding: 60px;
 		margin: 0 calc((100vw - #{$frameWidth}) / 2);
 		position: relative;
 		padding-top: 60px;
+		float: left;
 
 		&--fullHeight {
 			height: 100%;
