@@ -116,5 +116,6 @@ $overlayOpacity: 0.37;
 		transform: translateY(-50%);
 		color: $textColour;
 	}
+
 }
 </style>
