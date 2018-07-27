@@ -38,7 +38,7 @@ export default {
 				const link = `poems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
-					text: slideInPoemForm.text,
+					text: slideInPoemForm.caption,
 					imageSrc: this.sanitizedImgSrc(slideInPoemForm),
 					link
 				};
