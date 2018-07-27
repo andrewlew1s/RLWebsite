@@ -4,9 +4,7 @@
 	<carousel
 		class="Carousel__carousel"
 		v-if="isLoaded"
-		:slides="formattedSlides"
-		fullScreen
-		showDetailBar/>
+		:slides="formattedSlides"/>
 
 	<app-loader
 		class="Carousel__loader"
@@ -38,7 +36,7 @@ export default {
 				const link = `#/kpoems/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
-					caption: slideInPoemForm.caption,
+					text: slideInPoemForm.caption,
 					imageSrc: this.sanitizedImgSrc(slideInPoemForm),
 					link
 				};

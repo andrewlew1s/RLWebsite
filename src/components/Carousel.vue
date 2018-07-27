@@ -1,123 +1,55 @@
 <template>
 <div class="Carousel">
 
-	<b-carousel
-		:class="{
-			'Carousel__carousel--fullScreen': fullScreen
-		}"
-		indicators
-		:style="slideConfig.style"
-		:background="slideConfig.background"
-		:interval="slideConfig.interval"
-		:img-width="slideConfig.width"
-		:img-height="slideConfig.height"
-		v-model="currentSlideId">
-
-		<b-link
-			:to="slide.link"
+	<carousel :perPage="1">
+		<slide
+			class="Carousel__slide"
 			v-for="slide in slides"
 			:key="slide.link">
+			<b-link
+				:to="slide.link">
+				<section
+					class="Carousel__image"
+					:style="getImgStyle(slide)">
 
-				<b-carousel-slide :img-src="slide.imageSrc"/>
+					<div class="Carousel__overlay">
 
-		</b-link>
+						<div class="App__inner App__inner--noPadding Carousel__text">
 
-	</b-carousel>
+							<h1 v-text="slide.title"/>
 
-	<section
-		v-if="showDetailBar"
-		class="Carousel__detailBar"
-		:class="{
-			'Carousel__detailBar--fullScreen': fullScreen
-		}"
-		:style="detailBarStyle">
+							<p v-text="slide.text"/>
 
-		<div class="Carousel__detailBar__content App__inner">
-			<b-button
-				class="Carousel__detailBar__buton"
-				variant="outline-primary"
-				:href="detailBarLink"
-				v-text="detailBarTitle"/>
-			<p
-				class="Carousel__detailBar__excerpt"
-				v-text="detailBarText"/>
-		</div>
+						</div>
 
-	</section>
+					</div>
+
+				</section>
+			</b-link>
+		</slide>
+	</carousel>
 
 </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
+	components: {
+		Carousel,
+		Slide
+	},
 	props: {
 		slides: {
 			type: Array,
 			required: true
-		},
-		text: {
-			type: String
-		},
-		fullScreen: {
-			type: Boolean
-		},
-		showDetailBar: {
-			type: Boolean
-		}
-	},
-	data() {
-		return {
-			imageHeight: null,
-			detailBarStyle: null,
-			detailBarTitle: null,
-			detailBarText: null,
-			detailBarLink: '/poems/0',
-			currentSlideId: 0
-		};
-	},
-	watch: {
-		currentSlideId() {
-			this.initialiseDetailBar();
-		}
-	},
-	computed: {
-		slideConfig() {
-			return {
-				background: '#ababab',
-				interval: 10000,
-				height: this.imageHeight
-			};
 		}
 	},
 	methods: {
-		async setImageHeight() {
-			await this.$nextTick();
-			this.imageHeight = this.$el.getElementsByClassName('carousel-inner')[0].offsetHeight;
-			this.detailBarStyle = `top: ${this.imageHeight}px;`;
-			if (this.fullScreen) {
-				this.detailBarStyle += ` height: calc(100vh - ${this.imageHeight}px)`;
-			}
-		},
-		async initialiseDetailBar() {
-			await setTimeout(null, 3000);	// timeout while waiting for carousel to load
-			await this.$nextTick();
-			window.addEventListener('resize', () => {
-				this.setImageHeight();
-			});
-			this.setImageHeight();
-			if (!this.slides) return;
-			if (!this.slides[this.currentSlideId]) return;
-			const currentSlide = this.slides[this.currentSlideId];
-			this.detailBarLink = currentSlide.link;
-			this.detailBarTitle = currentSlide.title;
-			this.detailBarText = currentSlide.caption;
+		getImgStyle(slide) {
+			return `background-image: url(${slide.imageSrc});`;
 		}
-	},
-	async mounted() {
-		await this.$nextTick();
-		this.setImageHeight();
-		this.currentSlideId = 1;
-		if (this.showDetailBar) this.initialiseDetailBar();
 	}
 };
 </script>
@@ -126,92 +58,57 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
-$backgroundColour: $Background-Colour;
-$detailBarBackgroundColour: $Highlight-Colour;
-$detailBarTextCololur: $Theme-Colour;
-$indicatorColour: $Theme-Colour;
-$mobileBreak: $Mobile-Width;
+$indicatorColour: $Highlight-Colour;
+$activeColour: $Theme-Colour;
+$shadowColour: $Shadow-Colour;
+$textColour: $Highlight-Colour;
+
+$overlayOpacity: 0.37;
 
 .Carousel {
-	overflow: hidden;
+	position: relative;
 
-	&__carousel {
-
-		.carousel-caption {
-
-			@media all and (max-width: $mobileBreak){
-				top: 0;
-				height: 90%;
-				float: left;
-			}
-
-			p {
-				float: left;
-				height: 90%;
-				overflow: hidden;
+	.VueCarousel-pagination {
+		position: absolute;
+		bottom: 5%;
+	}
+	.VueCarousel-dot {
+		button {
+			background: $indicatorColour !important;
+		}
+		&.VueCarousel-dot--active {
+			button {
+				background: $activeColour !important;
 			}
 		}
-
-		.carousel-indicators {
-			li {
-				background: $indicatorColour;
-				opacity: 0.5;
-
-				&.active {
-					opacity: 1;
-				}
-			}
-		}
-
-		&--fullScreen {
-			height: calc(100vh - #{$headerHeight});
-			background: linear-gradient(to bottom right, $backgroundColour, white) !important;
-
-			@media all and (max-width: $mobileBreak) {
-				top: 0;
-				height: 90%;
-				float: left;
-			}
-
-			.carousel-caption {
-				overflow: scroll;
-
-				p {
-					overflow: scroll
-				}
-			}
-
-			.img-fluid.w-100 {
-				max-width: 100%;
-				max-height: 100%;
-				overflow: hidden;
-				z-index: 2;
-			}
-
-		}
-
+	}
+	a {
+		text-decoration: none !important;
 	}
 
-	&__detailBar {
+	&__slide {
+		height: calc(100vh - #{$headerHeight});
+	}
+
+	&__image {
 		width: 100%;
-		background: $detailBarBackgroundColour;
 		height: 100%;
-		position: absolute;
+		display: block;
+		background-size: cover;
+		background-position: center;
+	}
 
-		&__content {
-			margin-top: 1rem;
-		}
+	&__overlay {
+		width: 100%;
+		height: 100%;
+		background: rgba($shadowColour, $overlayOpacity);
+	}
 
-		&__excerpt {
-			float: right;
-			color: $detailBarTextCololur;
-		}
-
-		&__title {
-			color: $detailBarTextCololur;
-			float: left;
-		}
-
+	&__text {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $textColour;
 	}
 
 }
