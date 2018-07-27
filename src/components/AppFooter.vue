@@ -3,7 +3,10 @@
 		<div class="App__inner Footer__inner">
 			<span> Andrew and Mike Ltd. Corp</span>
 			<section class="Footer__icons">
-				<font-awesome-icon icon="bong" />
+				<font-awesome-icon icon="bong"/>
+				<img
+					class="Footer__icon"
+					src="/static/icons/facebook.svg"/>
 			</section>
 		</div>s
 	</div>
@@ -22,7 +25,6 @@ export default {
 	}
 };
 </script>
-
 
 <style lang="scss">
 @import '../settings';
@@ -44,6 +46,10 @@ $textColour: $Highlight-Colour;
 
 	&__icons {
 		float: right;
+	}
+
+	&__icon {
+		width: 24px;
 	}
 }
 
