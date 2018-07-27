@@ -1,15 +1,15 @@
 <template>
-<div class="Menue">
+	<div class="Menue">
 
-	<b-link
-		class="Menue__link"
-		:to="item.path"
-		v-for="item in menuItems"
-		:key="item.path"
-		v-text="item.menuName"
-		exact/>
+		<b-link
+			class="Menue__link"
+			:to="item.path"
+			v-for="item in menuItems"
+			:key="item.path"
+			v-text="item.menuName"
+			exact/>
 
-</div>
+	</div>
 </template>
 
 <script>
