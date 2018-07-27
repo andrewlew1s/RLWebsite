@@ -59,7 +59,7 @@ export default {
 
 $headerHeight: $Header-Height;
 $indicatorColour: $Theme-Colour;
-$mobileBreak: $Mobile-Width;
+$activeColour: $Highlight-Colour;
 $shadowColour: $Brown-Dark;
 $textColour: $Highlight-Colour;
 
@@ -72,19 +72,16 @@ $overlayOpacity: 0.37;
 		position: absolute;
 		bottom: 5%;
 	}
-
 	.VueCarousel-dot {
 		button {
 			background: $indicatorColour !important;
 		}
-
 		&.VueCarousel-dot--active {
 			button {
-				background: $textColour !important;
+				background: $activeColour !important;
 			}
 		}
 	}
-
 	a {
 		text-decoration: none !important;
 	}
