@@ -1,11 +1,11 @@
 <template>
 	<div class="App">
 
-		<app-header/>
+		<app-header class="App__header"/>
 
 		<router-view class="App__wrapper"/>
 
-		<app-footer/>
+		<app-footer class="App__footer"/>
 
 	</div>
 </template>
@@ -30,23 +30,20 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: $Background-Colour;
-	color: $Text-Colour;
 	font-family: $Font-Family;
-	width: 100%;
-	position: absolute;
-	top: 0;
 
 	&__inner {
-		width: $Frame-Width;
-		margin: auto;
+		width:  $Frame-Width;
+		margin: 0 calc((100vw - #{$Frame-Width}) / 2);
 		position: relative;
+		padding-top: 60px;
 
-		.col {
-			width: 100%;
-			flex: none;
-			display: block;
-			clear: both;
-			float: left;
+		&--fullHeight {
+			height: 100%;
+		}
+
+		&--noPadding {
+			padding: 0;
 		}
 
 		@media all and (max-width: $Frame-Width) {
@@ -54,26 +51,21 @@ export default {
 			margin-left: 5%;
 			margin-right: 5%;
 		}
+	}
 
+	&__header {
+		float: left;
 	}
 
 	&__wrapper {
-		margin-top: $Header-Height;
-		min-height: calc(100vh - #{$Footer-Height} - #{$Header-Height});
+		padding-top: $Header-Height;
+		min-height: calc(100vh - #{$Footer-Height});
 		background: $Background-Colour;
+		float: left;
 	}
 
-	&--padding {
-		padding-top: 60px;
-		padding-bottom: 60px;
-
-		&Top {
-			padding-top: 60px;
-		}
-
-		&Bottom {
-			padding-bottom: 60px;
-		}
+	&__footer {
+		float: left;
 	}
 
 	&--center {
@@ -83,5 +75,6 @@ export default {
 	}
 
 }
+
 
 </style>
