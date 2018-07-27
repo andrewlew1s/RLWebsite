@@ -6,6 +6,7 @@ import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 
 import storeConfig from './vuex/store';
 import App from './App';

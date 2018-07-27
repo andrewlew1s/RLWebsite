@@ -13,18 +13,18 @@
 				<v-card-title class="teal">
 					<strong class="subheading">Get connected with us on social networks!</strong>
 					<v-spacer/>
-					<v-btn
-						v-for="icon in icons"
-						:key="icon.name"
-						class="mx-3"
-						dark
-						icon>
-						<v-icon size="24px" v-text="icon"/>
-					</v-btn>
+						<v-btn
+							v-for="icon in icons"
+							:key="icon"
+							class="mx-3"
+							dark
+							icon>
+								<v-icon size="24px">{{ icon }}</v-icon>
+						</v-btn>
 				</v-card-title>
 
 				<v-card-actions class="grey darken-3 justify-center">
-					&copy;2018 — <strong>Vuetify</strong>
+					&copy;2018 — <strong>Andrew Lewis Charity CEO/THC Foundation</strong>
 				</v-card-actions>
 
 			</section>
@@ -37,15 +37,15 @@
 
 <script>
 export default {
-	data() {
-		return {
-			icons: [
-				{
-					name: 'myIcon'
-				}
-			]
-		};
-	}
+	data: () => ({
+		icons: [
+			'fab fa-facebook',
+			'fab fa-twitter',
+			'fab fa-google-plus',
+			'fab fa-linkedin',
+			'fab fa-instagram'
+		]
+	})
 };
 </script>
 
