@@ -1,37 +1,45 @@
 <template>
 <div class="Carousel">
 
-	<b-carousel
-		:class="{
-			'Carousel__carousel--fullScreen': fullScreen
-		}"
-		indicators
-		controls
-		:style="slideConfig.style"
-		:background="slideConfig.background"
-		:interval="slideConfig.interval"
-		:img-width="slideConfig.width"
-		:img-height="slideConfig.height">
-
-		<b-link
-			:to="slide.link"
+	<carousel :perPage="1">
+		<slide
+			class="Carousel__slide"
 			v-for="slide in slides"
 			:key="slide.link">
+			<b-link
+				:to="slide.link">
+				<section
+					class="Carousel__image"
+					:style="getImgStyle(slide)">
 
-				<b-carousel-slide
-					:img-src="slide.imageSrc"
-					:caption="slide.title"
-					:text="slide.text"/>
+					<div class="Carousel__overlay">
 
-		</b-link>
+						<div class="App__inner Carousel__text">
 
-	</b-carousel>
+							<h1 v-text="slide.title"/>
+
+							<p v-text="slide.text"/>
+
+						</div>
+
+					</div>
+
+				</section>
+			</b-link>
+		</slide>
+	</carousel>
 
 </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
+	components: {
+		Carousel,
+		Slide
+	},
 	props: {
 		slides: {
 			type: Array,
@@ -53,6 +61,11 @@ export default {
 				height: 1920
 			}
 		};
+	},
+	methods: {
+		getImgStyle(slide) {
+			return `background-image: url(${slide.imageSrc});`;
+		}
 	}
 };
 </script>
@@ -62,40 +75,46 @@ export default {
 
 $headerHeight: $Header-Height;
 $mobileBreak: $Mobile-Width;
+$shadowColour: $Brown-Dark;
+$textColour: $Highlight-Colour;
+
+$overlayOpacity: 0.37;
 
 .Carousel {
+	position: relative;
 
-	&__carousel {
+	.VueCarousel-pagination {
+		position: absolute;
+		bottom: 5%;
+	}
 
-		.carousel-caption {
+	a {
+		text-decoration: none !important;
+	}
 
-			p {
-				float: left;
-				height: 90%;
-				overflow: hidden;
-			}
+	&__slide {
+		height: calc(100vh - #{$headerHeight});
+	}
 
-			@media all and (max-width: $mobileBreak) {
-				top: 0;
-				height: 90%;
-				float: left;
-			}
-		}
+	&__image {
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-size: cover;
+		background-position: center;
+	}
 
-		&--fullScreen {
-			height: calc(100vh - #{$headerHeight});
+	&__overlay {
+		width: 100%;
+		height: 100%;
+		background: rgba($shadowColour, $overlayOpacity);
+	}
 
-			.img-fluid.w-100 {
-				height: calc(100vh - #{$headerHeight}) !important;;	// this makes actual slide image flush with bottom of screen
-				min-height: calc(100vh - #{$headerHeight});	// this makes actual slide image flush with bottom of screen
-				width: auto !important;
-				min-width: 100% !important;
-				overflow: hidden;
-
-			}
-
-		}
-
+	&__text {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $textColour;
 	}
 }
 </style>
