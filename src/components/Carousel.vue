@@ -14,7 +14,7 @@
 
 					<div class="Carousel__overlay">
 
-						<div class="App__inner Carousel__text">
+						<div class="App__inner App__inner--noPadding Carousel__text">
 
 							<h1 v-text="slide.title"/>
 
@@ -58,9 +58,9 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
-$indicatorColour: $Theme-Colour;
-$activeColour: $Highlight-Colour;
-$shadowColour: $Brown-Dark;
+$indicatorColour: $Highlight-Colour;
+$activeColour: $Theme-Colour;
+$shadowColour: $Shadow-Colour;
 $textColour: $Highlight-Colour;
 
 $overlayOpacity: 0.37;
