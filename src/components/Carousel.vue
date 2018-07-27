@@ -58,9 +58,6 @@ export default {
 @import '../settings';
 
 $headerHeight: $Header-Height;
-$backgroundColour: $Background-Colour;
-$detailBarBackgroundColour: $Highlight-Colour;
-$detailBarTextCololur: $Theme-Colour;
 $indicatorColour: $Theme-Colour;
 $mobileBreak: $Mobile-Width;
 $shadowColour: $Brown-Dark;
@@ -74,6 +71,18 @@ $overlayOpacity: 0.37;
 	.VueCarousel-pagination {
 		position: absolute;
 		bottom: 5%;
+	}
+
+	.VueCarousel-dot {
+		button {
+			background: $indicatorColour !important;
+		}
+
+		&.VueCarousel-dot--active {
+			button {
+				background: $textColour !important;
+			}
+		}
 	}
 
 	a {
