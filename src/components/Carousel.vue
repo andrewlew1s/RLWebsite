@@ -6,26 +6,28 @@
 			class="Carousel__slide"
 			v-for="slide in slides"
 			:key="slide.link">
-			<b-link
-				:to="slide.link">
-				<section
-					class="Carousel__image"
-					:style="getImgStyle(slide)">
+		`	<section
+				class="Carousel__image"
+				:style="getImgStyle(slide)">
 
-					<div class="Carousel__overlay">
+				<div class="Carousel__overlay">
 
-						<div class="App__inner App__inner--noPadding Carousel__text">
+					<div class="App__inner App__inner--noPadding Carousel__text">
 §
-							<h1 v-text="slide.title"/>
+						<h1 v-text="slide.title"/>
 
-							<p v-text="slide.text"/>
+						<p v-text="slide.text"/>
 
-						</div>
+						<b-button
+							:href="slide.link">
+							READ MORE
+						</b-button>
 
 					</div>
 
-				</section>
-			</b-link>
+				</div>
+
+			</section>`
 		</slide>
 	</carousel>
 
