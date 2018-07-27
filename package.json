@@ -20,7 +20,6 @@
     "vue-carousel": "^0.10.0",
     "vue-cli": "^2.9.6",
     "vue-router": "^3.0.1",
-    "vuetify": "^1.1.8",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
