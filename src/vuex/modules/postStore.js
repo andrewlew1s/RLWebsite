@@ -35,6 +35,8 @@ export default {
 		posts: state => state.posts,
 		post: state => state.post,
 		featured: state => state.posts.filter(p => p.featured),
-		poems: state => state.posts.filter(p => p.poem)
+		poems: state => state.posts.filter(p => p.poem),
+		performed: state => state.posts.filter(p => p.performed),
+		published: state => state.posts.filter(p => p.published)
 	}
 };
