@@ -8,16 +8,7 @@
 		</section>
 
 		<section class="App__inner">
-			<b-card
-				class="Landing__card"
-				overlay
-				img-src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a413a0b054159dd7840130c25e6dbdf&auto=format&fit=crop&w=1350&q=80"
-				img-alt="Perfomed"
-				text-variant="white"
-				title="Perfomed">
-				<app-loader/>
-				Coming Soon!
-			</b-card>
+			<preview-performed/>
 		</section>
 
 	</div>
@@ -27,11 +18,14 @@
 import { mapActions } from 'vuex';
 import PoemCarousel from './components/PoemCarousel';
 import PreviewPublished from '../../components/PreviewPublished';
+import PreviewPerformed from '../../components/PreviewPerformed';
 
 export default {
 	components: {
 		PoemCarousel,
-		PreviewPublished
+		PreviewPublished,
+		PreviewPerformed
+
 	},
 	methods: {
 		...mapActions({
