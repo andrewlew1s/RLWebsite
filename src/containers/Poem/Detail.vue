@@ -71,7 +71,6 @@ export default {
 @import '../../settings';
 
 .Poem{
-	margin-bottom: 3rem;
 
 	img, iframe{
 		@media all and (max-width: $Mobile-Width) {
