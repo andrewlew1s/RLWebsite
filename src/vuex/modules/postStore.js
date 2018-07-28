@@ -1,20 +1,16 @@
 export default {
 	namespaced: true,
 	state: {
-		path: 'poems',
-		poems: [],
-		poem: [],
-		featured: []
+		path: 'posts',
+		posts: [],
+		post: null
 	},
 	mutations: {
-		SET_POEMS(state, poems) {
-			state.poems = poems;
+		SET_POSTS(state, posts) {
+			state.posts = posts;
 		},
-		SET_POEM(state, poem) {
-			state.poem = poem;
-		},
-		SET_FEATURED(state, featured) {
-			state.featured = featured;
+		SET_POST(state, post) {
+			state.post = post;
 		}
 	},
 	actions: {
@@ -25,20 +21,20 @@ export default {
 				item._id = i;
 				return item;
 			});
-			commit('SET_POEMS', items);
-			const featured = items.filter(item => item.featured);
-			commit('SET_FEATURED', featured);
+			commit('SET_POSTS', items);
 		},
 		async fetchDetail({ commit, state, rootState }) {
 			const detailRef = rootState.data.child(state.path);
 			const snap = await detailRef.once('value');
 			const detail = snap.val();
-			commit('SET_POEM', detail);
+			commit('SET_POST', detail);
+			if (detail.poem) commit('SET_POEM', detail);
 		}
 	},
 	getters: {
-		poems: state => state.poems,
-		poem: state => state.poem,
-		featured: state => state.featured
+		posts: state => state.posts,
+		post: state => state.post,
+		featured: state => state.posts.filter(p => p.featured),
+		poems: state => state.posts.filter(p => p.poem)
 	}
 };

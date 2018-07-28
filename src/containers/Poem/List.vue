@@ -47,12 +47,12 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			poems: 'poem/poems'
+			poems: 'posts/poems'
 		})
 	},
 	methods: {
 		...mapActions({
-			fetchPoems: 'poem/fetchList'
+			fetch: 'posts/fetchPosts'
 		}),
 		goToPoem(poemId) {
 			this.$router.push({ name: 'poem.detail', params: { id: poemId } });

@@ -28,7 +28,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			slides: 'poem/featured'
+			slides: 'post/featured'
 		}),
 		formattedSlides() {
 			if (!this.slides) return null;
@@ -46,7 +46,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			fetchPoems: 'poem/fetchList'
+			fetchPoems: 'post/fetchList'
 		}),
 		sanitizedImgSrc(slide) {
 			if (slide.slideImage) return slide.slideImage;
