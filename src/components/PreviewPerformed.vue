@@ -2,7 +2,7 @@
 	<div class="Preview"
 		v-if="isLoaded">
 
-		<h3>Published</h3>
+		<h3>Performed</h3>
 
 		<b-link
 			:to="post.link"
