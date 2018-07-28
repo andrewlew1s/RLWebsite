@@ -6,14 +6,14 @@
 			class="Carousel__slide"
 			v-for="slide in slides"
 			:key="slide.link">
-		`	<section
+			<section
 				class="Carousel__image"
 				:style="getImgStyle(slide)">
 
 				<div class="Carousel__overlay">
 
 					<div class="App__inner App__inner--noPadding Carousel__text">
-§
+
 						<h1 v-text="slide.title"/>
 
 						<p v-text="slide.text"/>
@@ -89,7 +89,7 @@ $overlayOpacity: 0.37;
 	}
 
 	&__slide {
-		height: calc(100vh - #{$headerHeight});
+		height: calc(100vh - #{$headerHeight})
 	}
 
 	&__image {
@@ -98,6 +98,7 @@ $overlayOpacity: 0.37;
 		display: block;
 		background-size: cover;
 		background-position: center;
+		position: relative;
 	}
 
 	&__overlay {
