@@ -1,32 +1,8 @@
 <template>
 	<div class="Collection">
-		<div class="App__inner App--paddingTop">
+		<div class="App__inner">
 
-			<b-row>
-				<b-col>
-					<b-card
-						class="Collection__card"
-						overlay
-						img-src="/static/images/published.jpg"
-						img-alt="Published"
-						text-variant="white"
-						title="Published">
-						Coming Soon!
-					</b-card>
-				</b-col>
-				<b-col>
-					<b-card
-					'Collection__thumb--first': (i%4==0)		overlay
-						img-src="/static/images/performed.jpg"
-						img-alt="Perfomed"
-						text-variant="white"
-						title="Perfomed">
-						Coming Soon!
-					</b-card>
-				</b-col>	'Collection__thumb--first': (i%4==0)
-			</b-row>
-
-			<h3>
+	<h3>
 				All Poems:
 			</h3>
 

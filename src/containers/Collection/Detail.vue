@@ -1,5 +1,5 @@
 <template>
-	<div class="Poem App--paddingTop">
+	<div class="Poem">
 		<div class="App__inner">
 
 			<section v-if="isPoemLoaded">

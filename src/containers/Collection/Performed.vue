@@ -1,6 +1,6 @@
 <template>
 	<div class="Collection">
-		<div class="App__inner App--paddingTop">
+		<div class="App__inner">
 
 			<b-row>
 				<b-col>
