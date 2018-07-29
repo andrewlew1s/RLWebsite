@@ -28,7 +28,7 @@ export default {
 		formattedSlides() {
 			if (!this.slides) return null;
 			return this.slides.map(slideInPoemForm => {
-				const link = `/collection/${slideInPoemForm._id}`;
+				const link = `/#/collection/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
 					text: slideInPoemForm.caption,
