@@ -2,27 +2,31 @@
 	<div class="Poems">
 		<div class="App__inner App--paddingTop">
 
-			<b-card
-				class="Poems__card"
-				overlay
-				img-src="/static/images/published.jpg"
-				img-alt="Published"
-				text-variant="white"
-				title="Published">
-				<app-loader/>
-				Coming Soon!
-			</b-card>
+			<b-row>
+				<b-col>
+					<b-card
+						class="Poems__card"
+						overlay
+						img-src="/static/images/published.jpg"
+						img-alt="Published"
+						text-variant="white"
+						title="Published">
+						Coming Soon!
+					</b-card>
+				</b-col>
+				<b-col>
+					<b-card
+						class="Poems__card"
+						overlay
+						img-src="/static/images/performed.jpg"
+						img-alt="Perfomed"
+						text-variant="white"
+						title="Perfomed">
+						Coming Soon!
+					</b-card>
+				</b-col>
+			</b-row>
 
-			<b-card
-				class="Poems__card"
-				overlay
-				img-src="/static/images/performed.jpg"
-				img-alt="Perfomed"
-				text-variant="white"
-				title="Perfomed">
-				<app-loader/>
-				Coming Soon!
-			</b-card>
 
 			<b-list-group>
 
