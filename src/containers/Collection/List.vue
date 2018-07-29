@@ -27,6 +27,10 @@
 				</b-col>
 			</b-row>
 
+			<h3>
+				All Poems:
+			</h3>
+
 			<b-link
 				:to="post.link"
 				v-for="(post, i) in formattedPoems"
