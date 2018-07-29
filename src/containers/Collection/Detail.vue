@@ -1,5 +1,5 @@
 <template>
-	<div class="Poem App--paddingTop">
+	<div class="Poem">
 		<div class="App__inner">
 
 			<section v-if="isPoemLoaded">
@@ -43,7 +43,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			poems: 'poem/poems'
+			poems: 'post/poems'
 		}),
 		poem() {
 			return this.poems[this.$route.params.id];
@@ -55,7 +55,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			fetchPoems: 'poem/fetchList'
+			fetchPoems: 'post/fetchList'
 		})
 	},
 	created() {

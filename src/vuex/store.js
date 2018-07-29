@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import poemStore from './modules/poemStore';
+import postStore from './modules/postStore';
 
 
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const store = {
 		data: dataRef
 	},
 	modules: {
-		poem: poemStore
+		post: postStore
 	}
 };
 
