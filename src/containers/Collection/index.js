@@ -3,15 +3,15 @@ import Detail from './Detail';
 
 const routes = [
 	{
-		name: 'poem.list',
-		path: '/poems',
+		name: 'collection.list',
+		path: '/collection',
 		component: List,
 		menu: true,
 		menuName: 'Collection'
 	},
 	{
-		name: 'poem.detail',
-		path: '/poems/:id',
+		name: 'collection.detail',
+		path: '/collection/:id',
 		component: Detail
 	}
 ];
