@@ -4,6 +4,24 @@
 
 		<h3>Published</h3>
 
+		<b-link href="/published">
+			<section class="Preview__third Preview__third--published">
+
+				<div class="Preview__overlay">
+					<div class="Preview__text">
+						<h4 class="Preview__title">
+							Read More
+						</h4>
+					</div>
+				</div>
+
+				<h4 class="Preview__title Preview__text">
+					Read More
+				</h4>
+
+			</section>
+		</b-link>
+
 		<b-link
 			:to="post.link"
 			v-for="post in formattedPosts"
@@ -42,12 +60,9 @@ export default {
 			published: 'post/published'
 		}),
 		posts() {
-			if (this.published.length === 0) return [];
-			return [
-				this.published[0],
-				this.published[1],
-				this.published[2]
-			];
+			const num = 2;
+			if (this.published.length < num) return this.published;
+			return this.published.slice(0, num);
 		},
 		isLoaded() {
 			return this.formattedPosts.length !== 0;
@@ -105,7 +120,7 @@ $shadowColour: $Shadow-Colour;
 		float: left;
 		position: relative;
 
-		&--main{
+		&--published {
 			background-image: url('/static/images/published.jpg');
 		}
 
