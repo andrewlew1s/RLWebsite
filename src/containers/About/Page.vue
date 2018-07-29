@@ -9,7 +9,7 @@
 			</b-col>
 			<b-col>
 				<p>
-					<b-img class="About__image" src="../../assets/images/rachel.jpg"></b-img>
+					<b-img class="About__image" src="/static/images/rachel.jpg"></b-img>
 				</p>
 			</b-col>
 		</b-row>
