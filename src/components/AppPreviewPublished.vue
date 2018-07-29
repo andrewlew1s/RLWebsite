@@ -4,24 +4,6 @@
 
 		<h3>Published</h3>
 
-		<b-link href="/published">
-			<section class="AppPreview__third AppPreview__third--published">
-
-				<div class="AppPreview__overlay">
-					<div class="AppPreview__text">
-						<h4 class="AppPreview__title">
-							Read More
-						</h4>
-					</div>
-				</div>
-
-				<h4 class="AppPreview__title AppPreview__text">
-					Read More
-				</h4>
-
-			</section>
-		</b-link>
-
 		<b-link
 			:to="post.link"
 			v-for="post in formattedPosts"
@@ -42,6 +24,24 @@
 
 				<h4 class="AppPreview__title AppPreview__text">
 					{{post.title}}
+				</h4>
+
+			</section>
+		</b-link>
+
+		<b-link href="/published">
+			<section class="AppPreview__third AppPreview__third--published">
+
+				<div class="AppPreview__overlay">
+					<div class="AppPreview__text">
+						<h4 class="AppPreview__title">
+							Read More
+						</h4>
+					</div>
+				</div>
+
+				<h4 class="AppPreview__title AppPreview__text">
+					Read More
 				</h4>
 
 			</section>
