@@ -2,8 +2,8 @@
 	<div class="Collection">
 		<div class="App__inner">
 
-	<h3>
-				All Poems:
+			<h3>
+				Published:
 			</h3>
 
 			<b-link
@@ -46,11 +46,11 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			poems: 'post/poems'
+			published: 'post/published'
 		}),
 		formattedPoems() {
-			if (!this.poems) return null;
-			return this.poems.map(p => {
+			if (!this.published) return null;
+			return this.published.map(p => {
 				const link = `/collection/${p._id}`;
 				const formattedPoem = {
 					title: p.title,

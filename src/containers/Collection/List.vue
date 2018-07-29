@@ -4,15 +4,17 @@
 
 			<b-row>
 				<b-col>
-					<b-card
-						class="Collection__card"
-						overlay
-						img-src="/static/images/published.jpg"
-						img-alt="Published"
-						text-variant="white"
-						title="Published">
-						Coming Soon!
-					</b-card>
+					<b-link href="/#/published">
+						<b-card
+							class="Collection__card"
+							overlay
+							img-src="/static/images/published.jpg"
+							img-alt="Published"
+							text-variant="white"
+							title="Published">
+							Coming Soon!
+						</b-card>
+					</b-link>
 				</b-col>
 				<b-col>
 					<b-card

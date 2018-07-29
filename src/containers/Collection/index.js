@@ -18,12 +18,12 @@ const routes = [
 	},
 	{
 		name: 'collection.published',
-		path: '/collection/published',
+		path: '/published',
 		component: Published
 	},
 	{
 		name: 'collection.performed',
-		path: '/collection/performed',
+		path: '/performed',
 		component: Performed
 	}
 ];
