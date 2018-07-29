@@ -102,10 +102,13 @@ $footerPadding: 60px;
 		background: $shadowColour;
 		opacity: 0.1;
 		transition: opacity 0.2s ease-in;
+		z-index: 1;
+		position: relative;
 
 		&:hover {
 			opacity: 0.9;
 		}
+
 	}
 
 	&__third {

@@ -29,7 +29,6 @@
 			<section
 				class="AppPreview__third"
 				:style="post.thumbnailImage">
-
 				<div class="AppPreview__overlay">
 					<div class="AppPreview__text">
 						<h4 class="AppPreview__title">
