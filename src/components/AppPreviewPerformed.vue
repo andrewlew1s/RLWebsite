@@ -1,21 +1,21 @@
 <template>
-	<div class="Preview"
+	<div class="AppPreview"
 		v-if="isLoaded">
 
 		<h3>Performed</h3>
 
 		<b-link href="/published">
-			<section class="Preview__third Preview__third--performed">
+			<section class="AppPreview__third AppPreview__third--performed">
 
-				<div class="Preview__overlay">
-					<div class="Preview__text">
-						<h4 class="Preview__title">
+				<div class="AppPreview__overlay">
+					<div class="AppPreview__text">
+						<h4 class="AppPreview__title">
 							Read More
 						</h4>
 					</div>
 				</div>
 
-				<h4 class="Preview__title Preview__text">
+				<h4 class="AppPreview__title AppPreview__text">
 					Read More
 				</h4>
 
@@ -27,21 +27,21 @@
 			v-for="post in formattedPosts"
 			:key="post._id">
 			<section
-				class="Preview__third"
+				class="AppPreview__third"
 				:style="post.thumbnailImage">
 
-				<div class="Preview__overlay">
-					<div class="Preview__text">
-						<h4 class="Preview__title">
+				<div class="AppPreview__overlay">
+					<div class="AppPreview__text">
+						<h4 class="AppPreview__title">
 							{{post.title}}
 						</h4>
-						<p class="Preview__caption">
+						<p class="AppPreview__caption">
 							{{post.caption}}
 						</p>
 					</div>
 				</div>
 
-				<h4 class="Preview__title Preview__text">
+				<h4 class="AppPreview__title AppPreview__text">
 					{{post.title}}
 				</h4>
 
