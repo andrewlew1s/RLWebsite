@@ -30,7 +30,7 @@
 			</section>
 		</b-link>
 
-		<b-link href="/published">
+		<b-link href="/#/published">
 			<section class="AppPreview__third AppPreview__third--performed">
 
 				<div class="AppPreview__overlay">
@@ -70,7 +70,7 @@ export default {
 		formattedPosts() {
 			if (!this.posts) return null;
 			return this.posts.map(p => {
-				const link = `/poems/${p._id}`;
+				const link = `/collection/${p._id}`;
 				const formattedPost = {
 					title: p.title,
 					caption: p.caption,
