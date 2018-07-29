@@ -1,5 +1,7 @@
 import List from './List';
 import Detail from './Detail';
+import Published from './Published';
+import Performed from './Performed';
 
 const routes = [
 	{
@@ -13,6 +15,16 @@ const routes = [
 		name: 'collection.detail',
 		path: '/collection/:id',
 		component: Detail
+	},
+	{
+		name: 'collection.published',
+		path: '/collection/published',
+		component: Published
+	},
+	{
+		name: 'collection.performed',
+		path: '/collection/performed',
+		component: Performed
 	}
 ];
 
