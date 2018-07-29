@@ -17,15 +17,17 @@
 					</b-link>
 				</b-col>
 				<b-col>
-					<b-card
-						class="Collection__card"
-						overlay
-						img-src="/static/images/performed.jpg"
-						img-alt="Perfomed"
-						text-variant="white"
-						title="Perfomed">
-						Coming Soon!
-					</b-card>
+					<b-link href="/#/performed">
+						<b-card
+							class="Collection__card"
+							overlay
+							img-src="/static/images/performed.jpg"
+							img-alt="Perfomed"
+							text-variant="white"
+							title="Perfomed">
+							Coming Soon!
+						</b-card>
+					</b-link>
 				</b-col>
 			</b-row>
 
