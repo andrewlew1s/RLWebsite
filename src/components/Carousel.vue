@@ -14,7 +14,6 @@
 
 					<div class="App__inner App__inner--noPadding Carousel__text">
 
-
 						<h1 v-text="slide.title"/>
 
 						<p v-text="slide.text"/>
