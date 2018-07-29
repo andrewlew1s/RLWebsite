@@ -1,11 +1,11 @@
 <template>
-	<div class="Poems">
+	<div class="Collection">
 		<div class="App__inner App--paddingTop">
 
 			<b-row>
 				<b-col>
 					<b-card
-						class="Poems__card"
+						class="Collection__card"
 						overlay
 						img-src="/static/images/published.jpg"
 						img-alt="Published"
@@ -16,7 +16,7 @@
 				</b-col>
 				<b-col>
 					<b-card
-						class="Poems__card"
+						class="Collection__card"
 						overlay
 						img-src="/static/images/performed.jpg"
 						img-alt="Perfomed"
@@ -27,20 +27,36 @@
 				</b-col>
 			</b-row>
 
+			<b-link
+				:to="post.link"
+				v-for="(post, i) in formattedPoems"
+				:key="post._id">
+				<section
+					class="AppPreview__third Collection__thumb"
+					:style="post.thumbnailImage"
+					:class="{
+							'Collection__thumb--first': (i%4==0),
+							'Collection__thumb--last': (i%4==3)
+						}">
 
-			<b-list-group>
+					<div class="AppPreview__overlay">
+						<div class="AppPreview__text">
+							<h4 class="AppPreview__title Collection__title">
+								{{post.title}}
+							</h4>
+							<p class="AppPreview__caption">
+								{{post.caption}}
+							</p>
+						</div>
+					</div>
 
-				<b-list-group-item
-					v-for="poem in poems"
-					:key="poem.id">
+					<h4 class="AppPreview__title AppPreview__text">
+						{{post.title}}
+					</h4>
 
-						<b-link
-							@click="goToPoem(poem._id)"
-							v-text="poem.title"/>
+				</section>
+			</b-link>
 
-				</b-list-group-item>
-
-			</b-list-group>
 		</div>
 	</div>
 </template>
@@ -51,19 +67,32 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			poems: 'posts/poems'
-		})
+			poems: 'post/poems'
+		}),
+		formattedPoems() {
+			if (!this.poems) return null;
+			return this.poems.map(p => {
+				const link = `/collection/${p._id}`;
+				const formattedPoem = {
+					title: p.title,
+					caption: p.caption,
+					thumbnailImage: this.getImgStyle(p),
+					link
+				};
+				return formattedPoem;
+			});
+		}
 	},
 	methods: {
 		...mapActions({
-			fetch: 'posts/fetchPosts'
+			fetch: 'post/fetchList'
 		}),
-		goToPoem(poemId) {
-			this.$router.push({ name: 'poem.detail', params: { id: poemId } });
+		getImgStyle(post) {
+			return `background-image: url(${post.thumbnailImage});`;
 		}
 	},
 	created() {
-		this.fetchPoems();
+		this.fetch();
 	}
 };
 </script>
@@ -73,12 +102,32 @@ export default {
 
 @import '../../settings';
 
-.Poems{
+.Collection{
 
 	&__card {
 		height: 350px;
 		margin-bottom: 60px;
 		overflow: hidden;
+		position: relative;
+	}
+
+	&__thumb {
+		height: 200px;
+		width: 23.5%;
+		margin: 0 1% 40px 1%;
+		float: left;
+
+		&--first{
+			margin-left: 0;
+		}
+
+		&--last{
+			margin-right: 0;
+		}
+	}
+
+	&__title {
+		font-size: 24px;
 	}
 }
 

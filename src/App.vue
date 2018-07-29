@@ -141,6 +141,8 @@ $footerPadding: 60px;
 		font-size: 2rem;
 		font-weight: bold;
 		text-transform: uppercase;
+		text-align: center;
+		width: 90%;
 	}
 
 	&__caption {
