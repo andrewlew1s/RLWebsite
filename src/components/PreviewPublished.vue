@@ -124,6 +124,10 @@ $shadowColour: $Shadow-Colour;
 			background-image: url('/static/images/published.jpg');
 		}
 
+		&--performed {
+			background-image: url('/static/images/performed.jpg');
+		}
+
 	}
 
 	&__text {

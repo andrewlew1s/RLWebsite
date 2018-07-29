@@ -4,6 +4,24 @@
 
 		<h3>Performed</h3>
 
+		<b-link href="/published">
+			<section class="Preview__third Preview__third--performed">
+
+				<div class="Preview__overlay">
+					<div class="Preview__text">
+						<h4 class="Preview__title">
+							Read More
+						</h4>
+					</div>
+				</div>
+
+				<h4 class="Preview__title Preview__text">
+					Read More
+				</h4>
+
+			</section>
+		</b-link>
+
 		<b-link
 			:to="post.link"
 			v-for="post in formattedPosts"
@@ -41,14 +59,13 @@ export default {
 		...mapGetters({
 			performed: 'post/performed'
 		}),
-		posts() {
-			if (this.performed.length === 0) return [];
-			return [
-				this.performed[0]
-			];
-		},
 		isLoaded() {
 			return this.formattedPosts.length !== 0;
+		},
+		posts() {
+			const num = 2;
+			if (this.performed.length < num) return this.performed;
+			return this.performed.slice(0, num);
 		},
 		formattedPosts() {
 			if (!this.posts) return null;
@@ -71,61 +88,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="scss">
-@import '../settings';
-
-$highlightColour: $Highlight-Colour;
-$shadowColour: $Shadow-Colour;
-
-.Preview {
-	height: 350px;
-	width: 100%;
-	background: $highlightColour;
-
-	&__overlay {
-		width: 100%;
-		height: 100%;
-		background: $shadowColour;
-		opacity: 0.1;
-		transition: opacity 0.2s ease-in;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
-
-	&__third {
-		height: 100%;
-		width: 33.33%;
-		background-size: cover;
-		background-position: center;
-		float: left;
-		position: relative;
-
-	}
-
-	&__text {
-		color: $highlightColour;
-	}
-
-	&__title {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		font-size: 2rem;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-
-	&__caption {
-		width: 80%;
-		margin: 0 10%;
-		text-align: center;
-		position: absolute;
-		bottom: 10%;
-	}
-
-}
-</style>
