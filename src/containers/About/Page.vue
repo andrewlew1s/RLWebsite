@@ -4,7 +4,7 @@
 		<b-row class="App__inner">
 			<b-col>
 				<!-- eslint-disable max-len -->
-					Hi! I am a 23-year-old award-winning poet and performer living and working in London. I make poetry happen through writing, performing, collaborating with other artists and coordinating poetry publications and events.
+					Hello! My name is Rachel, and welcome to my website! I am a 23-year-old award-winning poet and performer living and working in London. I make poetry happen through writing, performing, collaborating with other artists and coordinating poetry publications and events.
 				<!-- eslint-enable max-len -->
 			</b-col>
 		</b-row>
@@ -62,6 +62,57 @@
 			<p>
 			Please get in touch via my twitter and instagram: @Rachel_Claire_L
 			</p>
+		</b-row>
+
+		<b-row class="App__inner">
+		List of awards:
+			<b-col>
+			<b-row>
+			2008 Winner, Dramatic Monologue Poetry Competition, judged by Glyn Maxwell
+			</b-row>
+			<b-row>
+			Jun 2009 Winner, Daunt Books Short Story Competition
+			</b-row>
+			<b-row>
+			Oct 2009 	Highly commended in Foyle Young Poets of the Year Award (top 100 out of 12,000 entries)
+			</b-row>
+			<b-row>
+			Mar 2011	Winner, Rudyard Kipling Society Essay Writing Competition
+			</b-row>
+			<b-row>
+			May 2012	Winner, Girton College Humanities Writing Competition, won with 2 sonnets
+			</b-row>
+			<b-row>
+			Oct 2012	Highly commended in Foyle Young Poets of the Year Award (top 100 out of 14,000 entries)
+			</b-row>
+			<b-row>
+			Nov 2012	Third Place, Arts Richmond Young Writers Award
+			</b-row>
+			<b-row>
+			May 2012	Highly commended, Thomas Campion Essay Prize, essay on Keats
+			</b-row>
+			<b-row>
+			May 2013	Highly Commended, SCJ Poetry Prize, judged by Moniza Alvi and Catherine Smith
+			</b-row>
+			<b-row>
+			Jan 2013	Highly commended, T. S. Eliot Prize Writing Competition, essay on new poets
+			</b-row>
+			<b-row>
+			May 2014	Highly Commended, Words and Women ‘About’ Poetry Competition
+			<b-link href="http://wordsandwomennorwich.blogspot.com/search/label/Young%20Women%20Writers">:Link to website</b-link>
+			</b-row>
+			<b-row>
+			Jun 2014	Winner, Cape Farewell’s Poetry Competition with YPN, judged by Helen Mort
+			</b-row>
+			<b-row>
+			Oct 2015	Highly Commended, Poetry Book Society Student Poetry Competition, judged by Andrew McMillan
+			</b-row>
+			<b-row>
+			Jun 2016 	Winner, ‘Ways to be Wilder’ YPN Competition, judged by Jen Hadfield
+			<b-link href="http://poems.poetrysociety.org.uk/poems/twenty-tourists-in-a-motor-boat-watching-marine-plankton-bioluminesce/">:Link to website</b-link>
+			</b-row>
+			</b-col>
+
 		</b-row>
 
 	</div>
