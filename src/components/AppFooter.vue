@@ -2,12 +2,20 @@
 	<div class="Footer">
 		<div class="App__inner Footer__inner">
 			<b-col>
-			<b-link href="https://twitter.com/Rachel_Claire_L"><b-img class="About__image" src="/static/images/tweet.JPG"></b-img></b-link>
-			<b-link href="https://www.facebook.com/profile.php?id=1186786120">
-				<b-img class="About__image" src="/static/images/fbook.JPG">
-				</b-img>
-			</b-link>
-			</b-col>
+
+				<b-link href="https://twitter.com/Rachel_Claire_L">
+					<b-img
+						class="Footer__icon"
+						src="/static/images/tweet.JPG"/>
+				</b-link>
+
+				<b-link href="https://www.facebook.com/profile.php?id=1186786120">
+					<b-img
+						class="Footer__icon Footer__icon--facebook"
+						src="/static/icons/facebook.svg"/>
+				</b-link>
+
+		</b-col>
 			<span> This website is a product of Holistic Web Studios</span>
 		</div>
 	</div>
@@ -51,6 +59,11 @@ $textColour: $Highlight-Colour;
 
 	&__icon {
 		width: 24px;
+		margin: 0 8px;
+
+		&--facebook {
+			background: white;
+		}
 	}
 }
 
