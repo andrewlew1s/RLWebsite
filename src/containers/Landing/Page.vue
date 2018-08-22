@@ -1,30 +1,18 @@
 <template>
 	<div class="Landing">
 
-		<poem-carousel class="Landing__carousel"/>
-
-		<section class="App__inner">
-			<app-preview-published/>
-		</section>
-
-		<section class="App__inner">
-			<app-preview-performed/>
-		</section>
+		<MLTrue class="Landing__ML" />
 
 	</div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import PoemCarousel from './components/PoemCarousel';
-import AppPreviewPublished from '../../components/AppPreviewPublished';
-import AppPreviewPerformed from '../../components/AppPreviewPerformed';
+import MLTrue from '../../components/MLTrue';
 
 export default {
 	components: {
-		PoemCarousel,
-		AppPreviewPublished,
-		AppPreviewPerformed
+		MLTrue
 
 	},
 	methods: {

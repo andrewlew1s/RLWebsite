@@ -4,7 +4,7 @@
 
 		<b-link to="/">
 			<h1 class="Header__title App--center Header--responsive">
-				Rachel Lewis
+				Basic TensorflowJS Model by Andrew
 			</h1>
 		</b-link>
 

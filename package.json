@@ -2,7 +2,7 @@
   "name": "website-rachel-lewis",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Michael <michael.fitzhavey@gmail.com>",
+  "author": "Andrew <andrew12lewis@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -13,9 +13,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^0.12.4",
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "fast-csv": "^2.4.1",
     "firebase": "^5.0.4",
+    "papaparse": "^4.6.0",
     "vue": "^2.5.2",
     "vue-carousel": "^0.10.0",
     "vue-cli": "^2.9.6",
