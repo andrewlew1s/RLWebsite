@@ -3,9 +3,22 @@
 
 		<b-row class="App__inner">
 			<b-col>
-				<h3>
-					Rachel Lewis is a 2014 winner of the Cape Farewell/Young Poets Network competition for poems exploring climate change.
-				</h3>
+					I am a 23-year-old award-winning poet and performer living and working in London. I make poetry happen through writing, performing, collaborating with other artists and coordinating poetry publications and events.
+			</b-col>
+		</b-row>
+
+		<b-row class="App__inner">
+			<b-col>
+				<p>
+					<!-- eslint-disable max-len -->
+					Most recently I worked on a collaborative performance with dancers and circus performers at the Roundhouse in Camden (2018) as a Young Producer with Poet in the City (2017). I previously studied English Literature at the University of Cambridge, where I led Chameleon, the university’s creative writing society and was a Poetry Editor for the Mays anthology.
+					<!-- eslint-enable max-len -->
+				</p>
+			</b-col>
+			<b-col>
+				<!-- eslint-disable max-len -->
+					My poetry has been published by The Poetry Book Society, the Poetry Society, Kindling journal and many more. I have performed on canal towpaths, in cellars underneath feminist pubs, in many a student bar and on the Roundhouse main stage.
+				<!-- eslint-enable max-len -->
 			</b-col>
 			<b-col>
 				<p>
@@ -15,27 +28,30 @@
 		</b-row>
 
 		<b-row class="App__inner">
-			<b-col>
-				<p>
-					<!-- eslint-disable max-len -->
-					Rachel joined PPL as an Analyst in October 2017 after completing a business management graduate scheme with Cambridge University Press.
-					During the scheme, she worked on an internal consultancy basis on a range of change projects in a not-for-profit context. Her projects were
-					aimed at making better use of data, overcoming organisational siloes and improving legacy processes, with a particular focus on developing
-					person-centred approaches and putting users and customers at the heart of business decisions. Her work included acting as programme manager
-					for a company-wide change to encourage better customer focus and co-created solutions. She also worked on launching a revised governance
-					process for the multi-million pound technology portfolio, and on creating data analyses to inform process improvements in the technology,
-					<!-- eslint-enable max-len -->
-				</p>
-			</b-col>
-			<b-col>
-				<!-- eslint-disable max-len -->
-					Her interest in the public sector, the health service and the third sector was sparked by voluntary
-					work in a community health centre as part of national citizenship service whilst still at school. She has since volunteered for educational
-					charities in the UK and Nepal and also spent a year as editor-in-chief of a health and development publication at the University of
-					Cambridge, editing and writing academic articles on health, sustainability and international development. Rachel holds a BA in English
-					Literature from the University of Cambridge, where she was a Peterhouse scholar.
-				<!-- eslint-enable max-len -->
-			</b-col>
+			<p>
+				The ‘Performed and published’ section of this website is where you can read and listen to my published work. I’ll let it speak for itself and let you work out what it’s all about yourself.
+
+				Do get in touch if you would like to work with me on any of the following:
+
+				<b-col>
+				⦁	Performing at your event
+				</b-col>
+				<b-col>
+				⦁	Hosting your event
+				</b-col>
+				<b-col>
+				⦁	Running a creative writing workshop
+				</b-col>
+				<b-col>
+				⦁	Commissioning a poem
+				</b-col>
+				<b-col>
+				⦁	Collaborating on a creative project
+				</b-col>
+				<b-col>
+				⦁	Chatting about poetry in general or in particular
+				</b-col>
+			</p>
 		</b-row>
 
 	</div>
