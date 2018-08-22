@@ -8,11 +8,10 @@
 						<b-card
 							class="Collection__card"
 							overlay
-							img-src="/static/images/published.jpg"
+							img-src="/static/images/published.JPG"
 							img-alt="Published"
 							text-variant="white"
 							title="Published">
-							Coming Soon!
 						</b-card>
 					</b-link>
 				</b-col>
@@ -25,7 +24,6 @@
 							img-alt="Perfomed"
 							text-variant="white"
 							title="Perfomed">
-							Coming Soon!
 						</b-card>
 					</b-link>
 				</b-col>

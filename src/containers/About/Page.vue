@@ -3,7 +3,9 @@
 
 		<b-row class="App__inner">
 			<b-col>
-					I am a 23-year-old award-winning poet and performer living and working in London. I make poetry happen through writing, performing, collaborating with other artists and coordinating poetry publications and events.
+				<!-- eslint-disable max-len -->
+					Hi! I am a 23-year-old award-winning poet and performer living and working in London. I make poetry happen through writing, performing, collaborating with other artists and coordinating poetry publications and events.
+				<!-- eslint-enable max-len -->
 			</b-col>
 		</b-row>
 
@@ -29,6 +31,7 @@
 
 		<b-row class="App__inner">
 			<p>
+				<!-- eslint-disable max-len -->
 				The ‘Performed and published’ section of this website is where you can read and listen to my published work. I’ll let it speak for itself and let you work out what it’s all about yourself.
 
 				Do get in touch if you would like to work with me on any of the following:
@@ -51,6 +54,13 @@
 				<b-col>
 				⦁	Chatting about poetry in general or in particular
 				</b-col>
+				<!-- eslint-enable max-len -->
+			</p>
+		</b-row>
+
+		<b-row class="App__inner">
+			<p>
+			Please get in touch via my twitter and instagram: @Rachel_Claire_L
 			</p>
 		</b-row>
 
