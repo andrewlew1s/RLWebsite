@@ -8,7 +8,7 @@
 						<b-card
 							class="Collection__card"
 							overlay
-							img-src="/static/images/published.JPG"
+							img-src="/static/images/published.jpg"
 							img-alt="Published"
 							text-variant="white"
 							title="Published">

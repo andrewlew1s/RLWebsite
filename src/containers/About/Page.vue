@@ -109,7 +109,10 @@
 			</b-row>
 			<b-row>
 			Jun 2016 	Winner, ‘Ways to be Wilder’ YPN Competition, judged by Jen Hadfield
-			<b-link href="http://poems.poetrysociety.org.uk/poems/twenty-tourists-in-a-motor-boat-watching-marine-plankton-bioluminesce/">:Link to website</b-link>
+				<!-- eslint-disable-next-line max-len -->
+				<b-link href="http://poems.poetrysociety.org.uk/poems/twenty-tourists-in-a-motor-boat-watching-marine-plankton-bioluminesce/">
+				:Link to website
+				</b-link>
 			</b-row>
 			</b-col>
 
