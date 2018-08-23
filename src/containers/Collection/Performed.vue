@@ -1,5 +1,5 @@
 <template>
-	<div class="Collection">
+	<div class="Performed">
 		<div class="App__inner">
 
 			<h3>
@@ -11,16 +11,12 @@
 				v-for="(post, i) in formattedPoems"
 				:key="post._id">
 				<section
-					class="PreviewList__third Collection__thumb"
-					:style="post.thumbnailImage"
-					:class="{
-							'Collection__thumb--first': (i%4==0),
-							'Collection__thumb--last': (i%4==3)
-						}">
+					class="PreviewList__third Performed__card"
+					:style="post.thumbnailImage">
 
 					<div class="PreviewList__overlay">
 						<div class="PreviewList__text">
-							<h4 class="PreviewList__title Collection__title">
+							<h4 class="PreviewList__title">
 								{{post.title}}
 							</h4>
 							<p class="PreviewList__caption">
@@ -76,38 +72,11 @@ export default {
 };
 </script>
 
-
-<style lang="scss" scoped>
-
-@import '../../settings';
-
-.Collection{
+<style lang="scss">
+.Performed {
 
 	&__card {
-		height: 350px;
-		margin-bottom: 60px;
-		overflow: hidden;
-		position: relative;
-	}
-
-	&__thumb {
-		height: 200px;
-		width: 23.5%;
-		margin: 0 1% 40px 1%;
-		float: left;
-
-		&--first{
-			margin-left: 0;
-		}
-
-		&--last{
-			margin-right: 0;
-		}
-	}
-
-	&__title {
-		font-size: 24px;
+		height: 250px;
 	}
 }
-
 </style>
