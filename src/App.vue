@@ -91,7 +91,8 @@ $footerPadding: 60px;
 
 }
 
-.AppPreview {
+
+.PreviewList {
 	height: 350px;
 	width: 100%;
 	background: $highlightColour;

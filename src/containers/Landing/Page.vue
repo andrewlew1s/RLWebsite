@@ -4,11 +4,11 @@
 		<poem-carousel class="Landing__carousel"/>
 
 		<section class="App__inner">
-			<app-preview-published/>
+			<preview-list mode="published"/>
 		</section>
 
 		<section class="App__inner">
-			<app-preview-performed/>
+			<preview-list mode="performed"/>
 		</section>
 
 	</div>
@@ -17,15 +17,12 @@
 <script>
 import { mapActions } from 'vuex';
 import PoemCarousel from './components/PoemCarousel';
-import AppPreviewPublished from '../../components/AppPreviewPublished';
-import AppPreviewPerformed from '../../components/AppPreviewPerformed';
+import PreviewList from '../../components/PreviewList';
 
 export default {
 	components: {
 		PoemCarousel,
-		AppPreviewPublished,
-		AppPreviewPerformed
-
+		PreviewList
 	},
 	methods: {
 		...mapActions({
