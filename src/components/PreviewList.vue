@@ -40,7 +40,7 @@
 
 		<b-link
 			v-if="isPublished"
-			href="/#/published">
+			href="/published">
 			<section class="PreviewList__third PreviewList__third--published">
 				<div class="PreviewList__overlay">
 					<div class="PreviewList__text">
@@ -57,7 +57,7 @@
 
 		<b-link
 			v-if="isPerformed"
-			href="/#/published">
+			href="/published">
 			<section class="PreviewList__third PreviewList__third--performed">
 				<div class="PreviewList__overlay">
 					<div class="PreviewList__text">

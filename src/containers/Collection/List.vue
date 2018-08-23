@@ -4,7 +4,7 @@
 
 			<b-row>
 				<b-col>
-					<b-link href="/#/published">
+					<b-link href="/published">
 						<b-card
 							class="Collection__card"
 							overlay
@@ -16,7 +16,7 @@
 					</b-link>
 				</b-col>
 				<b-col>
-					<b-link href="/#/performed">
+					<b-link href="/performed">
 						<b-card
 							class="Collection__card"
 							overlay
