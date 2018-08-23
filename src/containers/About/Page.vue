@@ -10,19 +10,19 @@
 		</b-row>
 
 		<b-row class="App__inner">
-			<b-col>
+			<b-col class="About__col">
 				<p>
 					<!-- eslint-disable max-len -->
 					Most recently I worked on a collaborative performance with dancers and circus performers at the Roundhouse in Camden (2018) as a Young Producer with Poet in the City (2017). I previously studied English Literature at the University of Cambridge, where I led Chameleon, the university’s creative writing society and was a Poetry Editor for the Mays anthology.
 					<!-- eslint-enable max-len -->
 				</p>
 			</b-col>
-			<b-col>
+			<b-col class="About__col">
 				<!-- eslint-disable max-len -->
 					My poetry has been published by The Poetry Book Society, the Poetry Society, Kindling journal and many more. I have performed on canal towpaths, in cellars underneath feminist pubs, in many a student bar and on the Roundhouse main stage.
 				<!-- eslint-enable max-len -->
 			</b-col>
-			<b-col>
+			<b-col class="About__col">
 				<p>
 					<b-img class="About__image" src="/static/images/rachel.jpg"></b-img>
 				</p>
@@ -122,10 +122,16 @@
 <style lang="scss">
 @import '../../settings';
 
-.module-home{
+$mobileWidth: $Mobile-Width;
 
-	&__image{
-		width: auto;
+.About{
+
+	&__col {
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
+			flex: none;
+		}
 	}
 }
 
