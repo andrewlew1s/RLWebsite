@@ -3,7 +3,7 @@
 		<div class="App__inner">
 
 			<b-row>
-				<b-col>
+				<b-col class="Collection__col">
 					<b-link href="/published">
 						<b-card
 							class="Collection__card"
@@ -15,7 +15,7 @@
 						</b-card>
 					</b-link>
 				</b-col>
-				<b-col>
+				<b-col class="Collection__col">
 					<b-link href="/performed">
 						<b-card
 							class="Collection__card"
@@ -108,6 +108,8 @@ export default {
 
 @import '../../settings';
 
+$mobileWidth: $Mobile-Width;
+
 .Collection{
 
 	&__card {
@@ -115,6 +117,14 @@ export default {
 		margin-bottom: 60px;
 		overflow: hidden;
 		position: relative;
+	}
+
+	&__col {
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
+			flex: none;
+		}
 	}
 
 	&__thumb {
@@ -130,6 +140,13 @@ export default {
 		&--last{
 			margin-right: 0;
 		}
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
 	}
 
 	&__title {
