@@ -12,7 +12,6 @@
 							img-alt="Published"
 							text-variant="white"
 							title="Published">
-							Coming Soon!
 						</b-card>
 					</b-link>
 				</b-col>
@@ -25,7 +24,6 @@
 							img-alt="Perfomed"
 							text-variant="white"
 							title="Perfomed">
-							Coming Soon!
 						</b-card>
 					</b-link>
 				</b-col>
