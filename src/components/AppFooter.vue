@@ -2,7 +2,12 @@
 	<section class="Footer">
 		<div class="App__inner Footer__inner">
 
-			<span> This website is a product of Holistic Web Studios</span>
+			<b-link
+				class="Footer__link"
+				href="https://github.com/holistic-web/"
+				target="_blank">
+				A Holistic project.
+			</b-link>
 
 			<div class="Footer__icons">
 				<b-link
@@ -88,6 +93,17 @@ $textColour: $Highlight-Colour;
 			}
 
 		}
+
+	}
+
+	&__link {
+		color: $textColour;
+
+		&:hover {
+			color: $textColour;
+			text-decoration: none;
+		}
+
 	}
 }
 
