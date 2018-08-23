@@ -11,25 +11,25 @@
 				v-for="(post, i) in formattedPoems"
 				:key="post._id">
 				<section
-					class="AppPreview__third Collection__thumb"
+					class="PreviewList__third Collection__thumb"
 					:style="post.thumbnailImage"
 					:class="{
 							'Collection__thumb--first': (i%4==0),
 							'Collection__thumb--last': (i%4==3)
 						}">
 
-					<div class="AppPreview__overlay">
-						<div class="AppPreview__text">
-							<h4 class="AppPreview__title Collection__title">
+					<div class="PreviewList__overlay">
+						<div class="PreviewList__text">
+							<h4 class="PreviewList__title Collection__title">
 								{{post.title}}
 							</h4>
-							<p class="AppPreview__caption">
+							<p class="PreviewList__caption">
 								{{post.caption}}
 							</p>
 						</div>
 					</div>
 
-					<h4 class="AppPreview__title AppPreview__text">
+					<h4 class="PreviewList__title PreviewList__text">
 						{{post.title}}
 					</h4>
 

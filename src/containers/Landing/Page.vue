@@ -3,7 +3,7 @@
 
 		<carousel
 			class="Landing__carousel"
-			:slides="formattedSlides"/>
+			:slides="slidesFormatted"/>
 
 		<section class="App__inner">
 			<preview-list mode="published"/>
@@ -30,9 +30,9 @@ export default {
 		...mapGetters({
 			slides: 'post/featured'
 		}),
-		formattedSlides() {
+		slidesFormatted() {
 			if (!this.slides) return null;
-			return this.slides.map(slideInPoemForm => {
+			const slides = this.slides.map(slideInPoemForm => {
 				const link = `/#/collection/${slideInPoemForm._id}`;
 				const formattedSlide = {
 					title: slideInPoemForm.title,
@@ -42,6 +42,20 @@ export default {
 				};
 				return formattedSlide;
 			});
+			// Add two extra slides for the publish and perfomed sections
+			slides.push({
+				title: 'Published',
+				text: 'A collection of my published works',
+				imageSrc: '/static/images/published.jpg',
+				link: '/published'
+			});
+			slides.push({
+				title: 'Performed',
+				text: 'A collection of my performed works',
+				imageSrc: '/static/images/performed.jpg',
+				link: '/performed'
+			});
+			return slides;
 		}
 	},
 	methods: {
