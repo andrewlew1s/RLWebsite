@@ -29,6 +29,7 @@ export default {
 $footerHeight: $Footer-Height;
 $headerHeight: $Header-Height;
 $frameWidth: $Frame-Width;
+$mobileWidth: $Mobile-Width;
 $textColour: $Text-Colour;
 $backgroundColour: $Background-Colour;
 $fontFamily: $Font-Family;
@@ -126,6 +127,10 @@ $footerPadding: 60px;
 
 		&--performed {
 			background-image: url('/static/images/performed.jpg');
+		}
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
 		}
 
 	}
