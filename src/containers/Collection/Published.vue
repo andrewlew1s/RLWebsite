@@ -1,6 +1,6 @@
 <template>
 	<div class="Published">
-		<div class="App__inner">
+		<div class="App__inner App__inner--padded">
 
 			<h3>
 				Published:
@@ -8,7 +8,7 @@
 
 			<b-link
 				:to="post.link"
-				v-for="(post, i) in formattedPoems"
+				v-for="(post) in formattedPoems"
 				:key="post._id">
 				<section
 					class="PreviewList__third Published__card"

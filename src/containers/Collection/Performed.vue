@@ -1,6 +1,6 @@
 <template>
 	<div class="Performed">
-		<div class="App__inner">
+		<div class="App__inner App__inner--padded">
 
 			<h3>
 				Performed:

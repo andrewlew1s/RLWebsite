@@ -1,6 +1,6 @@
 <template>
 	<div class="Poem">
-		<div class="App__inner">
+		<div class="App__inner App__inner--padded">
 
 			<section v-if="isPoemLoaded">
 
