@@ -49,15 +49,14 @@ $footerPadding: 60px;
 		width:  $frameWidth;
 		margin: 0 calc((100vw - #{$frameWidth}) / 2);
 		position: relative;
-		padding-top: 60px;
 		float: left;
 
 		&--fullHeight {
 			height: 100%;
 		}
 
-		&--noPadding {
-			padding: 0;
+		&--padded {
+			padding-top: 60px;
 		}
 
 		@media all and (max-width: $frameWidth) {
