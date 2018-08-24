@@ -5,11 +5,11 @@
 			class="Landing__carousel"
 			:slides="slidesFormatted"/>
 
-		<section class="App__inner">
+		<section class="App__inner App__inner--padded">
 			<preview-list mode="published"/>
 		</section>
 
-		<section class="App__inner">
+		<section class="App__inner App__inner--padded">
 			<preview-list mode="performed"/>
 		</section>
 
