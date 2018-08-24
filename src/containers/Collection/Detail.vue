@@ -43,10 +43,10 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			poems: 'post/poems'
+			posts: 'post/posts'
 		}),
 		poem() {
-			return this.poems[this.$route.params.id];
+			return this.posts[this.$route.params.id];
 		},
 		isPoemLoaded() {
 			if (!this.poem) return false;

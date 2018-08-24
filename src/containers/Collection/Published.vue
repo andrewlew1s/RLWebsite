@@ -1,5 +1,5 @@
 <template>
-	<div class="Collection">
+	<div class="Published">
 		<div class="App__inner">
 
 			<h3>
@@ -11,25 +11,21 @@
 				v-for="(post, i) in formattedPoems"
 				:key="post._id">
 				<section
-					class="AppPreview__third Collection__thumb"
-					:style="post.thumbnailImage"
-					:class="{
-							'Collection__thumb--first': (i%4==0),
-							'Collection__thumb--last': (i%4==3)
-						}">
+					class="PreviewList__third Published__card"
+					:style="post.thumbnailImage">
 
-					<div class="AppPreview__overlay">
-						<div class="AppPreview__text">
-							<h4 class="AppPreview__title Collection__title">
+					<div class="PreviewList__overlay">
+						<div class="PreviewList__text">
+							<h4 class="PreviewList__title Collection__title">
 								{{post.title}}
 							</h4>
-							<p class="AppPreview__caption">
+							<p class="PreviewList__caption">
 								{{post.caption}}
 							</p>
 						</div>
 					</div>
 
-					<h4 class="AppPreview__title AppPreview__text">
+					<h4 class="PreviewList__title PreviewList__text">
 						{{post.title}}
 					</h4>
 
@@ -81,32 +77,10 @@ export default {
 
 @import '../../settings';
 
-.Collection{
+.Published{
 
 	&__card {
-		height: 350px;
-		margin-bottom: 60px;
-		overflow: hidden;
-		position: relative;
-	}
-
-	&__thumb {
-		height: 200px;
-		width: 23.5%;
-		margin: 0 1% 40px 1%;
-		float: left;
-
-		&--first{
-			margin-left: 0;
-		}
-
-		&--last{
-			margin-right: 0;
-		}
-	}
-
-	&__title {
-		font-size: 24px;
+		height: 250px;
 	}
 }
 

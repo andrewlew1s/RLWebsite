@@ -93,7 +93,8 @@ $overlayOpacity: 0.37;
 	}
 
 	&__image {
-		width: 100%;
+		// width setting sets the image to fullscreen - scrollbar width
+		width: calc(100vw - 17px);
 		height: 100%;
 		display: block;
 		background-size: cover;

@@ -3,8 +3,8 @@
 		<div class="App__inner">
 
 			<b-row>
-				<b-col>
-					<b-link href="/#/published">
+				<b-col class="Collection__col">
+					<b-link href="/published">
 						<b-card
 							class="Collection__card"
 							overlay
@@ -15,8 +15,8 @@
 						</b-card>
 					</b-link>
 				</b-col>
-				<b-col>
-					<b-link href="/#/performed">
+				<b-col class="Collection__col">
+					<b-link href="/performed">
 						<b-card
 							class="Collection__card"
 							overlay
@@ -38,25 +38,25 @@
 				v-for="(post, i) in formattedPoems"
 				:key="post._id">
 				<section
-					class="AppPreview__third Collection__thumb"
+					class="PreviewList__third Collection__thumb"
 					:style="post.thumbnailImage"
 					:class="{
 							'Collection__thumb--first': (i%4==0),
 							'Collection__thumb--last': (i%4==3)
 						}">
 
-					<div class="AppPreview__overlay">
-						<div class="AppPreview__text">
-							<h4 class="AppPreview__title Collection__title">
+					<div class="PreviewList__overlay">
+						<div class="PreviewList__text">
+							<h4 class="PreviewList__title Collection__title">
 								{{post.title}}
 							</h4>
-							<p class="AppPreview__caption">
+							<p class="PreviewList__caption">
 								{{post.caption}}
 							</p>
 						</div>
 					</div>
 
-					<h4 class="AppPreview__title AppPreview__text">
+					<h4 class="PreviewList__title PreviewList__text">
 						{{post.title}}
 					</h4>
 
@@ -108,6 +108,8 @@ export default {
 
 @import '../../settings';
 
+$mobileWidth: $Mobile-Width;
+
 .Collection{
 
 	&__card {
@@ -115,6 +117,14 @@ export default {
 		margin-bottom: 60px;
 		overflow: hidden;
 		position: relative;
+	}
+
+	&__col {
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
+			flex: none;
+		}
 	}
 
 	&__thumb {
@@ -130,6 +140,13 @@ export default {
 		&--last{
 			margin-right: 0;
 		}
+
+		@media all and (max-width: $mobileWidth) {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
 	}
 
 	&__title {
