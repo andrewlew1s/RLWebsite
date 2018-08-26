@@ -1,7 +1,6 @@
 <template>
 	<div class="Published">
 		<div class="App__inner App__inner--padded">
-
 			<h3>
 				Published:
 			</h3>
@@ -67,7 +66,7 @@ export default {
 		}
 	},
 	created() {
-		this.fetch();
+		this.fetch();// :smile:
 	}
 };
 </script>

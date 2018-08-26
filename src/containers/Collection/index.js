@@ -6,10 +6,10 @@ import Performed from './Performed';
 const routes = [
 	{
 		name: 'collection.list',
-		path: '/collection',
+		path: '/published-&-performed',
 		component: List,
 		menu: true,
-		menuName: 'Collection'
+		menuName: 'Published & Performed'
 	},
 	{
 		name: 'collection.detail',

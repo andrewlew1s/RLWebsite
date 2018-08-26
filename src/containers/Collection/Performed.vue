@@ -8,7 +8,7 @@
 
 			<b-link
 				:to="post.link"
-				v-for="(post, i) in formattedPoems"
+				v-for="(post) in formattedPoems"
 				:key="post._id">
 				<section
 					class="PreviewList__third Performed__card"
