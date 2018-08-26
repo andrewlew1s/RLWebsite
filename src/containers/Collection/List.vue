@@ -2,32 +2,30 @@
 	<div class="Collection">
 		<div class="App__inner App__inner--padded">
 
-			<b-row>
-				<b-col class="Collection__col">
-					<b-link href="/published">
-						<b-card
-							class="Collection__card"
-							overlay
-							img-src="/static/images/published.jpg"
-							img-alt="Published"
-							text-variant="white"
-							title="Published">
-						</b-card>
-					</b-link>
-				</b-col>
-				<b-col class="Collection__col">
-					<b-link href="/performed">
-						<b-card
-							class="Collection__card"
-							overlay
-							img-src="/static/images/performed.jpg"
-							img-alt="Perfomed"
-							text-variant="white"
-							title="Perfomed">
-						</b-card>
-					</b-link>
-				</b-col>
-			</b-row>
+			<div class="Collection__col">
+				<b-link href="/published">
+					<b-card
+						class="Collection__card"
+						overlay
+						img-src="/static/images/published.jpg"
+						img-alt="Published"
+						text-variant="white"
+						title="Published">
+					</b-card>
+				</b-link>
+			</div>
+			<div class="Collection__col">
+				<b-link href="/performed">
+					<b-card
+						class="Collection__card"
+						overlay
+						img-src="/static/images/performed.jpg"
+						img-alt="Perfomed"
+						text-variant="white"
+						title="Perfomed">
+					</b-card>
+				</b-link>
+			</div>
 
 			<h3>
 				All Poems:
@@ -120,6 +118,8 @@ $mobileWidth: $Mobile-Width;
 	}
 
 	&__col {
+		float: left;
+		width: 50%;
 
 		@media all and (max-width: $mobileWidth) {
 			width: 100%;
