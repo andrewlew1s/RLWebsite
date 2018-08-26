@@ -109,7 +109,7 @@ $overlayOpacity: 0.37;
 	}
 
 	&__text {
-		position: relative;x
+		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 		color: $textColour;
