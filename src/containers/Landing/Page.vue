@@ -18,7 +18,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import Carousel from '../../components/Carousel';
+import Carousel from './components/Carousel';
 import PreviewList from './components/PreviewList';
 
 export default {

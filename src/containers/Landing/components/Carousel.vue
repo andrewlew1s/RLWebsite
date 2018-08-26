@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../settings';
+@import '../../../settings';
 
 $headerHeight: $Header-Height;
 $indicatorColour: $Highlight-Colour;
@@ -93,7 +93,7 @@ $overlayOpacity: 0.37;
 	}
 
 	&__image {
-		// width setting sets the image to fullscreen - scrollbar width
+		// width setting sets the image to fullscreen-(scrollbar width)
 		width: calc(100vw - 17px);
 		height: 100%;
 		display: block;
@@ -109,7 +109,7 @@ $overlayOpacity: 0.37;
 	}
 
 	&__text {
-		position: relative;
+		position: relative;x
 		top: 50%;
 		transform: translateY(-50%);
 		color: $textColour;
