@@ -1,6 +1,7 @@
-# rl-website
+# website-rachel-lewis
 
-> A Vue.js project
+
+> A Vue.js project, vue config follows...
 
 ## Build Setup
 
