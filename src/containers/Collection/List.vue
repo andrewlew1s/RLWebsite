@@ -16,7 +16,7 @@
 					v-model="activeFilters"
 					:options="options"
 					buttons
-					name="radioBtnOutline"/>
+					@change="onFilterChange"/>
 			</section>
 
 
@@ -70,10 +70,41 @@ export default {
 		}),
 		getImgStyle(post) {
 			return `background-image: url(${post.thumbnailImage});`;
+		},
+		async onFilterChange() {
+			await this.$nextTick();
+			const showPublished = this.activeFilters.includes('published');
+			const showPerformed = this.activeFilters.includes('performed');
+			if (!showPublished || !showPerformed) {
+				this.$router.replace({
+					name: 'collection.list',
+					query: {
+						showPublished,
+						showPerformed
+					}
+				});
+			} else {
+				this.$router.replace({ name: 'collection.list' });
+			}
+		},
+		applyRouteFilters() {
+			const query = this.$route.query;
+			if (query.showPublished === 'false') {
+				this.activeFilters = this.activeFilters.splice(this.activeFilters.indexOf('published'), 1);
+			}
+			if (query.showPerformed === 'false') {
+				this.activeFilters = this.activeFilters.splice(this.activeFilters.indexOf('performed'), 1);
+			}
 		}
 	},
-	created() {
+	watch: {
+		$route() {
+			this.applyRouteFilters();
+		}
+	},
+	mounted() {
 		this.fetch();
+		this.applyRouteFilters();
 	}
 };
 </script>
