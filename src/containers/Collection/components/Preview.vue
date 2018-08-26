@@ -49,7 +49,7 @@ $textColour: $Text-Colour;
 
 .CollectionPreview {
 	width: 33.333%;
-	height: 320px;
+	height: 250px;
 	float: left;
 	padding: 2rem;
 	cursor: pointer;

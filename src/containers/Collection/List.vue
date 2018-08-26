@@ -2,6 +2,11 @@
 	<div class="Collection">
 		<div class="App__inner App__inner--padded">
 
+			<!-- #Todo:
+				- ensure filters are stored in url
+				- send homepage links to this page with filters applied
+			-->
+
 			<section class="Collection__header">
 				<h2 class="Collection__title">Collection</h2>
 				<b-form-checkbox-group
@@ -85,6 +90,7 @@ $mobileWidth: $Mobile-Width;
 	&__header {
 		width: 100%;
 		float: left;
+		margin-bottom: 1rem;
 	}
 
 	&__title {
