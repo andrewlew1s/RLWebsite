@@ -3,35 +3,31 @@
 		<div class="App__inner App__inner--padded">
 
 			<div class="Collection__col">
-				<b-link href="/published">
-					<b-card
-						class="Collection__card"
-						overlay
-						img-src="/static/images/published.jpg"
-						img-alt="Published"
-						text-variant="white"
-						title="Published">
-					</b-card>
-				</b-link>
+				<b-card
+					class="Collection__card"
+					overlay
+					img-src="/static/images/published.jpg"
+					img-alt="Published"
+					text-variant="white"
+					title="Published">
+				</b-card>
 			</div>
 			<div class="Collection__col">
-				<b-link href="/performed">
-					<b-card
-						class="Collection__card"
-						overlay
-						img-src="/static/images/performed.jpg"
-						img-alt="Perfomed"
-						text-variant="white"
-						title="Perfomed">
-					</b-card>
-				</b-link>
+				<b-card
+					class="Collection__card"
+					overlay
+					img-src="/static/images/performed.jpg"
+					img-alt="Perfomed"
+					text-variant="white"
+					title="Perfomed">
+				</b-card>
 			</div>
 
 			<h3>
 				All Poems:
 			</h3>
 
-			<b-link
+			<!-- <b-link
 				:to="post.link"
 				v-for="(post, i) in formattedPoems"
 				:key="post._id">
@@ -59,7 +55,12 @@
 					</h4>
 
 				</section>
-			</b-link>
+			</b-link> -->
+
+			<preview
+				v-for="poem in poems"
+				:key="poem._id"
+				:poem="poem"/>
 
 		</div>
 	</div>
@@ -67,25 +68,16 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import Preview from './components/Preview';
 
 export default {
+	components: {
+		Preview
+	},
 	computed: {
 		...mapGetters({
 			poems: 'post/poems'
-		}),
-		formattedPoems() {
-			if (!this.poems) return null;
-			return this.poems.map(p => {
-				const link = `/collection/${p._id}`;
-				const formattedPoem = {
-					title: p.title,
-					caption: p.caption,
-					thumbnailImage: this.getImgStyle(p),
-					link
-				};
-				return formattedPoem;
-			});
-		}
+		})
 	},
 	methods: {
 		...mapActions({

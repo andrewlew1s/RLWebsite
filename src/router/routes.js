@@ -5,7 +5,11 @@ import collectionRoutes from '../containers/Collection';
 const routes = [
 	...landingRoutes,
 	...aboutRoutes,
-	...collectionRoutes
+	...collectionRoutes,
+	{
+		path: '*',
+		redirect: '/'
+	}
 ];
 
 export default routes;

@@ -15,7 +15,7 @@
 					href="https://twitter.com/Rachel_Claire_L"
 					target="_blank"
 					title="Follow on Twitter!">
-					<b-img src="/static/images/tweet.JPG"/>
+					<b-img src="/static/icons/twitter.jpg"/>
 				</b-link>
 
 				<b-link
