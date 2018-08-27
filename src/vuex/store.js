@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 import postStore from './modules/postStore';
+import pageStore from './modules/pageStore';
 
 
 const firebaseConfig = {
@@ -20,7 +21,8 @@ const store = {
 		data: dataRef
 	},
 	modules: {
-		post: postStore
+		post: postStore,
+		page: pageStore
 	}
 };
 
