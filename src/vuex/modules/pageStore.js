@@ -16,7 +16,7 @@ export default {
 			const listRef = rootState.data.child(path);
 			const snap = await listRef.once('value');
 			const pageData = snap.val();
-			commit('SET_POSTS', pageData);
+			commit('SET_PAGE_DATA', pageData);
 			return pageData;
 		}
 	},

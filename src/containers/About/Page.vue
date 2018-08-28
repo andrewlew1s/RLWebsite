@@ -62,6 +62,11 @@
 				List of awards:
 			</p>
 			<ul>
+				<li
+					v-for="award in awards"
+					:key="award.name">
+					<span v-text="award.date"/>
+				</li>
 				<li>
 					2008 Winner, Dramatic Monologue Poetry Competition, judged by Glyn Maxwell
 				</li>
@@ -108,8 +113,39 @@
 		</b-row>
 		<!-- eslint-enable max-len -->
 
+		{{awards}}
+
 	</div>
 </template>
+
+<script>
+import { mapActions, mapGetters } from 'vuex';
+
+export default {
+	computed: {
+		...mapGetters({
+			pageData: 'page/pageData'
+		}),
+		awards() {
+			if (!this.pageData) return false;
+			return this.pageData.awards;
+		}
+	},
+	methods: {
+		...mapActions({
+			fetchPageData: 'page/fetchPageData'
+		}),
+		async fetch() {
+			const result = await this.fetchPageData('about');
+			return result;
+		}
+	},
+	created() {
+		this.fetch();
+	}
+};
+</script>
+
 
 <style lang="scss">
 @import '../../settings';
