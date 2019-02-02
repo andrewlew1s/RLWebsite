@@ -47,13 +47,13 @@ export default {
 				title: 'Published',
 				text: 'A collection of my published works',
 				imageSrc: '/static/images/published.jpg',
-				link: '/published'
+				link: '/published-&-performed?showPublished=true&showPerformed=false'
 			});
 			slides.push({
 				title: 'Performed',
 				text: 'A collection of my performed works',
 				imageSrc: '/static/images/performed.jpg',
-				link: '/performed'
+				link: '/published-&-performed?showPublished=false&showPerformed=true'
 			});
 			return slides;
 		}

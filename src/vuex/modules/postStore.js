@@ -28,7 +28,7 @@ export default {
 			const snap = await detailRef.once('value');
 			const detail = snap.val();
 			commit('SET_POST', detail);
-			if (detail.poem) commit('SET_POEM', detail);
+			if (detail.poem) commit('SET_POEM', detail); // unnecessary perhaps fix
 		}
 	},
 	getters: {
