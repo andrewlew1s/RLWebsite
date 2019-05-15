@@ -1,5 +1,6 @@
 # website-rachel-lewis
 
+A website for Rachel Lewis, written in Vue.js
 
 > A Vue.js project, vue config follows...
 
