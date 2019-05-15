@@ -1,6 +1,6 @@
 # website-rachel-lewis
 
-A website for Rachel Lewis, written in Vue.js
+A website for Rachel Lewis, written in Vue.js. The corresponding firebase project is name `website-rachel-lewis`. Submit an issue to request access.
 
 > A Vue.js project, vue config follows...
 
